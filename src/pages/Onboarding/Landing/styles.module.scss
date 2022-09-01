@@ -65,7 +65,6 @@ body {
   color: $black-700;
   @include mq(xs) {
     left: 10px;
-    height: 100%;
   }
   h1 {
     font-size: 5vw;
