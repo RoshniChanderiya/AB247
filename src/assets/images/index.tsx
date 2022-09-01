@@ -13,14 +13,16 @@ import VehicleNotFound from "./VehicleNotFound.webp";
 import cardImage from "./cardImage.jpg";
 import mapFlorida from "./mapFlorida.jpg";
 import HeroImage from "./HeroImage.webp";
-import SellRetailInvetory from "./SellRetailInventory.webp";
 import PrivateVehicleCard from "./PrivateVehicleCard.webp";
-import WholesaleSolution from "./WholesaleSolution.webp";
-import PrivateVehicleSourcing from "./PrivateVehicleSourcing.webp";
 import WholeSolutionImage from "./WholeSolutionImage.webp";
 import IconBid  from "./icons/icon-bid.svg";
 import  IconSignup from "./icons/icon-sign up.svg";
 import IconNotify  from "./icons/icon-we notify you.svg";
+import IconAwesomeCar from "./IconAwesomeCar.png";
+import PrivateVehicleMainImage from "./PrivateVehicleMainImage.webp";
+import PrivateVehicleCars from "./PrivateVehicleCars.webp";
+import WholeSolutions from "./WholeSolutions.webp";
+import SellInventory from "./SellInventory.webp";
 
 interface IconProps
   extends React.DetailedHTMLProps<
@@ -69,14 +71,16 @@ export {
   cardImage,
   mapFlorida,
   HeroImage,
-  SellRetailInvetory,
   PrivateVehicleCard,
-  WholesaleSolution,
-  PrivateVehicleSourcing,
   WholeSolutionImage,
   IconBid,
   IconNotify,
-  IconSignup
+  IconSignup,
+  IconAwesomeCar,
+  PrivateVehicleMainImage,
+  PrivateVehicleCars, 
+  WholeSolutions,
+  SellInventory,
 };
 
 export default Icon;

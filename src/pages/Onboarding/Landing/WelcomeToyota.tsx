@@ -6,18 +6,16 @@ import Button from "@/components/Button";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.scss";
 import {
-  SellRetailInvetory,
-  WholesaleSolution,
-  PrivateVehicleCard,
-  PrivateVehicleSourcing,
-  cardImage,
+  PrivateVehicleCars,
+  WholeSolutions,
+  SellInventory
 } from "@/assets/images";
 const WelcomeToyota = () => {
   const cardData = [
     {
       num: "1",
       title: "Sell Retail Inventory ",
-      imgs: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+      imgs: SellInventory,
 
       point1: "We Deliver DEALS, Not Leads",
       point2: "Sell Your Invetory 24 Hours a Day",
@@ -29,8 +27,10 @@ const WelcomeToyota = () => {
     },
     {
       num: "2",
+
+
       title: "Private Vehicle Sourcing",
-      imgs: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+      imgs: PrivateVehicleCars,
       point1: "Buy Cars Direct from Consumers ",
       point2: "Increase Your Vehicle Inventory",
       point3: "Get Access to Vehicles You Would Never See ",
@@ -42,7 +42,7 @@ const WelcomeToyota = () => {
     {
       num: "3",
       title: "Wholesale Solutions",
-      imgs: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+      imgs:WholeSolutions,
       point1: "Never Lose a Customer Again",
       point2: "Search All Dealer Inventory Nationwide",
       point3: "Fast Online Transaction",

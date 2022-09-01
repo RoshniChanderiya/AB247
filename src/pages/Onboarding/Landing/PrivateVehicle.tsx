@@ -1,9 +1,7 @@
-import React from "react";
-import classNames from "classnames";
 import Button from "@/components/Button";
 import styles from "./styles.module.scss";
 import { Col, Row } from "reactstrap";
-import { IconPlay, PrivateVehicleSourcing } from "@/assets/images";
+import { IconPlay,PrivateVehicleMainImage} from "@/assets/images";
 const PrivateVehicle = () => {
   return (
     <div>
@@ -14,7 +12,7 @@ const PrivateVehicle = () => {
         <Row>
           <Col lg={6} className={styles.privateSeaction}>
             <img
-              src={PrivateVehicleSourcing}
+              src={PrivateVehicleMainImage}
               alt="simple"
               className={styles.privateVehicleImg}
             />
