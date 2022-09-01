@@ -1,5 +1,3 @@
-import React from "react";
-import classNames from "classnames";
 import Button from "@/components/Button";
 import styles from "./styles.module.scss";
 import { Col, Row } from "reactstrap";
