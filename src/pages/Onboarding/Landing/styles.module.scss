@@ -11,6 +11,9 @@ body {
   font-weight: bold;
   font-size: $font-xl * 2;
   text-align: center;
+  @include mq(xs) {
+    font-size: $font-xl;
+  }
 }
 .title {
   font-family: $secondary-font;
@@ -44,25 +47,37 @@ body {
   }
 }
 .backgroundArea {
+  position: relative;
   img {
     object-fit: cover;
     height: calc(100vh - 250px);
     width: 100%;
-    // @include mq(md) {
-    //   display: none;
-    // }
   }
 }
 .imageText {
   left: 104px;
-  top: 25%;
+  top: 0;
   position: absolute;
   padding-right: $padding-md * 4;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  height: 90%;
   color: $black-700;
+  @include mq(xs) {
+    left: 10px;
+    height: 100%;
+  }
   h1 {
     font-size: 5vw;
+    @include mq(lg) {
+      font-size: 6vw;
+    }
+    @include mq(md) {
+      font-size: 7vw;
+    }
+    @include mq(xs) {
+      font-size: 8vw;
+    }
   }
 }
 h1 {
@@ -70,6 +85,9 @@ h1 {
   color: $black-700;
   font-weight: bold;
   font-size: $font-lg * 3;
+  @include mq(xs) {
+    font-size: $font-xl;
+  }
 }
 .ulText {
   font-family: $secondary-font;
@@ -78,10 +96,28 @@ h1 {
   font-size: 3vw;
   font-weight: bold;
   margin-left: -20px;
+  @include mq(lg) {
+    font-size: 3.5vw;
+  }
+  @include mq(md) {
+    font-size: 4.5vw;
+  }
+  @include mq(xs) {
+    font-size: 5.5vw;
+  }
 }
 .liText {
   font-family: $secondary-font;
   font-size: 2vw;
+  @include mq(lg) {
+    font-size: 2.5vw;
+  }
+  @include mq(md) {
+    font-size: 3.5vw;
+  }
+  @include mq(xs) {
+    font-size: 4.5vw;
+  }
 }
 .bannerFooter {
   height: 100px;
@@ -95,6 +131,9 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  @include mq(xs) {
+    font-size: $font-lg;
+  }
 }
 
 .textTitle {
@@ -111,6 +150,9 @@ h1 {
   font-size: $font-lg + 6px;
   font-style: italic;
   font-weight: 600;
+  @include mq(xs) {
+    font-size: $font-md;
+  }
 }
 .mainCardSection {
   border: 1px solid #cecece;
@@ -124,6 +166,12 @@ h1 {
   width: 100%;
   background: $teal-50;
   padding: 55px;
+  @include mq(lg) {
+    padding: 55px 150px;
+  }
+  @include mq(xs) {
+    padding: 10px 0px;
+  }
 }
 .cardMenu {
   border: 1 px solid white;
@@ -191,6 +239,9 @@ h1 {
       margin-bottom: $margin-xs;
       font-weight: normal;
       font-size: $font-md + 2px;
+      @include mq(xs) {
+        font-size: $font-md;
+      }
       &::before {
         content: "\2022";
         font-size: $margin-xl;
@@ -264,6 +315,9 @@ h1 {
       margin-bottom: $margin-sm + 4px;
       font-weight: normal;
       font-size: $font-md + 2px;
+      @include mq(xs) {
+        font-size: $font-md;
+      }
 
       &::before {
         content: "\2022";
