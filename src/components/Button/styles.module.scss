@@ -12,6 +12,10 @@
       width: max-content;
       padding: 10px 40px;
       font-weight: 600;
+      @include mq(xs) {
+        padding: 5px 20px;
+        font-size: $font-md;
+      }
 
       @include mq(sm) {
         min-width: auto;

@@ -260,6 +260,9 @@ h1 {
   padding-top: $padding-sm * 3;
   font-size: $font-xl;
   font-family: $secondary-font;
+  @include mq(xs) {
+    font-size: $font-lg + 2px;
+  }
 }
 .sellingList {
   display: flex;
@@ -350,6 +353,9 @@ h1 {
     padding: 40px 0;
     text-align: center;
   }
+  @include mq(xs) {
+    padding: 10px 0;
+  }
 }
 .itemsLists {
   font-family: $primary-font;
@@ -363,6 +369,9 @@ h1 {
 .homeOneContainer {
   background-color: $white;
   padding: 80px 0;
+  @include mq(xs) {
+    padding: 10px 0;
+  }
 }
 .wholesaleContainer {
   overflow: hidden;
