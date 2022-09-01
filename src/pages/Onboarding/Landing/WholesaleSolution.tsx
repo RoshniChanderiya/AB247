@@ -1,7 +1,7 @@
 import { Col, Row } from "reactstrap";
 import Button from "@/components/Button";
 import styles from "./styles.module.scss";
-import { WholeSolutionImage } from "@/assets/images";
+import { IconPlay, WholeSolutionImage } from "@/assets/images";
 
 const WholesaleSolution = () => {
   return (
@@ -36,6 +36,8 @@ const WholesaleSolution = () => {
             alt="simple"
             className={styles.wholesaleImg}
           />
+            <img src={IconPlay} alt="" className={styles.videoIcon} />
+
         </Col>
       </Row>
     </div>

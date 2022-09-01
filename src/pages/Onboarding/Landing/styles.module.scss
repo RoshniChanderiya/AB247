@@ -289,15 +289,22 @@ h1 {
 }
 .privateSeaction {
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
 }
 .privateVehicleImg {
   max-width: 100%;
   object-fit: cover;
   height: 100%;
   padding: 0;
+  position: relative;
 }
 .videoPlay {
   z-index: 1;
+  position: absolute;
 }
 .wholesaleImgSection {
   display: flex;
@@ -363,6 +370,15 @@ h1 {
 .wholesaleImg {
   overflow: hidden;
   max-width: 100%;
+  position: relative;
+  object-fit: cover;
+}
+.videoIcon{
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .titleIcons {
   display: block;

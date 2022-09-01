@@ -1,7 +1,9 @@
+import React from "react";
+import classNames from "classnames";
 import Button from "@/components/Button";
 import styles from "./styles.module.scss";
 import { Col, Row } from "reactstrap";
-import { IconPlay,PrivateVehicleMainImage} from "@/assets/images";
+import { IconPlay,PrivateVehicleCars,PrivateVehicleMainImage} from "@/assets/images";
 const PrivateVehicle = () => {
   return (
     <div>
