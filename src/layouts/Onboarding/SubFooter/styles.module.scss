@@ -1,0 +1,78 @@
+@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/mixins.scss";
+
+.footerWrapper {
+  background-color: $black-50;
+  justify-content: center;
+  .footerTop {
+    justify-content: space-between;
+    padding-right: $padding-xl * 4;
+    padding-left: $padding-xl * 3;
+    padding-top: $padding-xl;
+
+    @include mq(md) {
+      justify-content: center;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+  .footLogoImg {
+    width: 25%;
+
+    @include mq(md) {
+      width: 100%;
+    }
+  }
+  .footerMenu {
+    margin: $margin-lg * 3 0 0 $margin-xl;
+  }
+  img {
+    height: 70px;
+
+    @include mq(md) {
+      margin-left: 0;
+    }
+  }
+  h4 {
+    width: 300px;
+    padding-left: $padding-lg;
+    color: $white;
+    @include mq(md) {
+      margin-left: 0;
+      margin-top: $margin-sm;
+    }
+  }
+  h5 {
+    color: $white;
+    @include mq(md) {
+      margin-left: 0;
+      margin-top: $margin-sm;
+    }
+  }
+  p {
+    font-weight: normal;
+    color: $teal-500;
+    margin: 0;
+
+    @include mq(md) {
+      margin-left: 0;
+    }
+  }
+  li {
+    list-style: none;
+    font-weight: normal;
+    color: $teal-500;
+
+    @include mq(md) {
+      margin-left: 0;
+    }
+  }
+  h1 {
+    font-size: $font-lg * 3;
+    font-family: $secondary-font;
+
+    @include mq(md) {
+      font-size: $font-lg * 2;
+    }
+  }
+}

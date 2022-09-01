@@ -1,0 +1,6 @@
+// custominzing bootstrap theme with our own colors
+// refer to this link https://getbootstrap.com/docs/4.6/getting-started/theming/#sass-options for the name of the variable to override.
+@import "./variables";
+
+$primary: $primary-color;
+$secondary: $secondary-color;

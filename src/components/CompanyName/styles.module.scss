@@ -1,0 +1,14 @@
+@import "@/assets/scss/variables.scss";
+
+.companyName {
+  &.bold {
+    font-weight: bold;
+  }
+  sup {
+    font-size: 10px;
+    top: -0.6em;
+  }
+  .firstName {
+    color: $yellow-30;
+  }
+}

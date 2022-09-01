@@ -1,0 +1,26 @@
+@import "@/assets/scss/variables";
+
+.spaceContainer {
+  display: flex;
+  
+  &.small {
+    gap: 8px;
+  }
+  &.medium {
+    gap: 16px;
+  }
+
+  &.large {
+    gap: 24px;
+  }
+  &.extra-large {
+    gap: 48px;
+  }
+
+  &.vertical {
+    flex-wrap: wrap;
+    > .spaceItem {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import "@/assets/scss/variables.scss";
+
+.title {
+  font-size: $font-lg;
+  font-weight: small;
+  color: $white;
+  border: 0 none;
+}
+
+.card {
+  border-radius: 15px 25px;
+  border-color: $primary-color;
+}
+
+.textChange {
+  font-size: $font-sm;
+}
+.nav {
+  background-color: $teal;
+  color: $white;
+  margin-top: -30px;
+}
+.bordertitle {
+  border: none;
+  font-size: $font-xl;
+  font-weight: medium;
+}
+.Nav-tabs > li.active > a,
+.Nav-tabs > li.active > a:focus,
+.Nav-tabs > li.active > a:hover {
+  border: 0;
+}

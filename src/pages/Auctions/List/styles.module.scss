@@ -1,0 +1,8 @@
+@import "@/assets/scss/variables.scss";
+
+.auctionArea {
+  &.summary {
+    min-height: auto;
+    padding: 0;
+  }
+}

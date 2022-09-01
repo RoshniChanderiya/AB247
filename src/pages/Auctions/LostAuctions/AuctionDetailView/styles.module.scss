@@ -1,0 +1,18 @@
+@import "@/assets/scss/variables.scss";
+
+.details {
+    background-color: rgba($teal, 0.1);
+    padding: $padding-md $padding-lg * 2;
+
+    .tableContainer {
+        background: $white;
+        border-radius: 10px;
+        overflow: hidden;
+
+        table {
+            th {
+                background-color: $white;
+            }
+        }
+    }
+}

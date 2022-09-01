@@ -1,0 +1,10 @@
+@import "@/assets/scss/variables.scss";
+
+.inventoryTable {
+    min-height: 80vh;
+
+    .trashIcon {
+        color: $primary-color;
+        cursor: pointer;
+    }
+}

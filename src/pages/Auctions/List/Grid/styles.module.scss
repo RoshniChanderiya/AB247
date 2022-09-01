@@ -1,0 +1,76 @@
+@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/mixins.scss";
+
+.container {
+  box-shadow: 0px 3px 8px $gray-500;
+  margin-top: $margin-lg;
+  border-radius: 8px;
+  overflow: hidden;
+
+  .header {
+    padding: $padding-md $padding-md 0 $padding-md;
+    color: $teal-50;
+    background: $black-700;
+    .headerTitle {
+      font-size: $font-xs * 4;
+      text-align: center;
+      font-weight: medium;
+    }
+    .headerData {
+      color: $white-200;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      font-weight: 600;
+      font-size: $font-xs * 2;
+      .key {
+        font-weight: normal;
+      }
+      .value {
+        font-weight: 600;
+      }
+    }
+  }
+  .cardBody {
+    padding: $padding-md;
+    color: $black-700;
+    .dateAndTime {
+      font-size: $font-xl;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .price {
+      font-size: $font-xl;
+      font-weight: 600;
+    }
+    .priceSubText {
+      font-size: $font-sm;
+      font-weight: medium;
+    }
+    .title {
+      padding-left: $padding-sm * 3;
+      color: $primary-color;
+      font-weight: normal;
+    }
+
+    .gridInput {
+      width: 100%;
+      margin: auto;
+      :global {
+        .floor-input {
+          width: 60% !important;
+        }
+        .button-container {
+          width: 40%;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          button {
+            margin-top: $margin-lg;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

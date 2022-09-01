@@ -1,0 +1,16 @@
+@import "@/assets/scss/variables.scss";
+
+.warning {
+  background-color: $red;
+}
+.trashIcon {
+  cursor: pointer;
+  color: $primary-color;
+}
+.bidColumn {
+  width: 140px;
+}
+
+.error {
+  background-color: $red-100;
+}

@@ -1,0 +1,197 @@
+@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/mixins.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background-color: $primary-color;
+  .searchContainer {
+    color: $primary-color;
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    .boxHeaderleft,
+    .boxHeaderright {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+    }
+    .boxHeaderleft {
+      width: auto;
+      h5 {
+        margin-bottom: 0;
+      }
+    }
+    .boxHeaderright {
+      width: calc(100% - 550px);
+    }
+    .title {
+      color: $white;
+    }
+    .heading {
+      color: $white;
+    }
+    .badgeBlock {
+      position: relative;
+      display: inline-block;
+    }
+    .badge {
+      color: $white;
+      position: absolute;
+      transform: translateX(-50%);
+      border-radius: 2em;
+      font-size: $font-xs * 1.5;
+      left: 95%;
+      line-height: 16px;
+      padding: 0 $padding-xs 0 $padding-xs;
+      background: $red 0% 0% no-repeat padding-box;
+    }
+    .inputContainer {
+      width: 100%;
+      padding: 0 $padding-sm;
+      &.live {
+        width: 50%;
+        margin: 0 $margin-md;
+      }
+      &.scheduled {
+        width: 80%;
+      }
+      &.completed {
+        width: 70%;
+      }
+      .group {
+        margin-bottom: 0 !important;
+        .inputBox {
+          padding-right: $padding-xl;
+          &::placeholder {
+            color: $gray;
+          }
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+    .searchIcon {
+      position: absolute;
+      right: 22px;
+      top: 10px;
+      color: $gray;
+    }
+    .otherSearchIcon {
+      @extend .searchIcon;
+      right: 28%;
+      top: 20px;
+    }
+  }
+  .rightPart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .alertbutton {
+      display: flex;
+      align-items: center;
+      color: $white;
+      background-color: $red;
+      width: fit-content;
+      border-radius: 50px;
+      font-size: $font-md;
+      padding: 0 $padding-md;
+      margin-right: $margin-sm;
+      height: 40px;
+      width: 100px;
+    }
+    .listGridContainer {
+      border: 3px solid $secondary-color;
+      border-radius: 2rem;
+      overflow: hidden;
+      display: flex;
+      color: $white;
+      background-color: $secondary-color;
+      .view {
+        width: 40px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        &.active {
+          color: $white;
+          background-color: $secondary-color;
+          padding: $padding-sm;
+        }
+        &.inactive {
+          color: $secondary-color;
+          background-color: $primary-color;
+        }
+      }
+      .monthBtn {
+        color: $secondary-color;
+        background-color: $primary-color;
+        width: 80px;
+        height: 40px;
+        overflow: hidden;
+        text-align: center;
+        margin: 0;
+        font-size: calc($font-lg/2);
+        border: none;
+        cursor: pointer;
+        &.active {
+          color: $white;
+          background-color: $secondary-color;
+        }
+        &.inactive {
+          color: $secondary-color;
+          background-color: $primary-color;
+        }
+      }
+      .monthBtn:nth-child(2) {
+        border-right: 3px solid $secondary-color;
+        border-left: 3px solid $secondary-color;
+      }
+      .monthBtn:hover {
+        color: $white;
+        background-color: $secondary-color;
+        border: none;
+      }
+    }
+  }
+}
+@include mq(md) {
+  .header {
+    height: 120px;
+    .boxHeaderleft,
+    .boxHeaderright {
+      width: 100% !important;
+    }
+    .boxHeaderright {
+      margin-top: $margin-sm;
+    }
+  }
+  .inputContainer {
+    padding-left: 0 !important;
+
+    &.live {
+      margin: 0 $margin-sm 0 0 !important;
+    }
+  }
+}
+@include mq(xss) {
+  .header {
+    height: 160px;
+  }
+  .boxHeaderleft {
+    flex-direction: column;
+    align-items: baseline !important;
+
+    h5 {
+      margin-bottom: $margin-sm !important;
+    }
+  }
+}

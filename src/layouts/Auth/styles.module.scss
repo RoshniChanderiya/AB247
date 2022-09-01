@@ -1,0 +1,14 @@
+@import "@/assets/scss/theme.scss";
+
+.sidebar {
+  height: 100vh;
+  padding: 0;
+  position: relative;
+  .logo {
+      height: 100%;
+  }
+}
+.formContainer{
+  display: flex;
+  flex-direction: column;
+}

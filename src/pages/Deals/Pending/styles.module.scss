@@ -1,0 +1,12 @@
+@import "@/assets/scss/variables.scss";
+
+.title {
+  font-size: $font-md;
+  font-weight: medium;
+  color: $black-700;
+}
+
+
+.cancelIcon {
+  cursor: pointer;
+}

@@ -1,0 +1,10 @@
+@import "@/assets/scss/variables.scss";
+
+.contactFooter {
+  margin-top: $margin-sm;
+  font-size: $font-lg;
+  font-weight: 500;
+  .footerText {
+    color: $primary-color;
+  }
+}

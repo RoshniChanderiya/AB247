@@ -1,0 +1,20 @@
+@import "@/assets/scss/variables";
+
+.circleBackground,
+.circleProgress {
+  fill: none;
+}
+
+.circleBackground {
+  stroke: $gray-50;
+}
+
+.circleProgress {
+  stroke: $primary-color;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  
+  &.circleProgressDanger {
+    stroke: $red-800;
+  }
+}

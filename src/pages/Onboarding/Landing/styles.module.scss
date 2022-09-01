@@ -1,0 +1,315 @@
+@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/mixins.scss";
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.h1 {
+  font-family: $secondary-font;
+  font-weight: bold;
+  font-size: $font-xl * 2;
+  text-align: center;
+}
+.title {
+  font-family: $secondary-font;
+  font-size: $font-lg;
+  font-weight: bold;
+  justify-content: center;
+  text-align: center;
+  flex: auto;
+}
+.titleBody {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  ul {
+    li {
+      list-style: none;
+      position: relative;
+      padding-left: $padding-xs * 5;
+      margin-bottom: $margin-xs;
+      font-weight: normal;
+
+      &::before {
+        content: "\2022";
+        font-size: $margin-xl;
+        line-height: 0;
+        position: absolute;
+        left: 0;
+        top: 7px;
+      }
+    }
+  }
+}
+.backgroundArea {
+  img {
+    object-fit: cover;
+    height: calc(100vh - 250px);
+    width: 100%;
+    // @include mq(md) {
+    //   display: none;
+    // }
+  }
+}
+.imageText {
+  left: 104px;
+  top: 25%;
+  position: absolute;
+  padding-right: $padding-md * 4;
+  display: flex;
+  justify-content: flex-end;
+  color: $black-700;
+  h1 {
+    font-size: 5vw;
+  }
+}
+h1 {
+  font-family: $secondary-font;
+  color: $black-700;
+  font-weight: bold;
+  font-size: $font-lg * 3;
+}
+.ulText {
+  font-family: $secondary-font;
+  margin-top: $margin-xl * 2;
+  margin-right: 0px;
+  font-size: 3vw;
+  font-weight: bold;
+  margin-left: -20px;
+}
+.liText {
+  font-family: $secondary-font;
+  font-size: 2vw;
+}
+.bannerFooter {
+  height: 100px;
+  width: 100%;
+  font-size: $font-xl;
+  text-align: center;
+  background-color: $teal-500;
+  color: $white;
+  font-family: $primary-font;
+  font-weight: lighter;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textTitle {
+  text-align: center;
+  padding: 60px 0;
+}
+.cardImg {
+  height: 350px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+.subHeading {
+  color: $teal-500;
+  font-size: $font-lg + 6px;
+  font-style: italic;
+  font-weight: 600;
+}
+.mainCardSection {
+  border: 1px solid #cecece;
+  border-radius: 35px;
+  position: relative;
+  transition: transform 250ms;
+  margin: 60px;
+}
+
+.cardSection {
+  width: 100%;
+  background: $teal-50;
+  padding: 55px;
+}
+.cardMenu {
+  border: 1 px solid white;
+  border-radius: 25px;
+  margin-bottom: 40px;
+}
+:global {
+  .card {
+    border-radius: 20px;
+  }
+}
+.cardBody {
+  color: $white;
+  background-color: #313028;
+  border-radius: 0 0 20px 20px;
+}
+.titleSection {
+  font-family: $secondary-font;
+  font-size: $font-lg + 4px;
+  text-align: center;
+  margin: $margin-md;
+}
+.listSection {
+  font-family: $primary-font;
+  margin: 6px 0;
+  font-weight: normal;
+}
+.actionLink {
+  text-align: center;
+}
+.btnFooter {
+  display: flex;
+  justify-content: center;
+}
+.mapSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.mapImg {
+  margin: 50px;
+  overflow: hidden;
+  position: relative;
+  object-fit: cover;
+}
+
+.video {
+  position: absolute;
+  color: $teal;
+  font-size: 2rem;
+  z-index: 1;
+}
+.mainSeaction {
+  background-color: $black-700;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ul {
+    li {
+      list-style: none;
+      position: relative;
+      padding-left: $padding-xs * 5;
+      margin-bottom: $margin-xs;
+      font-weight: normal;
+      font-size: $font-md + 2px;
+      &::before {
+        content: "\2022";
+        font-size: $margin-xl;
+        line-height: 0;
+        position: absolute;
+        left: 0;
+        top: 12px;
+      }
+    }
+  }
+}
+.sellingHeading {
+  text-align: center;
+  padding-top: $padding-sm * 3;
+  font-size: $font-xl;
+  font-family: $secondary-font;
+}
+.sellingList {
+  display: flex;
+  justify-content: center;
+  font-size: $font-lg;
+  font-weight: bold;
+}
+.mainSectionHeading {
+  padding-left: 5px;
+  text-align: center;
+  font-family: $secondary-font;
+  font-size: $font-xl;
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+.footerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vehicleTitle {
+  background-color: $teal-50;
+  overflow: hidden;
+}
+.vehicleSection {
+  overflow: hidden;
+}
+.privateSeaction {
+  padding: 0;
+}
+.privateVehicleImg {
+  max-width: 100%;
+  object-fit: cover;
+  height: 100%;
+  padding: 0;
+}
+.videoPlay {
+  z-index: 1;
+}
+.wholesaleImgSection {
+  display: flex;
+  padding: 0;
+}
+.vehicleBodySeaction {
+  background-color: $black-700;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ul {
+    li {
+      list-style: none;
+      position: relative;
+      padding-left: $padding-xs * 7.5;
+      margin-bottom: $margin-sm + 4px;
+      font-weight: normal;
+      font-size: $font-md + 2px;
+
+      &::before {
+        content: "\2022";
+        font-size: $font-xl;
+        line-height: 0;
+        position: absolute;
+        left: 0;
+        top: 8px;
+      }
+    }
+  }
+
+  // text-align: center;
+}
+
+.homeContainer {
+  background-color: $teal-50;
+  overflow: hidden;
+  padding: 60px 0;
+  h1 {
+    padding: 40px 0;
+    text-align: center;
+  }
+}
+.itemsLists {
+  font-family: $primary-font;
+  // font-weight: lighter;
+}
+.itBtnFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homeOneContainer {
+  background-color: $white;
+  padding: 80px 0;
+}
+.wholesaleContainer {
+  overflow: hidden;
+}
+.wholesaleImg {
+  overflow: hidden;
+  max-width: 100%;
+}
+.titleIcons {
+  display: block;
+  height: 40px;
+  margin: 0 auto 30px;
+}

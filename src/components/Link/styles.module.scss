@@ -1,0 +1,15 @@
+@import "@/assets/scss/variables";
+
+
+.link {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+    &.default {
+        color: inherit;
+    }
+    &.primary {
+        color: $primary-color;
+    }
+}

@@ -1,0 +1,75 @@
+@import "@/assets/scss/variables";
+
+.group {
+  .inputLabel {
+    margin-bottom: $margin-xs;
+    font-size: 14px;
+    font-weight: 400;
+
+    &.bold {
+      color: $secondary-color;
+      font-size: inherit;
+      font-weight: bold;
+    }
+
+    &.primary {
+      color: $primary-color;
+    }
+
+    &.secondary {
+      color: $secondary-color;
+    }
+
+    &.default {
+      color: $black;
+      font-size: $font-md;
+      font-weight: bold;
+      font-weight: 500;
+    }
+    .astric {
+      font-size: $font-lg;
+      color: $red;
+    }
+  }
+
+  .inputPrefix {
+    position: absolute;
+    background: none;
+    border: none;
+    font-weight: bold;
+    top: 5px;
+  }
+  .error {
+    font-weight: normal;
+  }
+}
+
+.info {
+  color: $gray;
+}
+input.inputField {
+  box-shadow: 0px 9px 6px #c1bcbc33;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-top: 2px;
+  padding: $padding-sm $padding-md;
+  // thanks to weird selector from bootstrap: .input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback)ˀ
+  border-top-left-radius: 100px !important;
+  border-bottom-left-radius: 100px !important;
+  border-top-right-radius: 100px !important;
+  border-bottom-right-radius: 100px !important;
+
+  &::placeholder {
+    color: $gray;
+    font-weight: 500;
+  }
+  &:focus,
+  &:active {
+    color: $primary-color;
+  }
+
+  &.hasPrefix {
+    padding-left: $padding-lg;
+  }
+}
