@@ -13,7 +13,7 @@ const WholesaleSolution = () => {
       </div>
 
       <Row xs="2">
-        <Col lg={6} className={styles.vehicleBodySeaction}>
+        <Col xs={12} md={12} lg={6} className={styles.vehicleBodySeaction}>
           <div>
             <h2 className={styles.sellingHeading}>When You Need More...</h2>
             <div className={styles.sellingList}>
@@ -32,7 +32,7 @@ const WholesaleSolution = () => {
           </div>
         </Col>
 
-        <Col lg={6} className={styles.wholesaleImgSection}>
+        <Col xs={12} md={12} lg={6} className={styles.wholesaleImgSection}>
           <img
             src={WholeSolutionImage}
             alt="simple"
