@@ -1,7 +1,5 @@
 import { Col, Row } from "reactstrap";
 import Button from "@/components/Button";
-import classNames from "classnames";
-
 import styles from "./styles.module.scss";
 import { WholeSolutionImage } from "@/assets/images";
 
