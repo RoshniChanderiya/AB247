@@ -1,17 +1,17 @@
+import { IconPlay,MapFlorida } from "@/assets/images";
 import Button from "@/components/Button";
-import styles from "./styles.module.scss";
 import { Col, Row } from "reactstrap";
-import { mapFlorida, IconPlay } from "@/assets/images";
+import styles from "./styles.module.scss";
 const SellingInventory = () => {
   return (
-    <div>
+    <>
       <h1 className={styles.textTitle}>Selling Your Retail Inventory</h1>
       <Row>
         <Col lg={6} className={styles.mainSeaction}>
           <div>
             <h2 className={styles.sellingHeading}>More Reach - More Revenue</h2>
             <div className={styles.sellingList}>
-              <ul className="mt-3 text-start">
+              <ul className={styles.bodyList}>
                 <li>It's FREE-We're Unemployed Until We Make A Sale</li>
                 <li>We Deliver DEALS, Not Leads</li>
                 <li>We Give The Dealer ALL The Back-end Revenue</li>
@@ -35,10 +35,10 @@ const SellingInventory = () => {
         </Col>
         <Col lg={6} className={styles.mapSection}>
           <img src={IconPlay} className={styles.video} alt="" />
-          <img src={mapFlorida} alt="simple" className={styles.mapImg} />
+          <img src={MapFlorida} alt="simple" className={styles.mapImg} />
         </Col>
       </Row>
-    </div>
+    </>
   );
 };
 export default SellingInventory;

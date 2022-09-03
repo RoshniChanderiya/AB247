@@ -1,11 +1,10 @@
-import React from "react";
 import BannerSection from "./BannerSection";
-import HowItFirst from "./HowItFirst";
-import HowItSecond from "./HowItSecond";
-import HowItThird from "./HowItThird";
-import PrivateVehicle from "./PrivateVehicle";
-import SellingInventory from "./SellingInventory";
 import WelcomeToyota from "./WelcomeToyota";
+import NotifyProcess from "./NotifyProcess";
+import BuyVehicleProcess from "./BuyVehicleProcess";
+import PrivateVehicle from "./PrivateVehicle";
+import FindVehicleProcess from "./FindVehicleProcess";
+import SellingInventory from "./SellingInventory";
 import WholesaleSolution from "./WholesaleSolution";
 import styles from "./styles.module.scss";
 
@@ -15,11 +14,11 @@ const Landing = () => {
       <BannerSection />
       <WelcomeToyota />
       <SellingInventory />
-      <HowItFirst />
+      <NotifyProcess />
       <PrivateVehicle />
-      <HowItSecond />
+      <BuyVehicleProcess />
       <WholesaleSolution />
-      <HowItThird />
+      <FindVehicleProcess />
     </div>
   );
 };

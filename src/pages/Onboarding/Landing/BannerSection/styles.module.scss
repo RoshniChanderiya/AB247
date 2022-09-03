@@ -1,0 +1,109 @@
+@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/mixins.scss";
+
+.h1 {
+    font-family: $secondary-font;
+    font-weight: bold;
+    font-size: $font-xl * 2;
+    text-align: center;
+    @include mq(xs) {
+      font-size: $font-xl;
+    }
+  }
+  .title {
+    font-family: $secondary-font;
+    font-size: $font-lg;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+    flex: auto;
+  }
+  .backgroundArea {
+    position: relative;
+    img {
+      object-fit: cover;
+      height: calc(100vh - 250px);
+      width: 100%;
+    }
+  }
+  .imageText {
+    left: 104px;
+    top: 0;
+    position: absolute;
+    padding-right: $padding-md * 4;
+    display: flex;
+    align-items: center;
+    height: 90%;
+    color: $black-700;
+    @include mq(xs) {
+      left: 10px;
+    }
+    h1 {
+      font-size: 5vw;
+      @include mq(lg) {
+        font-size: 6vw;
+      }
+      @include mq(md) {
+        font-size: 7vw;
+      }
+      @include mq(xs) {
+        font-size: 8vw;
+      }
+    }
+  }
+  h1 {
+    font-family: $secondary-font;
+    color: $black-700;
+    font-weight: bold;
+    font-size: $font-lg * 3;
+    @include mq(xs) {
+      font-size: $font-xl;
+    }
+  }
+  .ulText {
+    font-family: $secondary-font;
+    margin-top: $margin-xl * 2;
+    margin-right: 0px;
+    font-size: 3vw;
+    font-weight: bold;
+    margin-left: -20px;
+    @include mq(lg) {
+      font-size: 3.5vw;
+    }
+    @include mq(md) {
+      font-size: 4.5vw;
+    }
+    @include mq(xs) {
+      font-size: 5.5vw;
+    }
+  }
+  .liText {
+    font-family: $secondary-font;
+    font-size: 2vw;
+    @include mq(lg) {
+      font-size: 2.5vw;
+    }
+    @include mq(md) {
+      font-size: 3.5vw;
+    }
+    @include mq(xs) {
+      font-size: 4.5vw;
+    }
+  }
+  .bannerFooter {
+    height: 100px;
+    width: 100%;
+    font-size: $font-xl;
+    text-align: center;
+    background-color: $teal-500;
+    color: $white;
+    font-family: $primary-font;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mq(xs) {
+      font-size: $font-lg;
+    }
+  }
+  

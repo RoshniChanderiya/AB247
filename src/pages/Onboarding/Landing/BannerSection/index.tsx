@@ -1,20 +1,19 @@
-import { HeroImage } from "@/assets/images";
-import React from "react";
+import { BannerImage } from "@/assets/images";
+import CompanyName from "@/components/CompanyName";
 import styles from "./styles.module.scss";
 
 const BannerSection = () => {
   return (
-    <div>
+    <>
       <div className={styles.backgroundArea}>
-        <img className={styles.backgroundImage} alt="" src={HeroImage} />
+        <img className={styles.backgroundImage} alt="" src={BannerImage} />
         <div className={styles.imageText}>
           <div>
             <h1>
               BidWizer Partners <br /> with Dealers
             </h1>
-            {/* <h1>with Dealers</h1> */}
-            <ul>
               <h3 className={styles.ulText}>We Provide 3 Solutions</h3>
+            <ul>
               <li className={styles.liText}>Sell Retail Inventory</li>
               <li className={styles.liText}>Private Vehicle Sourcing</li>
               <li className={styles.liText}>Wholesale Solutions</li>
@@ -22,10 +21,10 @@ const BannerSection = () => {
           </div>
         </div>
         <div className={styles.bannerFooter}>
-          Buy Wiser, Sell Wiser, BidWizer...
+          Buy Wiser, Sell Wiser, <CompanyName />...
         </div>
       </div>
-    </div>
+    </>
   );
 };
 export default BannerSection;

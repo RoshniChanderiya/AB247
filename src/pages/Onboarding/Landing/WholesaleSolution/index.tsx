@@ -1,21 +1,22 @@
-import { Col, Row } from "reactstrap";
-import Button from "@/components/Button";
-import styles from "./styles.module.scss";
 import { IconPlay, WholeSolutionImage } from "@/assets/images";
+import Button from "@/components/Button";
+import { Col, Row } from "reactstrap";
+import styles from "./styles.module.scss";
 
 const WholesaleSolution = () => {
   return (
-    <div>
-      <div className={styles.wholesaleContainer}>
+    <>
+     <div className={styles.wholesaleContainer}>
         <h1 className={styles.textTitle}>Wholesale Solutions</h1>
       </div>
+
 
       <Row xs="2">
         <Col xs={12} md={12} lg={6} className={styles.vehicleBodySeaction}>
           <div>
             <h2 className={styles.sellingHeading}>When You Need More...</h2>
             <div className={styles.sellingList}>
-              <ul>
+              <ul className={styles.bodyList}>
                 <li>Source Dealers Inventory Nationwide</li>
                 <li>Dealer to Dealer Live Online</li>
                 <li>Have Cars Shipped Directly To Your Dearlership</li>
@@ -31,16 +32,16 @@ const WholesaleSolution = () => {
         </Col>
 
         <Col xs={12} md={12} lg={6} className={styles.wholesaleImgSection}>
+        <img src={IconPlay} className={styles.playVideo} alt="" />
+
           <img
             src={WholeSolutionImage}
             alt="simple"
             className={styles.wholesaleImg}
           />
-            <img src={IconPlay} alt="" className={styles.videoIcon} />
-
         </Col>
       </Row>
-    </div>
+    </>
   );
 };
 export default WholesaleSolution;

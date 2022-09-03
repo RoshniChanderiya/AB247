@@ -49,6 +49,7 @@ const DashboardLayout: React.FC = () => {
     <>
       <Header />
       <SubNav navLinks={navLinks} title="Dealers Dashboard" />
+
       <div className={styles.main}>
         <Outlet />
       </div>

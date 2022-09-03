@@ -1,0 +1,76 @@
+@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/mixins.scss";
+
+.textTitle {
+  text-align: center;
+  padding: $padding-lg * 2.5 0;
+}
+.wholesaleContainer {
+    overflow: hidden;
+  }
+  .wholesaleImg {
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  .vehicleBodySeaction {
+    background-color: $black-700;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .bodyList{
+      li {
+        list-style: none;
+        position: relative;
+        padding-left: $padding-xs * 7.5;
+        margin-bottom: $margin-sm + 4px;
+        font-weight: normal;
+        font-size: $font-md + 2px;
+        @include mq(xs) {
+          font-size: $font-md;
+        }
+  
+        &::before {
+          content: "\2022";
+          font-size: $font-xl;
+          line-height: 0;
+          position: absolute;
+          left: 0;
+          top: 8px;
+        }
+      }
+    }
+  
+  }
+  .sellingHeading {
+    text-align: center;
+    padding-top: $padding-sm * 3;
+    font-size: $font-xl;
+    font-family: $secondary-font;
+    @include mq(xs) {
+      font-size: $font-lg + 2px;
+    }
+  }
+  .sellingList {
+    display: flex;
+    justify-content: center;
+    font-size: $font-lg;
+    font-weight: bold;
+  }
+  .footerBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wholesaleImgSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     padding: 0;
+  }
+  .playVideo{
+    position: absolute;
+    z-index: 1;
+  }

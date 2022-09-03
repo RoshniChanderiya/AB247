@@ -1,30 +1,28 @@
-import React from "react";
-import classNames from "classnames";
+import { IconPlay, PrivateVehicleMainImage } from "@/assets/images";
 import Button from "@/components/Button";
-import styles from "./styles.module.scss";
 import { Col, Row } from "reactstrap";
-import { IconPlay,PrivateVehicleCars,PrivateVehicleMainImage} from "@/assets/images";
+import styles from "./styles.module.scss";
 const PrivateVehicle = () => {
   return (
-    <div>
+    <>
       <div className={styles.vehicleTitle}>
         <h1 className={styles.textTitle}>Private Vehicle Sourcing</h1>
       </div>
       <div className={styles.vehicleSection}>
         <Row>
           <Col lg={6} className={styles.privateSeaction}>
+            <img src={IconPlay} className={styles.videoPlay} alt="" />
             <img
               src={PrivateVehicleMainImage}
               alt="simple"
               className={styles.privateVehicleImg}
             />
-            <img src={IconPlay} alt="" className={styles.videoPlay} />
           </Col>
           <Col lg={6} className={styles.vehicleBodySeaction}>
             <div>
               <h2 className={styles.sellingHeading}>Now You Can...</h2>
               <div className={styles.sellingList}>
-                <ul className="mt-5 text-start">
+                <ul className={styles.bodyList}>
                   <li>Buy Cars Direct from Consumers</li>
                   <li>Increase Your Vehicle Inventory</li>
                   <li>Get Access to Vehicles You Would Never See</li>
@@ -40,7 +38,7 @@ const PrivateVehicle = () => {
           </Col>
         </Row>
       </div>
-    </div>
+    </>
   );
 };
 export default PrivateVehicle;

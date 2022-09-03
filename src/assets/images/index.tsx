@@ -10,19 +10,17 @@ import IconLinkedin from "./IconLinkedin.png";
 import IconPinterest from "./IconPinterest.png";
 import IconTwitter from "./IconTwitter.png";
 import VehicleNotFound from "./VehicleNotFound.webp";
-import cardImage from "./cardImage.jpg";
-import mapFlorida from "./mapFlorida.jpg";
-import HeroImage from "./HeroImage.webp";
-import PrivateVehicleCard from "./PrivateVehicleCard.webp";
-import WholeSolutionImage from "./WholeSolutionImage.webp";
-import IconBid  from "./icons/icon-bid.svg";
-import  IconSignup from "./icons/icon-sign up.svg";
-import IconNotify  from "./icons/icon-we notify you.svg";
-import IconAwesomeCar from "./IconAwesomeCar.png";
-import PrivateVehicleMainImage from "./PrivateVehicleMainImage.webp";
-import PrivateVehicleCars from "./PrivateVehicleCars.webp";
+import BannerImage from "./BannerImage.webp";
+import BidIcon from "./icons/IconBid.svg";
+import MapFlorida from "./mapFlorida.jpg";
 import WholeSolutions from "./WholeSolutions.webp";
+import WholeSolutionImage from "./WholeSolutionImage.webp";
 import SellInventory from "./SellInventory.webp";
+import PrivateVehicleCars from "./PrivateVehicleCars.webp";
+import PrivateVehicleMainImage from "./PrivateVehicleMainImage.webp";
+import SignupIcon from "./icons/IconSignup.svg";
+import NotifyIcon from "./icons/IconWeNotify.svg";
+import SellCarIcon from "./icons/IconSellcar.svg";
 
 interface IconProps
   extends React.DetailedHTMLProps<
@@ -68,19 +66,17 @@ export {
   VehicleNotFound,
   SidebarArrowIcon,
   IconEdit,
-  cardImage,
-  mapFlorida,
-  HeroImage,
-  PrivateVehicleCard,
-  WholeSolutionImage,
-  IconBid,
-  IconNotify,
-  IconSignup,
-  IconAwesomeCar,
-  PrivateVehicleMainImage,
-  PrivateVehicleCars, 
+  BannerImage,
+  BidIcon,
+  MapFlorida,
   WholeSolutions,
+  WholeSolutionImage,
   SellInventory,
+  PrivateVehicleCars,
+  PrivateVehicleMainImage,
+  NotifyIcon,
+  SellCarIcon,
+  SignupIcon,
 };
 
 export default Icon;
