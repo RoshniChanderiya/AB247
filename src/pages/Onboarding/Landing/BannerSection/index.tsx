@@ -10,9 +10,9 @@ const BannerSection = () => {
         <div className={styles.imageText}>
           <div>
             <h1>
-              BidWizer Partners <br /> with Dealers
+              BidWizer Partners <p>with Dealers</p>
             </h1>
-              <h3 className={styles.ulText}>We Provide 3 Solutions</h3>
+            <h3 className={styles.ulText}>We Provide 3 Solutions</h3>
             <ul>
               <li className={styles.liText}>Sell Retail Inventory</li>
               <li className={styles.liText}>Private Vehicle Sourcing</li>
@@ -21,7 +21,8 @@ const BannerSection = () => {
           </div>
         </div>
         <div className={styles.bannerFooter}>
-          Buy Wiser, Sell Wiser, <CompanyName />...
+          Buy Wiser, Sell Wiser, <CompanyName />
+          ...
         </div>
       </div>
     </>
