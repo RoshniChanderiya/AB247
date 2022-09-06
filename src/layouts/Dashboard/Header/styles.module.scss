@@ -3,6 +3,11 @@
 
 .navbar {
   background: $white 0% 0% no-repeat padding-box;
+  img {
+    @include mq(xs) {
+      width: 160px;
+    }
+  }
 }
 .linksContainer {
   margin-left: auto;
