@@ -1,16 +1,14 @@
 import { IconPlay, WholeSolutionImage } from "@/assets/images";
-import Button from "@/components/Button";
+import SignupButton from "@/components/SignupButton";
 import { Col, Row } from "reactstrap";
 import styles from "./styles.module.scss";
 
 const WholesaleSolution = () => {
   return (
     <>
-     <div className={styles.wholesaleContainer}>
-        <h1 className={styles.textTitle}>Wholesale Solutions</h1>
+      <div className={styles.wholesaleContainer}>
+        <h1 className={styles.titleHeading}>Wholesale Solutions</h1>
       </div>
-
-
       <Row xs="2">
         <Col xs={12} md={12} lg={6} className={styles.vehicleBodySeaction}>
           <div>
@@ -24,16 +22,12 @@ const WholesaleSolution = () => {
                 <li>Never Go To An Auction Again</li>
               </ul>
             </div>
-            <div className={styles.footerBtn}>
-              <Button filled>ONE SIGN UP - GET ALL 3</Button>
-            </div>
+            <SignupButton />
             <div className="w-100 d-flex  mt-5"></div>
           </div>
         </Col>
-
         <Col xs={12} md={12} lg={6} className={styles.wholesaleImgSection}>
-        <img src={IconPlay} className={styles.playVideo} alt="" />
-
+          <img src={IconPlay} className={styles.playVideo} alt="Wholesale" />
           <img
             src={WholeSolutionImage}
             alt="simple"

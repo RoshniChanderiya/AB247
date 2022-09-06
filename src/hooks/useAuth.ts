@@ -1,12 +1,14 @@
 import { AuthContext } from "@/providers/AuthProvider";
 import { retrieveErrorMessage } from "@/utils/RestClient";
 import Message from "@/utils/Toast";
+import { Auth } from "@aws-amplify/auth";
 import get from "lodash/get";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useMutation, useQueryClient } from "react-query";
 
 const useAuth = () => {
   const { user, login, logout: cognitoLogout } = useContext(AuthContext);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const queryClient = useQueryClient();
   const { mutateAsync: loginMutation, isLoading: isLoggingIn } = useMutation(
@@ -17,6 +19,11 @@ const useAuth = () => {
       },
     }
   );
+  useEffect(() => {
+    Auth.currentAuthenticatedUser().catch((err) => {
+      setIsLoggedIn(false);
+    });
+  }, []);
   /**
    *
    * @param values
@@ -46,7 +53,7 @@ const useAuth = () => {
     logout,
     user,
     isLoggingIn,
-    isLoggedIn: Boolean(user),
+    isLoggedIn,
     token: get(user, "signInUserSession.accessToken.jwtToken"),
   };
 };

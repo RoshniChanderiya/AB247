@@ -1,0 +1,47 @@
+@import "@/assets/scss/variables.scss";
+.summarySidebar {
+  background-color: $teal-50;
+  min-height: 89vh;
+  height: 100%;
+  overflow-y: auto;
+  .header {
+    background: $teal-900;
+    width: 100%;
+  }
+  .profileCard {
+    margin-top: $margin-md;
+    padding-left: $padding-lg;
+    .bidderNumber {
+      color: $primary-color;
+      margin-top: $margin-sm;
+      font-size: $font-md;
+    }
+    .action {
+      display: flex;
+      padding-right: $padding-md;
+
+      .editUser,
+      .deleteIcon {
+        color: $gray;
+        cursor: pointer;
+      }
+
+      .deleteIcon {
+        margin-left: $margin-md;
+      }
+    }
+    .cardBody {
+      margin-top: $margin-sm;
+      .label {
+        font-size: $font-md;
+        color: $gray;
+      }
+      .title {
+        color: $gray;
+      }
+      .nameAndTitle {
+        font-size: $font-md;
+      }
+    }
+  }
+}

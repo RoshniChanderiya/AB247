@@ -35,11 +35,23 @@ const RestClient = async (
   }
 };
 
-export const retrieveErrorMessage = (error: any) =>
-  get(
+export const retrieveErrorMessage = (error: any) => {
+  const message = get(
+    error,
+    "data.error",
+    get(
+      error,
+      "message",
+      "An unknown error occurred while completing your request."
+    )
+  );
+  return get(
     error,
     "data.message",
-    get(error, "data.error", get(error, "message", "An error occurred"))
+    typeof message === "string"
+      ? message
+      : "An unknown error occurred while completing your request."
   );
+};
 
 export default RestClient;

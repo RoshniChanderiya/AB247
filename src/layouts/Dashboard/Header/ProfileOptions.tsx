@@ -1,3 +1,4 @@
+import Link from "@/components/Link";
 import { AppRoutes } from "@/constants";
 import useAuth from "@/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
@@ -15,10 +16,9 @@ const ProfileOptions: React.FC = () => {
   return (
     <PopoverBody className="p-0">
       <ul className={styles.dropdownItems}>
-        <li>Dashboard</li>
-        <li className="my-2">My Profile</li>
-        <li>Manage Account</li>
-        <li className="my-2">Settings & Privacy</li>
+        <li>
+          <Link to="/profile">Manage Account</Link>
+        </li>
         <li onClick={onLogOut}>Sign out</li>
       </ul>
     </PopoverBody>

@@ -1,11 +1,11 @@
 import { IconPlay,MapFlorida } from "@/assets/images";
-import Button from "@/components/Button";
+import SignupButton from "@/components/SignupButton";
 import { Col, Row } from "reactstrap";
 import styles from "./styles.module.scss";
 const SellingInventory = () => {
   return (
     <>
-      <h1 className={styles.textTitle}>Selling Your Retail Inventory</h1>
+      <h1 className={styles.titleHeading}>Selling Your Retail Inventory</h1>
       <Row>
         <Col lg={6} className={styles.mainSeaction}>
           <div>
@@ -27,15 +27,13 @@ const SellingInventory = () => {
                 <li>Real-Time Data, Trends and Business Intelligence</li>
               </ul>
             </div>
-            <div className={styles.footerBtn}>
-              <Button filled>ONE SIGN UP - GET ALL 3</Button>
-            </div>
+            <SignupButton />
             <div className="w-100 d-flex justify-content-center mt-5"></div>
           </div>
         </Col>
         <Col lg={6} className={styles.mapSection}>
           <img src={IconPlay} className={styles.video} alt="" />
-          <img src={MapFlorida} alt="simple" className={styles.mapImg} />
+          <img src={MapFlorida} alt="Map Florida" className={styles.mapImg} />
         </Col>
       </Row>
     </>

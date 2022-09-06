@@ -51,7 +51,7 @@ const Dashboard: React.FC = () => {
           <Col lg={12} className="mt-3 p-0">
             <TableContainer
               title="Lost Auction"
-              footerLink="auctions/completed"
+              footerLink={AppRoutes.LOST_AUCTIONS}
             >
               <LostAuction />
             </TableContainer>

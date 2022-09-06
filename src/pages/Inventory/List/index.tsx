@@ -26,7 +26,7 @@ const InventoryList: React.FC<InventoryListProps> = ({ isSummary }) => {
   const { state } = useContext(InventoryContext);
   const { isLoading, data } = useVehicleInventory({
     state,
-    limit: isSummary ? 5 : 10000,
+    limit: 10000,
   });
   const [showConfirmationModal, setShowConfirmModal] = useState(false);
   const [selectedInventory, setSelectedInventory] = useState("");
@@ -144,7 +144,11 @@ const InventoryList: React.FC<InventoryListProps> = ({ isSummary }) => {
     },
   ];
   return (
-    <div className={classNames(styles.inventoryTable)}>
+    <div
+      className={classNames(styles.inventoryTable, {
+        [styles.summaryScreen]: isSummary,
+      })}
+    >
       <Table
         columns={columns.filter((_, index: number) =>
           isActive ? true : index !== columns.length - 2
@@ -154,7 +158,7 @@ const InventoryList: React.FC<InventoryListProps> = ({ isSummary }) => {
           data?.data || [],
           (current) => dayjs(current._source.payload.listing_first_date).unix(),
           "asc"
-        )}
+        ).splice(0, isSummary ? 6 : data?.data.length)}
         rowKey="_id"
       />
       {isActive && (

@@ -36,7 +36,7 @@ const AuctionList: React.FC = () => {
     width < 1200 ? setView("grid") : setView("table");
   }, [width]);
 
-  const waitingSignupAuctions = auctionsFromAPI.filter(
+  const waitingSignatureAuctions = auctionsFromAPI.filter(
     ({ payload: { auction_status, vehicles, auction } }) => {
       const winnerVehicle = get(auction, "winner_bids.0._id");
       const vehicle = vehicles?.find(({ id }) => id === winnerVehicle);
@@ -54,7 +54,7 @@ const AuctionList: React.FC = () => {
 
   const actualAuctions =
     state === AUCTION_STATES.expiring
-      ? waitingSignupAuctions.map((auction) => {
+      ? waitingSignatureAuctions.map((auction) => {
           const winnerVehicle = get(auction, "payload.auction.winner_bids.0");
           return {
             ...auction,
@@ -80,7 +80,7 @@ const AuctionList: React.FC = () => {
           view={view}
           total={{
             live: auctions.length,
-            waiting: waitingSignupAuctions.length,
+            waiting: waitingSignatureAuctions.length,
           }}
           setView={setView}
           underBidCount={underBidAuctions.length}

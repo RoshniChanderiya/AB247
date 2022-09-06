@@ -2,6 +2,7 @@ import { Cross } from "@/assets/images";
 import classNames from "classnames";
 import isNull from "lodash/isNull";
 import isUndefined from "lodash/isUndefined";
+import omit from "lodash/omit";
 import { Fragment } from "react";
 import {
   Modal as NativeModal,
@@ -82,10 +83,26 @@ const Modal: React.FC<ModalProps> = ({
       <FooterComponent>
         {isUndefined(footer) && (
           <Space>
-            <Button onClick={onCancel} {...cancelButtonProps} outline>
+            <Button
+              onClick={onCancel}
+              className={classNames(
+                cancelButtonProps?.className,
+                styles.footerButton
+              )}
+              {...omit(cancelButtonProps, "className")}
+              outline
+            >
               {cancelText || "Cancel"}
             </Button>
-            <Button color="secondary" onClick={onOk} {...okButtonProps}>
+            <Button
+              color="secondary"
+              className={classNames(
+                okButtonProps?.className,
+                styles.footerButton
+              )}
+              onClick={onOk}
+              {...omit(okButtonProps, "className")}
+            >
               {okText || "Ok"}
             </Button>
           </Space>

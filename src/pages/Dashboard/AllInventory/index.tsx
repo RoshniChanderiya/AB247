@@ -6,7 +6,6 @@ import InventoryList from "@/pages/Inventory/List";
 import { retrieveErrorMessage } from "@/utils/RestClient";
 import Message from "@/utils/Toast";
 import classNames from "classnames";
-import { Col, Row } from "reactstrap";
 import styles from "./../styles.module.scss";
 
 const AllInventory: React.FC = () => {
@@ -24,7 +23,7 @@ const AllInventory: React.FC = () => {
   return (
     <InventoryContext.Provider value={{ state: "active" }}>
       <div className={classNames(styles.header, "px-4 mx-0")}>
-        <Row
+        <div
           className={classNames(
             styles.searchContainer,
             "d-flex",
@@ -33,32 +32,31 @@ const AllInventory: React.FC = () => {
             "w-100"
           )}
         >
-          <Col lg={9} className="d-flex">
+          <div className="d-flex">
             <YMMSSSelection
               buttonProps={{
                 onClick: updateInventory,
                 isLoading,
               }}
             />
-          </Col>
-          <Col lg={3}>
-            <div className="d-flex">
-              <div className={styles.filterText}>
-                <AgeCircle days={30} />
-                {" < "} <span className={styles.dayText}> 30 days</span>
-              </div>
-              <div className={styles.filterText}>
-                <AgeCircle days={31} />
-                {" < "}
-                <span className={styles.dayText}> 31 - 60 days</span>
-              </div>
-              <div className={styles.filterText}>
-                <AgeCircle days={61} />
-                {" < "} <span className={styles.dayText}> 61 - 90 days +</span>
-              </div>
+          </div>
+        </div>
+        <div>
+          <div className="d-flex">
+            <div className={styles.filterText}>
+              <AgeCircle days={30} />
+              <span className={styles.dayText}>{" < "} 30 days</span>
             </div>
-          </Col>
-        </Row>
+            <div className={styles.filterText}>
+              <AgeCircle days={31} />
+              <span className={styles.dayText}>{" < "} 31 - 60 days</span>
+            </div>
+            <div className={styles.filterText}>
+              <AgeCircle days={61} />
+              <span className={styles.dayText}>{" < "} 61 - 90 days +</span>
+            </div>
+          </div>
+        </div>
       </div>
       <InventoryList isSummary />
     </InventoryContext.Provider>

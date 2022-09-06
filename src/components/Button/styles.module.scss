@@ -6,16 +6,12 @@
   border-radius: 100px;
   cursor: pointer;
   text-transform: uppercase;
-  font-size: $font-md * 1.2;
+  font-size: $font-md;
+  border: 2px solid;
+
   &.btn {
     &-lg {
       width: max-content;
-      padding: 10px 40px;
-      font-weight: 600;
-      @include mq(xs) {
-        padding: 5px 20px;
-        font-size: $font-md;
-      }
 
       @include mq(sm) {
         min-width: auto;

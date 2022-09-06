@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Collapse, Navbar, NavbarToggler, Nav } from "reactstrap";
-import Link from "../Link";
+import Link from "@/components/Link";
 import styles from "./styles.module.scss";
 
 export interface NavItemProps {
@@ -23,7 +23,7 @@ interface SubNavProps {
   leftButton?: LeftButtonProps;
 }
 
-const SubNav: React.FC<SubNavProps> = ({ navLinks, title, leftButton }) => {
+const SubHeader: React.FC<SubNavProps> = ({ navLinks, title, leftButton }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen((prev) => !prev);
 
@@ -41,7 +41,7 @@ const SubNav: React.FC<SubNavProps> = ({ navLinks, title, leftButton }) => {
             navbar
           >
             <Nav navbar>
-              {leftButton !== undefined && (
+              {leftButton && (
                 <NavLink to={leftButton.link} className={styles.leftNavButton}>
                   <Icon icon={IconArrowLeft} alt="left arrow" />
                   {leftButton.text}
@@ -75,4 +75,4 @@ const SubNav: React.FC<SubNavProps> = ({ navLinks, title, leftButton }) => {
     </div>
   );
 };
-export default SubNav;
+export default SubHeader;

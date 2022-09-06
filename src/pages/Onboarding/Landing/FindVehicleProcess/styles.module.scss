@@ -2,62 +2,60 @@
 @import "@/assets/scss/mixins.scss";
 
 .homeOneContainer {
-    background-color: $white;
-    padding: 80px 0;
-    @include mq(xs) {
-      padding: 10px 0;
-    }
+  background-color: $white;
+  padding: $padding-xl * 1.7 0;
+  @include mq(xs) {
+    padding: $padding-xs * 2.5 0;
   }
-  .h1 {
-    font-family: $secondary-font;
-    font-weight: bold;
-    font-size: $font-xl * 2;
-    text-align: center;
-    @include mq(xs) {
-      font-size: $font-xl;
-    }
+}
+.notifyheading {
+  font-family: $secondary-font;
+  font-weight: bold;
+  font-size: $font-xl * 2;
+  text-align: center;
+  @include mq(xs) {
+    font-size: $font-xl;
   }
-  .titleIcons {
-    display: block;
-    height: 40px;
-    margin: 0 auto 30px;
-  }
-  .title {
-    font-family: $secondary-font;
-    font-size: $font-lg;
-    font-weight: bold;
-    justify-content: center;
-    text-align: center;
-    flex: auto;
-  }
-  .titleBody {
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
-    .bodyList {
-      li {
-        list-style: none;
-        position: relative;
-        padding-left: $padding-xs * 5;
-        margin-bottom: $margin-xs;
-        font-weight: normal;
+}
+.titleIcons {
+  display: block;
+  height: 40px;
+  margin: 0 auto $margin-md * 1.9;
   
-        &::before {
-          content: "\2022";
-          font-size: $margin-xl;
-          line-height: 0;
-          position: absolute;
-          left: 0;
-          top: 7px;
-        }
+}
+.title {
+  font-family: $secondary-font;
+  font-size: $font-lg;
+  font-weight: bold;
+  justify-content: center;
+  text-align: center;
+  flex: auto;
+}
+.titleBody {
+  @include flexCenterContainer;
+  margin-top: $margin-xs + 1;
+  .bodyList {
+    li {
+      list-style: none;
+      position: relative;
+      padding-left: $padding-xs * 5;
+      margin-bottom: $margin-xs;
+      font-weight: normal;
+
+      &::before {
+        content: "";
+        font-size: $margin-xl;
+        line-height: 0;
+        position: absolute;
+        left: 0;
+        top: 7px;
       }
     }
   }
-  .itemsLists {
-    font-family: $primary-font;
-  }
-  .itBtnFooter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+}
+.itemsLists {
+  font-family: $primary-font;
+}
+.processBtn {
+  @include flexCenterContainer;
+}

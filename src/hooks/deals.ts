@@ -58,7 +58,7 @@ export const useCancelDealMutation = () => {
 
   return useMutation(cancelDeal, {
     onSuccess: () => {
-      queryClient.invalidateQueries([QUERY_KEYS.DEAL_LIST]);
+      queryClient.resetQueries([QUERY_KEYS.DEAL_LIST]);
     },
   });
 };
@@ -68,7 +68,7 @@ export const useFundDealMutation = () => {
 
   return useMutation(fundDeal, {
     onSuccess: () => {
-      queryClient.invalidateQueries([QUERY_KEYS.DEAL_LIST]);
+      queryClient.resetQueries([QUERY_KEYS.DEAL_LIST]);
     },
   });
 };

@@ -3,15 +3,16 @@ import classNames from "classnames";
 import React from "react";
 import styles from "./styles.module.scss";
 
-interface SideItemProps {
-  completed: boolean;
+export interface SidebarItemProps {
+  completed?: boolean;
   enabled?: boolean;
   active: boolean;
   title: string;
   subtitle: string;
   onClick: () => void;
 }
-const SidebarItem: React.FC<SideItemProps> = ({
+
+const SidebarItem: React.FC<SidebarItemProps> = ({
   completed,
   enabled,
   active,
@@ -55,7 +56,7 @@ const SidebarItem: React.FC<SideItemProps> = ({
       )}
       {active && active !== completed && (
         <div className="d-flex justify-content-center align-items-center align-self-center">
-          <div className={styles.filledCircle} />
+          <div className={styles.blankCircle} />
         </div>
       )}
       {!completed && !active && (

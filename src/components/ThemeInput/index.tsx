@@ -20,9 +20,9 @@ export interface ThemeInputProps extends Omit<InputProps, "type"> {
   onSearch?: (value?: string) => void;
   groupProps?: FormGroupProps;
   showIcons?: boolean;
-  variant?: "primary" | "secondary" | "default";
+  variant?: "primary" | "secondary" | "teriary";
   block?: boolean;
-  type?: InputProps["type"] | "currency";
+  type?: InputProps["type"] | "currency" | "phone";
 }
 
 const ThemeInput: React.FC<ThemeInputProps> = ({
@@ -47,10 +47,9 @@ const ThemeInput: React.FC<ThemeInputProps> = ({
             className={classNames(styles.inputLabel, {
               [styles.primary]: variant === "primary",
               [styles.secondary]: variant === "secondary",
-              [styles.default]: variant === "default",
+              [styles.teriary]: variant === "teriary",
             })}
-            htmlFor={name}
-          >
+            htmlFor={name}>
             {label}
             {showRequiredMark && <span className={styles.astric}>*</span>}
           </label>
@@ -58,6 +57,29 @@ const ThemeInput: React.FC<ThemeInputProps> = ({
           <div className="w-100 position-relative">
             {type === "select" && (
               <CustomSelect label={label} name={label} {...props} />
+            )}
+            {type === "phone" && (
+              <NumberFormat
+                allowNegative={false}
+                className={classNames(
+                  `form-control form-control-text shadow-md w-100`,
+                  styles.inputField
+                )}
+                onValueChange={(values, sourceInfo) => {
+                  const { value } = values;
+                  const { event } = sourceInfo;
+                  if (!event?.target) {
+                    return;
+                  }
+                  event.target.value = value;
+                  event.persist();
+                  if (props.onChange) {
+                    props.onChange(event);
+                  }
+                }}
+                format="###-###-####"
+                {...omit(props, ["className", "onChange"])}
+              />
             )}
             {type === "currency" && (
               <NumberFormat
@@ -85,7 +107,7 @@ const ThemeInput: React.FC<ThemeInputProps> = ({
                 {...omit(props, ["className", "onChange"])}
               />
             )}
-            {!["select", "currency"].includes(type as string) && (
+            {!["phone", "select", "currency"].includes(type as string) && (
               <Input
                 className={classNames(
                   `form-control-text shadow-md w-100`,

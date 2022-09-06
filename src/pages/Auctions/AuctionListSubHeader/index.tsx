@@ -58,7 +58,9 @@ const AuctionListSubHeader: React.FC<AuctionSubHeaderProps> = ({
     <>
       <div className={classNames(styles.header, "px-4 mx-0")}>
         <div className={styles.searchContainer}>
-          <h5 className={styles.title}>{upperFirst(state)} Auctions</h5>
+          <h5 className={styles.title}>
+            {upperFirst(state === "completed" ? "lost" : state)} Auctions
+          </h5>
           {[AUCTION_STATES.live, AUCTION_STATES.expiring].includes(state) && (
             <Space>
               <Link to={AppRoutes.LIVE_AUCTIONS}>

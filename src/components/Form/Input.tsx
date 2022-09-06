@@ -1,4 +1,5 @@
 import { Field, FieldAttributes } from "formik";
+import get from "lodash/get";
 import omit from "lodash/omit";
 import React from "react";
 import Radio from "../Radio";
@@ -21,8 +22,9 @@ const InputField: React.FC<any> = ({
   onChange,
   ...rest
 }) => {
-  const error = form.errors[name];
-  const touched = form.touched[name];
+  const error = get(form, `errors.${name}`);
+  const touched = get(form, `touched.${name}`);
+
   if (type === "radio")
     return (
       <Radio
@@ -82,6 +84,7 @@ const Input: React.FC<InputProps> = ({
           field={field}
           form={form}
           value={props.value}
+          placeholder={placeholder}
           {...rest}
         />
       )}

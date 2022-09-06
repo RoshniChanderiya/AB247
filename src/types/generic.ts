@@ -36,3 +36,15 @@ export interface DataModel<T> {
   };
 }
 export type ListViewType = typeof LIST_VIEW_TYPE[number];
+
+export interface Analytics {
+  auctions: {
+    live?: number;
+    scheduled?: number;
+  };
+  deals: {
+    new?: number;
+    pending?: number;
+    funded?: number;
+  };
+}

@@ -1,5 +1,5 @@
 import BannerSection from "./BannerSection";
-import WelcomeToyota from "./WelcomeToyota";
+import WelcomeSection from "./WelcomeSection";
 import NotifyProcess from "./NotifyProcess";
 import BuyVehicleProcess from "./BuyVehicleProcess";
 import PrivateVehicle from "./PrivateVehicle";
@@ -8,11 +8,11 @@ import SellingInventory from "./SellingInventory";
 import WholesaleSolution from "./WholesaleSolution";
 import styles from "./styles.module.scss";
 
-const Landing = () => {
+const OnboardingLandingPage = () => {
   return (
     <div className={styles.mainContainer}>
       <BannerSection />
-      <WelcomeToyota />
+      <WelcomeSection />
       <SellingInventory />
       <NotifyProcess />
       <PrivateVehicle />
@@ -22,4 +22,4 @@ const Landing = () => {
     </div>
   );
 };
-export default Landing;
+export default OnboardingLandingPage;

@@ -1,9 +1,15 @@
 @import "@/assets/scss/variables.scss";
 @import "@/assets/scss/mixins.scss";
 
-.textTitle {
+.titleHeading {
+  font-family: $secondary-font;
+  font-weight: bold;
+  font-size: $font-xl * 2;
   text-align: center;
-  padding: $padding-lg * 2.5 0;
+  padding: $padding-md;
+ @include mq(xs) {
+    font-size: $font-xl;
+  }
 }
 .wholesaleContainer {
   overflow: hidden;
@@ -17,9 +23,8 @@
 .vehicleBodySeaction {
   background-color: $black-700;
   color: $white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCenterContainer;
+
   .bodyList {
     li {
       list-style: none;
@@ -33,7 +38,11 @@
       }
 
       &::before {
-        content: "\2022";
+        content: " ";
+        width: 8px;
+        height: 8px;
+        background-color: $white;
+        border-radius: 10px;
         font-size: $font-xl;
         line-height: 0;
         position: absolute;
@@ -53,20 +62,15 @@
   }
 }
 .sellingList {
-  display: flex;
-  justify-content: center;
+  @include flexCenterContainer;
   font-size: $font-lg;
   font-weight: bold;
 }
 .footerBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCenterContainer;
 }
 .wholesaleImgSection {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCenterContainer;
   padding: 0;
 }
 .playVideo {

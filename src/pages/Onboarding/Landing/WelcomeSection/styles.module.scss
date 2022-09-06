@@ -1,0 +1,81 @@
+@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/mixins.scss";
+
+.textTitle {
+  text-align: center;
+  padding: $padding-lg * 2.5 0;
+}
+.titleHeading {
+  font-family: $secondary-font;
+  font-weight: bold;
+  font-size: $font-xl * 2;
+  text-align: center;
+  @include mq(xs) {
+    font-size: $font-xl;
+  }
+}
+.cardImg {
+  height: 350px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+.subHeading {
+  color: $teal-500;
+  font-size: $font-lg + 6px;
+  font-style: italic;
+  font-weight: 600;
+  @include mq(xs) {
+    font-size: $font-md;
+  }
+}
+.mainCardSection {
+  border: 1px solid $gray-50;
+  border-radius: 35px;
+  position: relative;
+  transition: transform 250ms;
+  margin: 60px;
+}
+
+.cardSection {
+  width: 100%;
+  background: $teal-50;
+  padding: $padding-lg * 2.3;
+  @include mq(lg) {
+    padding: $padding-lg * 2.3 $padding-xl * 3.12;
+  }
+  @include mq(xs) {
+    padding: $padding-xs * 2.5 0px;
+  }
+}
+.cardMenu {
+  border: 1 px solid $white;
+  border-radius: 25px;
+  margin-bottom: $margin-xl;
+}
+:global {
+  .card {
+    border-radius: 20px;
+  }
+}
+.cardBody {
+  color: $white;
+  background-color: $black;
+  border-radius: 0 0 20px 20px;
+}
+.titleSection {
+  font-family: $secondary-font;
+  font-size: $font-lg + $font-xs;
+  text-align: center;
+  margin: $margin-md;
+}
+.listSection {
+  font-family: $primary-font;
+  margin: $margin-xs * 1.5 0;
+  font-weight: normal;
+}
+.actionLink {
+  text-align: center;
+}
+.btnFooter {
+  @include flexCenterContainer;
+}

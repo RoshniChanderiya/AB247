@@ -2,6 +2,9 @@
 
 .inventoryTable {
     min-height: 80vh;
+    &.summaryScreen {
+        min-height: 20vh;
+    }
 
     .trashIcon {
         color: $primary-color;

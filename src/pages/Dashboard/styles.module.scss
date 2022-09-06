@@ -38,7 +38,7 @@
   }
 }
 .indicatorContainer {
-  background-color: $primary-color;
+  background-color: $red;
   margin: $margin-sm 0 0 $margin-sm;
   border-radius: 10px;
   height: 300px;
@@ -46,7 +46,7 @@
 
   .heading {
     color: $white;
-    font-size: $font-xl * 3;
+    font-size: $font-xl * 3.5;
     font-weight: 500;
     height: 60%;
     text-shadow: 1px 1px 5px $black;
@@ -61,7 +61,7 @@
     font-size: $font-lg;
   }
   &.noDeal {
-    background-color: $red;
+    background-color: $primary-color;
     .heading {
       font-size: $font-xl * 3.5;
     }
@@ -70,7 +70,7 @@
   &:hover {
     background-color: $red;
     .heading {
-      font-size: $font-xl * 3.5;
+      font-size: $font-xl * 3;
     }
   }
 }
@@ -80,12 +80,16 @@
   display: flex;
   align-items: flex-end;
   background-color: $primary-color;
+  flex-wrap: wrap;
+  row-gap: 20px;
+
   .filterText {
     margin-right: 1vw;
     display: flex;
     align-items: center;
     font-size: 14px;
     color: $white;
+    gap: 10px;
     .circle {
       width: 16px;
       height: 16px;

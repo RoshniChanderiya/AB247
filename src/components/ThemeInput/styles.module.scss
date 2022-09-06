@@ -20,10 +20,9 @@
       color: $secondary-color;
     }
 
-    &.default {
+    &.teriary {
       color: $black;
       font-size: $font-md;
-      font-weight: bold;
       font-weight: 500;
     }
     .astric {
@@ -47,6 +46,7 @@
 .info {
   color: $gray;
 }
+
 input.inputField {
   box-shadow: 0px 9px 6px #c1bcbc33;
   font-size: 1rem;

@@ -1,76 +1,90 @@
 @import "@/assets/scss/variables.scss";
 @import "@/assets/scss/mixins.scss";
 
-.textTitle {
+.titleHeading {
+  font-family: $secondary-font;
+  font-weight: bold;
+  font-size: $font-xl * 2;
   text-align: center;
-  padding: $padding-lg * 2.5 0;
+  padding: $padding-md;
+  @include mq(xs) {
+    font-size: $font-xl * 1.5;
+   @include flexCenterContainer;
+
+  }
 }
-  .mainSeaction {
-    background-color: $black-700;
-    color: $white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .bodyList{
-      li {
-        list-style: none;
-        position: relative;
-        padding-left: $padding-xs * 5;
-        margin-bottom: $margin-xs;
-        font-weight: normal;
-        font-size: $font-md + 2px;
-        @include mq(xs) {
-          font-size: $font-md;
-        }
-        &::before {
-          content: "\2022";
-          font-size: $margin-xl;
-          line-height: 0;
-          position: absolute;
-          left: 0;
-          top: 12px;
-        }
+.mainSeaction {
+  background-color: $black-700;
+  color: $white;
+  @include flexCenterContainer;
+
+  .bodyList {
+    li {
+      list-style: none;
+      position: relative;
+      padding-left: $padding-xs * 5;
+      margin-bottom: $margin-xs;
+      font-weight: normal;
+      font-size: $font-md + 2px;
+      @include mq(xs) {
+        font-size: $font-md;
+      }
+      &::before {
+        content: " ";
+        width: 8px;
+        height: 8px;
+        background-color: $white;
+        border-radius: 10px;
+        font-size: $margin-xl;
+        line-height: 0;
+        position: absolute;
+        left: 0;
+        top: 12px;
       }
     }
   }
-  .sellingHeading {
-    text-align: center;
-    padding-top: $padding-sm * 3;
-    font-size: $font-xl;
-    font-family: $secondary-font;
-    @include mq(xs) {
-      font-size: $font-lg + 2px;
-    }
+}
+.sellingHeading {
+  text-align: center;
+  padding-top: $padding-sm * 3;
+  font-size: $font-xl;
+  font-family: $secondary-font;
+  @include mq(xs) {
+    font-size: $font-lg + 2px;
   }
-  .sellingList {
-    display: flex;
-    justify-content: center;
-    font-size: $font-lg;
-    font-weight: bold;
+}
+.sellingList {
+  @include flexCenterContainer;
+
+  font-size: $font-lg;
+  font-weight: bold;
+}
+.footerBtn {
+  @include flexCenterContainer;
+}
+.mapSection {
+  @include flexCenterContainer;
+  padding: 0;
+}
+.mapImg {
+  margin: $margin-lg * 2.1;
+  overflow: hidden;
+  position: relative;
+  object-fit: cover;
+  @include mq(xs) {
+   @include flexCenterContainer;
+
   }
-  .footerBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .mapSection {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-  }
-  .mapImg {
-    margin: 50px;
-    overflow: hidden;
-    position: relative;
-    object-fit: cover;
-  }
-  
-  .video {
-    position: absolute;
-    color: $teal;
-    font-size: 2rem;
-    z-index: 1;
-    margin-left: 2rem;
-    margin-top: -1.5rem;
-  }
+}
+
+.video {
+  position: absolute;
+  color: $teal;
+  font-size: $font-md * 2;
+  z-index: 1;
+  margin: -$margin-sm * 2.5 0 0 $margin-md * 2;
+  @include mq(xs) {
+  margin: -$margin-sm  0 0 $margin-md;
+    
+   }
+}

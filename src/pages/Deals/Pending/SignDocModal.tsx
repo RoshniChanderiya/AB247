@@ -23,13 +23,16 @@ interface SignDocModalProps {
   deal: Deals;
 }
 
-const terms = [
+const loadTerms = [
   { value: 36, label: "36 Months" },
   { value: 60, label: "60 Months" },
   { value: 72, label: "72 Months" },
   { value: 84, label: "84 Months" },
 ];
-
+const leaseTerms = [
+  { value: 36, label: "36 Months" },
+  { value: 39, label: "39 Months" },
+];
 const fundingType = [
   { value: "loan", label: "Loan" },
   { value: "lease", label: "Lease" },
@@ -84,6 +87,7 @@ interface SignFormProps {
 const SignForm: React.FC<SignFormProps> = ({ tradeInAmount, showTradeIn }) => {
   const { data: banks = [] } = useBanks();
   const [selectedType, setSelectedType] = useState("");
+  const isCash = selectedType === "cash";
   return (
     <div className="px-4">
       <Row>
@@ -138,7 +142,7 @@ const SignForm: React.FC<SignFormProps> = ({ tradeInAmount, showTradeIn }) => {
         options={fundingType}
         onChange={(e: any) => setSelectedType(e.target.value)}
       />
-      {selectedType !== "cash" && (
+      {!isCash && (
         <Input
           name="bank"
           type="select"
@@ -149,14 +153,15 @@ const SignForm: React.FC<SignFormProps> = ({ tradeInAmount, showTradeIn }) => {
           }))}
         />
       )}
-      {selectedType !== "cash" && (
-        <Input name="price" type="currency" label="Payment" />
-      )}
-      {selectedType !== "cash" && (
-        <Input name="funded" type="currency" label="Amount Funded" />
-      )}
-      {selectedType !== "cash" && (
-        <Input name="terms" type="select" label="Term Funded" options={terms} />
+      {!isCash && <Input name="price" type="currency" label="Payment" />}
+      {!isCash && <Input name="funded" type="currency" label="Amount Funded" />}
+      {!isCash && (
+        <Input
+          name="terms"
+          type="select"
+          label="Term Funded"
+          options={selectedType === "lease" ? leaseTerms : loadTerms}
+        />
       )}
     </div>
   );
@@ -186,6 +191,7 @@ const SignDocModal: React.FC<SignDocModalProps> = ({ deal }) => {
           ? "Deal funded successfully."
           : "Deal updated successfully."
       );
+      toggleUpdateModal();
     } catch (error) {
       Message.error(retrieveErrorMessage(error));
     }

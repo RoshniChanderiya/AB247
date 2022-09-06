@@ -41,6 +41,7 @@ const AuctionDetailView: React.FC<AuctionDetailViewProps> = ({ auction }) => {
       name: "YEAR",
       dataKey: "id",
       render: (id: string) => <VehicleDetails id={id} dataKey="year" />,
+      sort: true,
     },
     {
       name: "MAKE",
@@ -64,16 +65,19 @@ const AuctionDetailView: React.FC<AuctionDetailViewProps> = ({ auction }) => {
       name: "AGE",
       dataKey: "id",
       render: (id: string) => <VehicleDetails id={id} dataKey="age" />,
+      sort: true,
     },
     {
       name: "FLOOR PRICE",
       dataKey: "floor_bid",
       render: (price: number) => formatNumber(price),
+      sort: true,
     },
     {
-      name: "SELL PRICE",
+      name: "SELLING PRICE",
       dataKey: "id",
       render: () => formatNumber(finalBidAmount),
+      sort: true,
     },
     {
       name: "LOST BY",
@@ -84,7 +88,7 @@ const AuctionDetailView: React.FC<AuctionDetailViewProps> = ({ auction }) => {
   return (
     <div className={styles.details}>
       <Space direction="vertical">
-        <small>Detailed View</small>
+        <small>DETAILED VIEW</small>
         <div className={styles.tableContainer}>
           <Table columns={columns} items={vehicles} />
         </div>

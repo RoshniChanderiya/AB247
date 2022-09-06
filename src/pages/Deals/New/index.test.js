@@ -37,6 +37,7 @@ describe("New Deals", () => {
       )
     ).toBeInTheDocument();
     const address = get(FakeDeal, "_source.payload.personal_details.billing");
+
     expect(
       await screen.findByText(
         formatNumber(get(FakeDeal, "_source.payload.total_amount", 0), {

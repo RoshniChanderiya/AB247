@@ -19,10 +19,13 @@ interface LostAuctionProps {
 const LostAuctions: React.FC<LostAuctionProps> = ({ duration, isSummary }) => {
   const [params, setParams] = useSearchParams();
 
-  const selectedDuration =
-    (params.get("duration") as AuctionSubHeaderProps["selectedDuration"]) ||
-    duration ||
-    "week";
+  const selectedDuration = useMemo(() => {
+    return (
+      (params.get("duration") as AuctionSubHeaderProps["selectedDuration"]) ||
+      duration ||
+      "week"
+    );
+  }, [params, duration]);
 
   const { isLoading, data: auctions } = useAuctions({
     state: ["completed"],
@@ -81,12 +84,12 @@ const LostAuctions: React.FC<LostAuctionProps> = ({ duration, isSummary }) => {
     },
   ];
 
-  const actualAuctions = useMemo(() => {
-    const newAuctions = orderBy(
-      auctions || [],
-      (current) => dayjs(current.payload.auction_end_time).unix(),
-      "desc"
-    );
+  const newAuctions = orderBy(
+    auctions,
+    (current) => dayjs(current.payload.auction_end_time).unix(),
+    "desc"
+  );
+  const actualAuctions = () => {
     switch (selectedDuration) {
       case "week":
         const currentWeek = [dayjs().subtract(1, "week"), dayjs()];
@@ -115,7 +118,7 @@ const LostAuctions: React.FC<LostAuctionProps> = ({ duration, isSummary }) => {
       default:
         return newAuctions;
     }
-  }, [auctions, selectedDuration]);
+  };
 
   return (
     <>
@@ -130,7 +133,7 @@ const LostAuctions: React.FC<LostAuctionProps> = ({ duration, isSummary }) => {
       <Table
         columns={columns}
         loading={isLoading}
-        items={isSummary ? actualAuctions.splice(0, 5) : actualAuctions}
+        items={isSummary ? actualAuctions().splice(0, 6) : actualAuctions()}
         expandable={{
           expandedRowRender: (auction: Auction) => (
             <AuctionDetailView auction={auction} />

@@ -8,15 +8,28 @@
 .vehicleSection {
   overflow: hidden;
 }
-.textTitle {
+.sellingHeading {
   text-align: center;
-  padding: $padding-lg * 2.5 0;
+  padding-top: $padding-sm * 3;
+  font-size: $font-xl;
+  font-family: $secondary-font;
+  @include mq(xs) {
+    font-size: $font-lg + 2px;
+  }
+}
+.titleHeading {
+  font-family: $secondary-font;
+  font-weight: bold;
+  font-size: $font-xl * 2;
+  text-align: center;
+  padding: $padding-md;
+ @include mq(xs) {
+    font-size: $font-xl;
+  }
 }
 .privateSeaction {
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCenterContainer;
 }
 .privateVehicleImg {
   width: 100%;
@@ -28,14 +41,16 @@
 .videoPlay {
   position: absolute;
   z-index: 1;
-  font-size: 2rem;
+  font-size: $font-md * 2;
+  @include mq(xs) {
+    display: none;
+  }
+  
 }
 .vehicleBodySeaction {
   background-color: $black-700;
   color: $white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCenterContainer;
   .bodyList {
     li {
       list-style: none;
@@ -49,7 +64,11 @@
       }
 
       &::before {
-        content: "\2022";
+        content: " ";
+        width: 8px;
+        height: 8px;
+        background-color: $white;
+        border-radius: 10px;
         font-size: $font-xl;
         line-height: 0;
         position: absolute;
@@ -60,7 +79,5 @@
   }
 }
 .footerBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCenterContainer;
 }

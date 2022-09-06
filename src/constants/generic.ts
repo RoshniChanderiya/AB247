@@ -15,3 +15,13 @@ export const COMPANY_CONTACT_NUMBER = "1+(800) 920-6912";
 export const DEFAULT_DATE_FORMAT = "MM/DD/YYYY";
 export const DEFAULT_DATE_TIME_FORMAT = "MM/DD/YYYY • hh:mm A";
 export const DEFAULT_TIME_FORMAT = "hh:mm:ss";
+
+export const AVAIALABLE_ROLES = [
+  {
+    label: "General Manager",
+    value: "General Manager",
+  },
+  { label: "New Car Manager", value: "New Car Manager" },
+  { label: "Used Car Manager", value: "Used Car Manager" },
+  { label: "New & Used Car Manager", value: "New & Used Car Manager" },
+];

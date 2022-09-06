@@ -1,4 +1,4 @@
-import Landing from "@/pages/Onboarding/Landing";
+import OnboardingLandingPage from "@/pages/Onboarding/Landing";
 import AuthProvider from "@/providers/AuthProvider";
 import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
@@ -6,7 +6,6 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 // layouts
 const AuthLayout = React.lazy(() => import("@/layouts/Auth"));
 const DashboardLayout = React.lazy(() => import("@/layouts/Dashboard"));
-const OnboardingLayout = React.lazy(() => import("@/layouts/Onboarding"));
 
 // pages
 const Dashboard = React.lazy(() => import("@/pages/Dashboard"));
@@ -27,6 +26,7 @@ const Onboarding = React.lazy(() => import("@/pages/Onboarding"));
 const Login = React.lazy(() => import("@/pages/Login"));
 const ForgotPassword = React.lazy(() => import("@/pages/ForgotPassword"));
 
+const Profile = React.lazy(() => import("@/pages/Profile"));
 
 const AppRoute: React.FC = () => {
   return (
@@ -43,7 +43,7 @@ const AppRoute: React.FC = () => {
                 <Route path="lost" element={<LostAuctions />} />
                 <Route path="*" element={<>Page Not Found</>} />
               </Route>
-          
+
               <Route path="deals">
                 <Route path="pending" element={<PendingDeals />} />
                 <Route path="new" element={<NewDeals />} />
@@ -54,13 +54,13 @@ const AppRoute: React.FC = () => {
                 <Route path="removed" element={<InventoryList />} />
               </Route>
               <Route path="/onboarding">
+                <Route index element={<OnboardingLandingPage />} />
                 <Route path=":step" element={<Onboarding />} />
               </Route>
+              <Route path="/profile" element={<Profile />} />
               <Route path="*" element={<>Page Not Found</>} />
             </Route>
-              <Route path="/onboarding" element={<OnboardingLayout />} >
-                <Route index element={<Landing />} />
-            </Route>
+
             <Route path="/security" element={<AuthLayout />}>
               <Route path="" element={<Navigate to="login" />} />
               <Route path="login" element={<Login />} />
@@ -75,5 +75,3 @@ const AppRoute: React.FC = () => {
 };
 
 export default AppRoute;
-
-

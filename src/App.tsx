@@ -7,8 +7,10 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { Container } from "reactstrap";
 import "./App.scss";
 import AppRoute from "./routes";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 dayjs.extend(utc);
 
 const queryClient = new QueryClient({

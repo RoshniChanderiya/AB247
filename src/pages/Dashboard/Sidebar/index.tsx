@@ -1,11 +1,15 @@
 import Link from "@/components/Link";
 import { AppRoutes } from "@/constants";
 import { useHeaderCount } from "@/hooks/analytics";
+import useAuth from "@/hooks/useAuth";
 import React from "react";
 import styles from "./../styles.module.scss";
 
 const Sidebar: React.FC = () => {
-  const { data = { auctions: {}, deals: {} } } = useHeaderCount();
+  const { isLoggedIn } = useAuth();
+  const { data = { auctions: {}, deals: {} } } = useHeaderCount({
+    enabled: isLoggedIn,
+  });
   return (
     <div className={styles.container}>
       <div className={styles.tittle}>

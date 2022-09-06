@@ -1,25 +1,87 @@
 import Button from "@/components/Button";
 import Form from "@/components/Form";
+import Input from "@/components/Form/Input";
+import Link from "@/components/Link";
+import type { ItemProperties } from "@/components/Sidebar";
 import ThemeCheckBox from "@/components/ThemeCheckBox";
-import ThemeInput from "@/components/ThemeInput";
+import { useSaveAccountDetailsMutation } from "@/hooks/dealer";
+import ContactNumberFooter from "@/pages/Onboarding/ContactNumberFooter";
+import { OnboardingContext } from "@/providers/OnboardingProvider";
+import { getSnakeCaseVersion } from "@/utils/generic";
+import { retrieveErrorMessage } from "@/utils/RestClient";
+import Message from "@/utils/Toast";
 import classNames from "classnames";
-import { Link } from "react-router-dom";
+import get from "lodash/get";
+import { useContext } from "react";
 import { Col, Row } from "reactstrap";
-import ContactNumberFooter from "../ContactNumberFooter";
-import styles from "./styles.module.scss";
+import * as yup from "yup";
+import styles from "../styles.module.scss";
 
-interface AccountDetailData {
-  handleNextStepClick: () => void;
+const accountDetailsSchema = yup.object().shape({
+  dealerFees: yup.number().required("Please enter dealer fees."),
+  processingFees: yup.number().required("Please enter processing fees."),
+  dmsAccountNumber: yup.string().required("Please enter account number."),
+  dmsName: yup.string().required("Please select DMS name."),
+  floorplanCompany: yup.string().required("Please select floor plan company."),
+  floorplanCompanyEmail: yup
+    .string()
+    .required("Please select floor plan company email.")
+    .email("Please enter valid email."),
+  bank: yup.object().shape({
+    name: yup.string().optional(),
+    address: yup.string().optional(),
+    accountNumber: yup.string().optional(),
+    routingNumber: yup.string().optional(),
+    businessName: yup.string().optional(),
+    businessAddress: yup.string().optional(),
+  }),
+});
+
+interface AccountDetailsProps {
+  onNext: (key: ItemProperties, data: Record<string, any>) => void;
 }
-const AccountDetails: React.FC<AccountDetailData> = ({
-  handleNextStepClick,
-}) => {
-  const onSubmit = () => {
-    handleNextStepClick();
+const AccountDetails: React.FC<AccountDetailsProps> = ({ onNext }) => {
+  const { dealer } = useContext(OnboardingContext);
+  const { isLoading, mutateAsync: saveAccountDetailsMutation } =
+    useSaveAccountDetailsMutation();
+
+  const onSubmit = async (values: Record<string, unknown>) => {
+    try {
+      const data = getSnakeCaseVersion(values);
+      await saveAccountDetailsMutation({
+        id: dealer?._id as string,
+        data,
+      });
+      onNext("DEALER_BILLING_COSTS", getSnakeCaseVersion(values));
+      Message.success("Account details saved successfully.");
+    } catch (error) {
+      Message.error(retrieveErrorMessage(error));
+    }
   };
+
+  const dealerPayload = get(dealer, "_source.payload", {});
   return (
     <>
-      <Form initialValues={{}} onSubmit={onSubmit}>
+      <Form
+        initialValues={{
+          dealerFees: dealerPayload.dealer_fees || "",
+          processingFees: dealerPayload.processing_fees || "",
+          dmsAccountNumber: dealerPayload.dms_account_number || "",
+          dmsName: dealerPayload.dms_name || "",
+          floorplanCompany: dealerPayload.floorplan_company || "",
+          floorplanCompanyEmail: dealerPayload.floorplan_company_email || "",
+          bank: {
+            name: dealerPayload.bank?.name || "",
+            address: dealerPayload.bank?.address || "",
+            accountNumber: dealerPayload.bank?.account_number || "",
+            routingNumber: dealerPayload.bank?.routing_number || "",
+            businessName: dealerPayload.bank?.business_name || "",
+            businessAddress: dealerPayload.bank?.business_address || "",
+          },
+        }}
+        onSubmit={onSubmit}
+        validationSchema={accountDetailsSchema}
+      >
         <Row className="px-3">
           <Col sm={12}>
             <span className={styles.heading}>Account Details</span>
@@ -34,68 +96,62 @@ const AccountDetails: React.FC<AccountDetailData> = ({
             </Col>
             <Row>
               <Col sm={12} lg={6} className="mt-1">
-                <ThemeInput
-                  variant="default"
+                <Input
+                  variant="teriary"
                   showRequiredMark
-                  boldLabel
-                  control="themed"
-                  name="dealerFee"
+                  name="dealerFees"
                   label="Dealer Fee"
                   placeholder="$599"
+                  type="currency"
                 />
               </Col>
               <Col sm={12} lg={6} className="mt-1">
-                <ThemeInput
-                  variant="default"
+                <Input
+                  variant="teriary"
                   showRequiredMark
-                  boldLabel
-                  control="themed"
-                  name="titleProcessingFee"
-                  label="Title Processing Fee"
+                  name="processingFees"
+                  label="Total Processing Fee"
                   placeholder="$299"
+                  type="currency"
                 />
               </Col>
               <Col sm={12} lg={6} className="mt-3">
-                <ThemeInput
-                  variant="default"
+                <Input
+                  variant="teriary"
                   showRequiredMark
-                  boldLabel
-                  control="themed"
-                  name="addDMSAccountNumber"
+                  name="dmsAccountNumber"
                   label="Add DMS Account Number"
                   placeholder="DMS Account Number Here"
                 />
               </Col>
               <Col sm={12} lg={6} className="mt-3">
-                <ThemeInput
-                  variant="default"
+                <Input
+                  variant="teriary"
                   showRequiredMark
-                  boldLabel
-                  control="themed"
-                  name="AddDMSName"
+                  name="dmsName"
                   label="Add DMS Name"
                   placeholder="Select DMS"
                   type="select"
+                  options={["Option1", "Option2", "Option3"].map((option) => ({
+                    label: option,
+                    value: option,
+                  }))}
                 />
               </Col>
               <Col sm={12} lg={6} className="mt-3">
-                <ThemeInput
-                  variant="default"
+                <Input
+                  variant="teriary"
                   showRequiredMark
-                  boldLabel
-                  control="themed"
-                  name="addFloorplanCompany"
+                  name="floorplanCompany"
                   label="Add Floorplan Company"
                   placeholder="Floorplan Company Here"
                 />
               </Col>
               <Col sm={12} lg={6} className="mt-3">
-                <ThemeInput
-                  variant="default"
+                <Input
+                  variant="teriary"
                   showRequiredMark
-                  boldLabel
-                  control="themed"
-                  name="addFloorplanContactEmail"
+                  name="floorplanCompanyEmail"
                   label="Add Floorplan Contact Email"
                   placeholder=" Select Floorplan Contact Email"
                 />
@@ -104,61 +160,49 @@ const AccountDetails: React.FC<AccountDetailData> = ({
                 <h5 className={styles.header}>Banking Information</h5>
               </Col>
               <Col sm={12} lg={6} className="mt-1">
-                <ThemeInput
-                  variant="default"
-                  boldLabel
-                  control="themed"
-                  name="bankName"
+                <Input
+                  variant="teriary"
+                  name="bank.name"
                   label="Bank Name"
                   placeholder="Enter Bank Name Here"
                 />
               </Col>
               <Col sm={12} lg={6} className="mt-1">
-                <ThemeInput
-                  variant="default"
-                  boldLabel
-                  control="themed"
-                  name="bankName"
+                <Input
+                  variant="teriary"
+                  name="bank.address"
                   label="Bank Address"
                   placeholder="Bank Address Here"
                 />
               </Col>
               <Col sm={12} lg={6} className="mt-1">
-                <ThemeInput
-                  variant="default"
-                  boldLabel
-                  control="themed"
-                  name="wireAccountNumber"
+                <Input
+                  variant="teriary"
+                  name="bank.accountNumber"
                   label="Wire Account Number"
                   placeholder="Wire Account Number"
                 />
               </Col>
               <Col sm={12} lg={6} className="mt-1">
-                <ThemeInput
-                  variant="default"
-                  boldLabel
-                  control="themed"
-                  name="wireRoutingNumber"
+                <Input
+                  variant="teriary"
+                  name="bank.routingNumber"
                   label="Wire Routing Number"
                   placeholder="Wire Routing Number"
                 />
               </Col>
               <Col sm={12} lg={6} className="mt-1">
-                <ThemeInput
-                  variant="default"
-                  boldLabel
-                  control="themed"
-                  name="businessName"
+                <Input
+                  variant="teriary"
+                  name="bank.businessName"
                   label="Business Name"
                   placeholder="Enter Business Name Here"
                 />
               </Col>
               <Col sm={12} lg={6} className="mt-1">
-                <ThemeInput
-                  variant="default"
-                  boldLabel
-                  control="themed"
-                  name="businessAddress"
+                <Input
+                  variant="teriary"
+                  name="bank.businessAddress"
                   label="Business Address"
                   placeholder="Business Address Here"
                 />
@@ -198,21 +242,22 @@ const AccountDetails: React.FC<AccountDetailData> = ({
 
             <Col sm={12} className={styles.submitbtn}>
               <Button
-                filled
                 type="submit"
-                size="xl"
-                className={classNames("mx-4", "btn-save", "h-100")}
+                size="lg"
+                className="mx-4 btn-save h-100"
+                isLoading={isLoading}
+                loaderSize="sm"
               >
                 COMPLETE REGISTRATION
               </Button>
               <div className="d-flex mx-3 mt-3">
                 <ThemeCheckBox
-                  name={""}
+                  name="terms"
                   label="I agree with the "
                   className="mx-1"
                   color="red"
                 />
-                <Link to="">
+                <Link to="/">
                   <p>Terms and Conditions</p>
                 </Link>
               </div>

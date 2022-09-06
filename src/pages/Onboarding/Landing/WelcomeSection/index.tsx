@@ -3,12 +3,11 @@ import {
   SellInventory,
   WholeSolutions
 } from "@/assets/images";
-import Button from "@/components/Button";
-import classNames from "classnames";
+import SignupButton from "@/components/SignupButton";
 import { Link } from "react-router-dom";
 import { Card, CardBody, CardTitle, Col, Container, Row } from "reactstrap";
 import styles from "./styles.module.scss";
-const WelcomeToyota = () => {
+const WelcomeSection = () => {
   const cardData = [
     {
       id: "1",
@@ -57,7 +56,7 @@ const WelcomeToyota = () => {
   return (
     <>
       <div className={styles.textTitle}>
-        <h1>Welcome Avery Toyota</h1>
+        <h1 className={styles.titleHeading}>Welcome Avery Toyota</h1>
         <h3 className={styles.subHeading}>
           To The Future of Buying and Selling Cars!
         </h3>
@@ -71,7 +70,7 @@ const WelcomeToyota = () => {
                     <div className={styles.cardMenu}>
                       <Card>
                         <img
-                          alt="Sample"
+                          alt="Vehicle"
                           src={element.imgs}
                           className={styles.cardImg}
                         />
@@ -102,13 +101,9 @@ const WelcomeToyota = () => {
             })}
           </Row>
         </Container>
-        <div className={styles.btnFooter}>
-          <Button filled className={classNames("ml-5", "btn-save", "h-100")}>
-            ONE SIGN UP - GET ALL 3
-          </Button>
-        </div>
+        <SignupButton />
       </div>
     </>
   );
 };
-export default WelcomeToyota;
+export default WelcomeSection;

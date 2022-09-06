@@ -1,12 +1,12 @@
 import { IconPlay, PrivateVehicleMainImage } from "@/assets/images";
-import Button from "@/components/Button";
+import SignupButton from "@/components/SignupButton";
 import { Col, Row } from "reactstrap";
 import styles from "./styles.module.scss";
 const PrivateVehicle = () => {
   return (
     <>
       <div className={styles.vehicleTitle}>
-        <h1 className={styles.textTitle}>Private Vehicle Sourcing</h1>
+        <h1 className={styles.titleHeading}>Private Vehicle Sourcing</h1>
       </div>
       <div className={styles.vehicleSection}>
         <Row>
@@ -14,7 +14,7 @@ const PrivateVehicle = () => {
             <img src={IconPlay} className={styles.videoPlay} alt="" />
             <img
               src={PrivateVehicleMainImage}
-              alt="simple"
+              alt="Private vehicle"
               className={styles.privateVehicleImg}
             />
           </Col>
@@ -30,9 +30,7 @@ const PrivateVehicle = () => {
                   <li>$250 Fixed Buy Fee on Every Vehicle</li>
                 </ul>
               </div>
-              <div className={styles.footerBtn}>
-                <Button>ONE SIGN UP - GET ALL 3</Button>
-              </div>
+              <SignupButton />
               <div className="w-100 d-flex  mt-5"></div>
             </div>
           </Col>
