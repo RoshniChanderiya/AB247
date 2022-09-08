@@ -17,6 +17,8 @@ const DashboardLayout: React.FC = () => {
     enabled: isLoggedIn
   });
   const location = useLocation();
+  console.log(location,"location")
+  
   const navigate = useNavigate();
   const isOnboarding = trim(location.pathname, "/") === "onboarding";
 
