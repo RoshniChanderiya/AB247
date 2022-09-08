@@ -62,10 +62,12 @@ const DashboardLayout: React.FC = () => {
     ];
   }, [analytics]);
 
+
+
   return (
     <>
       <Header />
-      {!isOnboarding && (
+      {!isOnboarding &&  (
         <SubHeader navLinks={navLinks} title="Dealers Dashboard" />
       )}
       <div className={styles.main}>

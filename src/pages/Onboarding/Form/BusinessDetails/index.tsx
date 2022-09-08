@@ -1,22 +1,23 @@
 import Button from "@/components/Button";
 import Form from "@/components/Form";
 import Input from "@/components/Form/Input";
-import { AVAIALABLE_ROLES, States } from "@/constants";
-import { OnboardingContext } from "@/providers/OnboardingProvider";
-import classNames from "classnames";
-import get from "lodash/get";
-import React, { useContext } from "react";
-import { Col, Row } from "reactstrap";
-import ContactNumberFooter from "../../ContactNumberFooter";
-import styles from "../styles.module.scss";
-
+import Radio from "@/components/Radio";
 import { ItemProperties } from "@/components/Sidebar";
+import { AVAIALABLE_ROLES, States } from "@/constants";
 import { useSaveBusinessDetailsMutation } from "@/hooks/dealer";
+import { OnboardingContext } from "@/providers/OnboardingProvider";
 import { getSnakeCaseVersion } from "@/utils/generic";
 import { retrieveErrorMessage } from "@/utils/RestClient";
 import Message from "@/utils/Toast";
+import classNames from "classnames";
+import get from "lodash/get";
+import React, { useContext, useState } from "react";
+import { Col, Row } from "reactstrap";
 import * as yup from "yup";
-import Radio from "@/components/Radio";
+import ContactNumberFooter from "../../ContactNumberFooter";
+import styles from "../styles.module.scss";
+
+
 
 const URL_REGEX =
   /^((ftp|http|https):\/\/)?(www.)?(?!.*(ftp|http|https|www.))[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+((\/)[\w#]+)*(\/\w+\?[a-zA-Z0-9_]+=\w+(&[a-zA-Z0-9_]+=\w+)*)?$/gm;
@@ -60,6 +61,10 @@ interface BusinessDetailsProps {
 }
 const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
   const { dealer, admin } = useContext(OnboardingContext);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => {
+    setIsOpen((prev) => !prev);
+  }
   const { isLoading, mutateAsync: saveBusinessDetailsMutation } =
     useSaveBusinessDetailsMutation();
 
@@ -79,6 +84,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
   const dealerPayload = get(dealer, "_source.payload", {});
   const adminPayload = get(admin, "_source.payload", {});
   console.log(adminPayload.title);
+  
   return (
     <>
       <Row>
@@ -215,7 +221,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
               </span>
             </Col>
             <Row className="mt-4">
-              <Col sm={6} className="d-none d-sm-block">
+              <Col sm={6} >
                 <Input
                   variant="teriary"
                   name="admin.firstName"
@@ -224,7 +230,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                   placeholder="Enter First Name"
                 />
               </Col>
-              <Col sm={6} className="d-none d-sm-block">
+              <Col sm={6}>
                 <Input
                   variant="teriary"
                   name="admin.lastName"
@@ -254,7 +260,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                 />
               </Col>
               <Row>
-                <Col sm={5} className="d-none d-sm-block">
+                <Col sm={5}>
                   <Input
                     variant="teriary"
                     name="admin.phone"
@@ -264,7 +270,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                     placeholder="Enter Your Mobile Phone Number"
                   />
                 </Col>
-                <Col sm={2} className="d-none d-sm-block">
+                <Col sm={2}>
                   <Input
                     variant="teriary"
                     name="admin.extension"
@@ -272,7 +278,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                     placeholder="Ext."
                   />
                 </Col>
-                <Col sm={5} className="d-none d-sm-block">
+                <Col sm={5}>
                   <Input
                     variant="teriary"
                     name="admin.mobile"

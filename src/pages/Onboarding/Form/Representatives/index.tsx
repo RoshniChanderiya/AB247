@@ -164,10 +164,10 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
                       .join(" ")}
                   />
                 </Col>
-                <Col sm={12}>
+                <Col sm={12} xs={12} >
                   <LabelValue label="Business Title" value={payload.title} />
                 </Col>
-                <Col sm={12}>
+                <Col sm={12} xs={12}>
                   <LabelValue label="Email Address" value={payload.email} />
                 </Col>
                 <Col sm={12}>
@@ -235,7 +235,7 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
                     placeholder="Larry"
                   />
                 </Col>
-                <Col sm={6}>
+                <Col sm={6} className="d-none d-sm-block">
                   <Input
                     variant="teriary"
                     name="lastName"
@@ -264,7 +264,7 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
                     disabled={isEditMode}
                   />
                 </Col>
-                <Col sm={12} className="mb-4">
+                <Col sm={12} className="mb-4 d-none d-sm-block">
                   <ThemeInput
                     variant="teriary"
                     type="hidden"
@@ -291,7 +291,7 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
                   </Space>
                 </Col>
                 <Row>
-                  <Col lg={8}>
+                  <Col lg={8} xs={6}>
                     <Input
                       variant="teriary"
                       showRequiredMark
@@ -301,7 +301,7 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
                       type="phone"
                     />
                   </Col>
-                  <Col lg={4}>
+                  <Col lg={4} xs={6}>
                     <Input
                       variant="teriary"
                       name="extension"

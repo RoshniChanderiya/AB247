@@ -20,6 +20,13 @@
   .header {
     color: $primary-color;
   }
+  @include mq(xs) {
+  background-color: $white;
+  border-radius: 0;
+  .header {
+    color: $black;
+  }   
+  }
 }
 .informationHeading {
   margin-left: $margin-xl;
@@ -81,12 +88,38 @@
   margin: $margin-xl * 2 0 0 $margin-xl * 5;
   padding-left: $padding-xl * 2;
   font-weight: 500;
+  @include mq(xs) {
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+.bankingResponsive{
+   @include mq(xs) {
+  background-color: $teal-50;
+  padding-top: $padding-md * 2;
+  .header{
+    color: $teal;
+  }
+}
+}
+.footerBtn{
+  margin-top: $margin-sm;
+  @include mq(xs) {
+   top: 1420px;
+   position: absolute;
+  }
 }
 // Representative
 .addRepresentative {
   border-radius: 4px;
   background: $teal-50;
   min-height: 650px;
+  @include mq(xs) {
+    position: absolute;
+    min-height: 100px;
+    bottom:150px;
+    // width: 50px;
+   }
 
   .plusCircleContent {
     text-align: center;
@@ -106,6 +139,9 @@
 }
 .updatebtn {
   float: right;
+  @include mq(xs) {
+   float: left;
+  }
 }
 
 //
@@ -118,6 +154,12 @@
   .form {
     width: 400px;
     min-width: 400px;
+    @include mq(xs) {
+      column-gap: 2px;
+      .form {
+       min-height: 100px;
+      }
+     }
   }
 
   .label {
