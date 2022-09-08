@@ -60,10 +60,10 @@ const SummarySidebar: React.FC = () => {
           "justify-content-between"
         )}
       >
-        <h4 className="text-white ms-4 ms-md-5 ms-lg-0 my-3 ps-3">
+        <h4 className="ms-4 ms-md-5 ms-lg-0 my-3 ps-3">
           Dealer Rep's
         </h4>
-        <PlusCircle color="#fff" size={30} onClick={() => onEdit()} />
+        <PlusCircle color="#fff" className={styles.headerEdit} size={30} onClick={() => onEdit()} />
       </div>
       <div className={styles.profileCard}>
         {isLoading && (

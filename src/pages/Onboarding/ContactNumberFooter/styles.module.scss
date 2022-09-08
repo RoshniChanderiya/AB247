@@ -1,10 +1,20 @@
 @import "@/assets/scss/variables.scss";
+@import "@/assets/scss/mixins.scss";
 
 .contactFooter {
   margin-top: $margin-sm;
   font-size: $font-lg;
   font-weight: 500;
+  @include mq(xs) {
+    align-items: center;
+    padding: $padding-md;
+    margin-top: -15px;
+  }
   .footerText {
     color: $primary-color;
+    @include mq(xs) {
+      font-size: $font-lg * 1.2;
+      @include flexCenterContainer;
+    }
   }
 }

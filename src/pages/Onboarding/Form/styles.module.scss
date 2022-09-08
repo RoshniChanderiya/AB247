@@ -17,15 +17,19 @@
   background-color: $teal-50;
   border-radius: 20px;
   padding-bottom: $margin-md;
+  @include mq(xs) {
+    padding: 0;
+    margin: 0;
+  }
   .header {
     color: $primary-color;
   }
   @include mq(xs) {
-  background-color: $white;
-  border-radius: 0;
-  .header {
-    color: $black;
-  }   
+    background-color: $white;
+    border-radius: 0;
+    .header {
+      color: $black;
+    }
   }
 }
 .informationHeading {
@@ -91,22 +95,28 @@
   @include mq(xs) {
     padding-left: 0;
     margin-left: 0;
+    padding-top: 35px;
+    background: $teal-900;
+    align-items: center;
+    justify-content: center;
   }
 }
-.bankingResponsive{
-   @include mq(xs) {
-  background-color: $teal-50;
-  padding-top: $padding-md * 2;
-  .header{
-    color: $teal;
+.bankingResponsive {
+  @include mq(xs) {
+    background-color: $teal-50;
+    padding-top: $padding-md * 2;
+    .header {
+      color: $teal;
+    }
   }
 }
-}
-.footerBtn{
+
+.footerBtn {
   margin-top: $margin-sm;
   @include mq(xs) {
-   top: 1420px;
-   position: absolute;
+    top: 1420px;
+    position: absolute;
+    margin: -5px;
   }
 }
 // Representative
@@ -117,9 +127,9 @@
   @include mq(xs) {
     position: absolute;
     min-height: 100px;
-    bottom:150px;
+    bottom: 50px;
     // width: 50px;
-   }
+  }
 
   .plusCircleContent {
     text-align: center;
@@ -140,7 +150,7 @@
 .updatebtn {
   float: right;
   @include mq(xs) {
-   float: left;
+    float: left;
   }
 }
 
@@ -155,11 +165,9 @@
     width: 400px;
     min-width: 400px;
     @include mq(xs) {
-      column-gap: 2px;
-      .form {
-       min-height: 100px;
-      }
-     }
+      width: 370px;
+      min-width: 370px;
+    }
   }
 
   .label {
@@ -171,5 +179,14 @@
   .value {
     font-weight: 500;
     margin-bottom: $margin-lg * 1.25;
+  }
+}
+.addBtn {
+  @include mq(xs) {
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-bottom: 30px;
+    margin-top: 0;
   }
 }

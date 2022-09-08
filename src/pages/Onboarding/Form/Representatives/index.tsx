@@ -164,7 +164,7 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
                       .join(" ")}
                   />
                 </Col>
-                <Col sm={12} xs={12} >
+                <Col sm={12} xs={12}>
                   <LabelValue label="Business Title" value={payload.title} />
                 </Col>
                 <Col sm={12} xs={12}>
@@ -200,7 +200,8 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
                   <Button
                     outline
                     className={classNames("w-50", "mt-5")}
-                    onClick={() => onEdit(representative)}>
+                    onClick={() => onEdit(representative)}
+                  >
                     Edit
                   </Button>
                 </Col>
@@ -224,7 +225,8 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
             }}
             onSubmit={onSubmit}
             enableReinitialize
-            validationSchema={bidderValidation}>
+            validationSchema={bidderValidation}
+          >
             <div className={classNames("mt-4", styles.form)} id="add-rep-form">
               <Row>
                 <Col sm={6}>
@@ -284,7 +286,7 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
                       variant="teriary"
                       type="radio"
                       name="role"
-                      label="Bidder"
+                       label="Bidder"
                       value="bidder"
                       id="role-bidder"
                     />
@@ -335,12 +337,13 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
                   />
                 </Col>
 
-                <Col sm={12}>
+                <Col sm={12} xs={12}>
                   <Button
                     type="submit"
-                    className={classNames("w-50", "mt-5")}
+                    className={classNames(styles.addBtn, "w-50", "mt-5")}
                     isLoading={isCreating || isUpdating}
-                    loaderSize="sm">
+                    loaderSize="sm"
+                  >
                     {isEditMode ? "Update" : "Add"}
                   </Button>
                 </Col>
@@ -356,7 +359,8 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
             "px-5",
             "mt-4",
             styles.addRepresentative
-          )}>
+          )}
+        >
           <div onClick={onAdd}>
             <div
               className={classNames(
@@ -365,7 +369,8 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
                 "align-items-center",
                 "justify-content-center",
                 "mx-5"
-              )}>
+              )}
+            >
               <PlusCircle width="120px" height="120px" />
             </div>
             <div
@@ -374,7 +379,8 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
                 "d-flex",
                 "align-items-center",
                 "justify-content-center"
-              )}>
+              )}
+            >
               <p>
                 Click To Add New <br /> Dealer Representative
               </p>
@@ -390,7 +396,8 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
           <Button
             type="submit"
             className={classNames(styles.updatebtn, "w-25", "btn-save")}
-            onClick={() => onNext("DEALER_REPRESENTATIVES", {})}>
+            onClick={() => onNext("DEALER_REPRESENTATIVES", {})}
+          >
             UPDATE
           </Button>
         </Col>
