@@ -296,7 +296,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                   isLoading={isLoading}
                   loaderSize="sm"
                 >
-                  NEXT STEP
+               NEXT STEP
                 </Button>
               </Col>
             </Row>
