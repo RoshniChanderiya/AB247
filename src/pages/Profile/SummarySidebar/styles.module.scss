@@ -1,16 +1,34 @@
 @import "@/assets/scss/variables.scss";
+@import "@/assets/scss/mixins.scss";
+
 .summarySidebar {
   background-color: $teal-50;
   min-height: 89vh;
   height: 100%;
   overflow-y: auto;
+  @include mq(xs){
+    background-color: $white;
+  }
   .header {
     background: $teal-900;
     width: 100%;
+    color: $white;
+    @include mq(xs){
+      background-color: $white;
+      color:$black;
+    }
+    .headerEdit{
+      @include mq(xs) {
+        display: none;
+      }
+    }
   }
   .profileCard {
     margin-top: $margin-md;
     padding-left: $padding-lg;
+    @include mq(xs) {
+      background-color: $white;
+    }
     .bidderNumber {
       color: $primary-color;
       margin-top: $margin-sm;
@@ -20,7 +38,11 @@
       display: flex;
       padding-right: $padding-md;
 
-      .editUser,
+      .editUser {
+        @include mq(xs) {
+          display: none;
+        }
+      }
       .deleteIcon {
         color: $gray;
         cursor: pointer;

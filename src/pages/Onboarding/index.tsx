@@ -120,7 +120,7 @@ const Onboard: React.FC = () => {
           )}
         </Card>
       </Col>
-      <Col lg={3}>
+      <Col lg={3} className="d-none d-sm-block">
         <Sidebar
           title="Dealer Profile Registration"
           activeStep={activeStep}

@@ -24,6 +24,10 @@
   background-color: $teal-50;
   border-radius: 20px;
   padding-bottom: $margin-md;
+  @include mq(xs) {
+    padding: 0;
+    margin: 0;
+  }
   .header {
     color: $primary-color;
   }
@@ -98,6 +102,10 @@
   @include mq(xs) {
     padding-left: 0;
     margin-left: 0;
+    padding-top: 35px;
+    background: $teal-900;
+    align-items: center;
+    justify-content: center;
   }
 }
 .bankingResponsive {
@@ -109,11 +117,19 @@
     }
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 631eea195ec4d580f63d42c1dd8d044d36d8841f
 .footerBtn {
   margin-top: $margin-sm;
   @include mq(xs) {
     top: 1420px;
     position: absolute;
+<<<<<<< HEAD
+=======
+    margin: -5px;
+>>>>>>> 631eea195ec4d580f63d42c1dd8d044d36d8841f
   }
 }
 // Representative
@@ -124,7 +140,11 @@
   @include mq(xs) {
     position: absolute;
     min-height: 100px;
+<<<<<<< HEAD
     bottom: 150px;
+=======
+    bottom: 50px;
+>>>>>>> 631eea195ec4d580f63d42c1dd8d044d36d8841f
     // width: 50px;
   }
 
@@ -162,10 +182,15 @@
     width: 400px;
     min-width: 400px;
     @include mq(xs) {
+<<<<<<< HEAD
       column-gap: 2px;
       .form {
         min-height: 100px;
       }
+=======
+      width: 370px;
+      min-width: 370px;
+>>>>>>> 631eea195ec4d580f63d42c1dd8d044d36d8841f
     }
   }
 
@@ -178,5 +203,14 @@
   .value {
     font-weight: 500;
     margin-bottom: $margin-lg * 1.25;
+  }
+}
+.addBtn {
+  @include mq(xs) {
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-bottom: 30px;
+    margin-top: 0;
   }
 }

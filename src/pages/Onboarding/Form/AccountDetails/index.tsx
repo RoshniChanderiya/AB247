@@ -250,7 +250,7 @@ const AccountDetails: React.FC<AccountDetailsProps> = ({ onNext }) => {
               <Button
                 type="submit"
                 size="lg"
-                className="mx-4 btn-save h-100 d-none d-sm-block"
+                className="mx-4 btn-save h-100"
                 isLoading={isLoading}
                 loaderSize="sm"
               >
