@@ -8,13 +8,20 @@
   @include mq(xs) {
     align-items: center;
     padding: $padding-md;
-    margin-top: $margin-xl;
+    display: flex;
+    flex-direction: column;
+    // margin-top: $margin-xl;
   }
   .footerText {
     color: $primary-color;
     @include mq(xs) {
       font-size: $font-lg * 1.2;
       @include flexCenterContainer;
+    }
+  }
+  em {
+    @include mq(xs) {
+      font-size: $font-lg * 1.2;
     }
   }
 }

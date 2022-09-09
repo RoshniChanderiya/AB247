@@ -112,7 +112,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
         enableReinitialize
       >
         {width < 568 ? (
-          <Row>
+          <Row className="p-3">
             {isBussiness ? (
               <Col sm={12} md={6} lg={6} xs={12}>
                 <Col sm={12}>
@@ -296,8 +296,6 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                 </Row>
               </Col>
             )}
-
-            <Button onClick={() => setIsBussiness(false)}>NEXT</Button>
           </Row>
         ) : (
           <Row>
@@ -482,11 +480,19 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
               </Row>
             </Col>
 
-            <Button>NEXT</Button>
+            {/* <Button>NEXT</Button> */}
           </Row>
         )}
       </Form>
       <ContactNumberFooter />
+      <Col sm={12} className={styles.submitbtn}>
+        <Button
+          className="submitbtn mx-3"
+          onClick={() => setIsBussiness(false)}
+        >
+          NEXT
+        </Button>
+      </Col>
     </>
   );
 };
