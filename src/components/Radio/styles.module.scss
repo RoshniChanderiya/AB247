@@ -1,10 +1,10 @@
 @import "@/assets/scss/variables.scss";
 
-
 .readioInputContainer {
   cursor: pointer;
   label {
     cursor: pointer;
+    font-size: $font-xs + 4px;
   }
   .radioInput {
     -webkit-appearance: none;
@@ -14,7 +14,7 @@
     outline: none;
     border: 2px solid $white-100;
     cursor: pointer;
-  
+
     &:checked:before {
       content: "";
       display: block;

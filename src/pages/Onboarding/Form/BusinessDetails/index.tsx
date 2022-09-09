@@ -86,10 +86,10 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
   return (
     <>
       <Row>
-        <Col>
+        <Col xs={5}>
           <Radio name={""} label="Bussiness Details" />
         </Col>
-        <Col xs={6}>
+        <Col>
           <Radio name={""} label="Add Dealer Representatives" />
         </Col>
       </Row>
