@@ -17,8 +17,6 @@ import * as yup from "yup";
 import ContactNumberFooter from "../../ContactNumberFooter";
 import styles from "../styles.module.scss";
 
-
-
 const URL_REGEX =
   /^((ftp|http|https):\/\/)?(www.)?(?!.*(ftp|http|https|www.))[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+((\/)[\w#]+)*(\/\w+\?[a-zA-Z0-9_]+=\w+(&[a-zA-Z0-9_]+=\w+)*)?$/gm;
 
@@ -64,7 +62,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
     setIsOpen((prev) => !prev);
-  }
+  };
   const { isLoading, mutateAsync: saveBusinessDetailsMutation } =
     useSaveBusinessDetailsMutation();
 
@@ -84,14 +82,14 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
   const dealerPayload = get(dealer, "_source.payload", {});
   const adminPayload = get(admin, "_source.payload", {});
   console.log(adminPayload.title);
-  
+
   return (
     <>
       <Row>
-        <Col xs={2}>
+        <Col>
           <Radio name={""} label="Bussiness Details" />
         </Col>
-        <Col xs={2}>
+        <Col xs={6}>
           <Radio name={""} label="Add Dealer Representatives" />
         </Col>
       </Row>
@@ -221,7 +219,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
               </span>
             </Col>
             <Row className="mt-4">
-              <Col sm={6} >
+              <Col sm={6}>
                 <Input
                   variant="teriary"
                   name="admin.firstName"
@@ -259,44 +257,42 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                   placeholder="Enter Your Email Address"
                 />
               </Col>
-              <Row>
-                <Col sm={5}>
-                  <Input
-                    variant="teriary"
-                    name="admin.phone"
-                    showRequiredMark
-                    type="phone"
-                    label="Your Direct Phone"
-                    placeholder="Enter Your Mobile Phone Number"
-                  />
-                </Col>
-                <Col sm={2}>
-                  <Input
-                    variant="teriary"
-                    name="admin.extension"
-                    label="Ext."
-                    placeholder="Ext."
-                  />
-                </Col>
-                <Col sm={5}>
-                  <Input
-                    variant="teriary"
-                    name="admin.mobile"
-                    showRequiredMark
-                    type="phone"
-                    label="Your Mobile Number"
-                    placeholder="Enter Your Mobile Number"
-                  />
-                </Col>
-              </Row>
-              <Col sm={12} className="mx-3">
+              <Col sm={5}>
+                <Input
+                  variant="teriary"
+                  name="admin.phone"
+                  showRequiredMark
+                  type="phone"
+                  label="Your Direct Phone"
+                  placeholder="Enter Your Mobile Phone Number"
+                />
+              </Col>
+              <Col sm={2}>
+                <Input
+                  variant="teriary"
+                  name="admin.extension"
+                  label="Ext."
+                  placeholder="Ext."
+                />
+              </Col>
+              <Col sm={5}>
+                <Input
+                  variant="teriary"
+                  name="admin.mobile"
+                  showRequiredMark
+                  type="phone"
+                  label="Your Mobile Number"
+                  placeholder="Enter Your Mobile Number"
+                />
+              </Col>
+              <Col sm={12}>
                 <Button
                   type="submit"
-                  className={classNames(styles.nextbtn, "w-25", "btn-save")}
+                  className={classNames(styles.nextbtn, "btn-save")}
                   isLoading={isLoading}
                   loaderSize="sm"
                 >
-               NEXT STEP
+                  NEXT STEP
                 </Button>
               </Col>
             </Row>

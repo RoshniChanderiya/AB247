@@ -11,8 +11,6 @@
 
   &.btn {
     &-lg {
-      width: max-content;
-
       @include mq(sm) {
         min-width: auto;
       }
