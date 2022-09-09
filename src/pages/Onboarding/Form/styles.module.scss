@@ -27,7 +27,7 @@
   @include mq(xs) {
     background-color: $white;
     border-radius: 0;
-    margin-bottom: $margin-xl + 50px;
+    margin-bottom: $margin-xl * 2.5;
   }
   .header {
     color: $primary-color;
@@ -116,7 +116,7 @@
 .bankingResponsive {
   @include mq(xs) {
     background-color: $teal-50;
-    padding-top: $padding-md * 2;
+    padding: $padding-md * 2 0;
     .header {
       color: $teal;
     }

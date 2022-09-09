@@ -94,7 +94,7 @@ const AccountDetails: React.FC<AccountDetailsProps> = ({ onNext }) => {
                 Add Dealership Fees and Inventory
               </h5>
             </Col>
-            <Row>
+            <Row className="pb-4">
               <Col sm={12} xs={12} lg={6} className="mt-1">
                 <Input
                   variant="teriary"

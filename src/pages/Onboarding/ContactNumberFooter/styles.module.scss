@@ -8,7 +8,7 @@
   @include mq(xs) {
     align-items: center;
     padding: $padding-md;
-    margin-top: -15px;
+    margin-top: $margin-xl;
   }
   .footerText {
     color: $primary-color;
