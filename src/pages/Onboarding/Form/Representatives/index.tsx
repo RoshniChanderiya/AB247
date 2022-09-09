@@ -286,13 +286,13 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
                       variant="teriary"
                       type="radio"
                       name="role"
-                       label="Bidder"
+                      label="Bidder"
                       value="bidder"
                       id="role-bidder"
                     />
                   </Space>
                 </Col>
-                <Row>
+                <Row className="justify-content-center">
                   <Col lg={8} xs={6}>
                     <Input
                       variant="teriary"
@@ -306,6 +306,7 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
                   <Col lg={4} xs={6}>
                     <Input
                       variant="teriary"
+                      showRequiredMark
                       name="extension"
                       label="EXT"
                       placeholder="540"

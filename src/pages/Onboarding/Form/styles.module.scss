@@ -104,7 +104,7 @@
     align-items: center;
     justify-content: center;
     margin: 0;
-    padding: $padding-lg 0;
+    padding: $padding-lg;
   }
   button {
     @include mq(xs) {
@@ -116,7 +116,7 @@
 .bankingResponsive {
   @include mq(xs) {
     background-color: $teal-50;
-    padding: $padding-md * 2 0;
+    padding: $padding-md * 1.5;
     .header {
       color: $teal;
     }
@@ -138,8 +138,9 @@
   @include mq(xs) {
     position: absolute;
     min-height: 100px;
-    bottom: 50px;
-    // width: 50px;
+    padding: $padding-lg;
+    bottom: 180px;
+    width: 100%;
   }
 
   .plusCircleContent {
@@ -176,8 +177,15 @@
     width: 400px;
     min-width: 400px;
     @include mq(xs) {
-      width: 370px;
-      min-width: 370px;
+      width: 100%;
+      min-width: 100%;
+      padding: $padding-md;
+    }
+  }
+  button {
+    @include mq(xs) {
+      width: 100%;
+      min-width: 100%;
     }
   }
 
