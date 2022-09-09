@@ -117,19 +117,12 @@
     }
   }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 631eea195ec4d580f63d42c1dd8d044d36d8841f
 .footerBtn {
   margin-top: $margin-sm;
   @include mq(xs) {
     top: 1420px;
     position: absolute;
-<<<<<<< HEAD
-=======
     margin: -5px;
->>>>>>> 631eea195ec4d580f63d42c1dd8d044d36d8841f
   }
 }
 // Representative
@@ -140,11 +133,7 @@
   @include mq(xs) {
     position: absolute;
     min-height: 100px;
-<<<<<<< HEAD
-    bottom: 150px;
-=======
     bottom: 50px;
->>>>>>> 631eea195ec4d580f63d42c1dd8d044d36d8841f
     // width: 50px;
   }
 
@@ -182,15 +171,8 @@
     width: 400px;
     min-width: 400px;
     @include mq(xs) {
-<<<<<<< HEAD
-      column-gap: 2px;
-      .form {
-        min-height: 100px;
-      }
-=======
       width: 370px;
       min-width: 370px;
->>>>>>> 631eea195ec4d580f63d42c1dd8d044d36d8841f
     }
   }
 
