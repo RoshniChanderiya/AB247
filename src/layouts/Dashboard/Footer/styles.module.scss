@@ -68,6 +68,9 @@
   color: $white;
   display: flex;
   justify-content: space-between;
+  @include mq(xs) {
+    display: none;
+  }
 
   .socialIconImage {
     margin-right: $margin-xl;

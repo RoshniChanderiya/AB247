@@ -1,6 +1,7 @@
 @import "@/assets/scss/variables.scss";
 
 .main {
-    background-color: $white;
-    min-height: 80vh;
+  background-color: $white;
+  min-height: 80vh;
+  overflow: hidden;
 }

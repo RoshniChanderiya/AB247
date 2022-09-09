@@ -25,17 +25,16 @@
   border-radius: 20px;
   padding-bottom: $margin-md;
   @include mq(xs) {
-    padding: 0;
-    margin: 0;
+    background-color: $white;
+    border-radius: 0;
+    margin-bottom: $margin-xl + 50px;
   }
   .header {
     color: $primary-color;
-  }
-  @include mq(xs) {
-    background-color: $white;
-    border-radius: 0;
-    .header {
-      color: $black;
+    @include mq(xs) {
+      .header {
+        color: $black;
+      }
     }
   }
 }
@@ -100,12 +99,18 @@
   padding-left: $padding-xl * 2;
   font-weight: 500;
   @include mq(xs) {
-    padding-left: 0;
-    margin-left: 0;
-    padding-top: 35px;
     background: $teal-900;
+    display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
+    padding: $padding-lg 0;
+  }
+  button {
+    @include mq(xs) {
+      width: 100%;
+      border: none;
+    }
   }
 }
 .bankingResponsive {

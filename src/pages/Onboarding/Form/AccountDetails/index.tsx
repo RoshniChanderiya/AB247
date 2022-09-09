@@ -82,140 +82,136 @@ const AccountDetails: React.FC<AccountDetailsProps> = ({ onNext }) => {
         onSubmit={onSubmit}
         validationSchema={accountDetailsSchema}
       >
-        <Row className="px-3">
+        <Row className="px-0 px-sm-3">
           <Col sm={12}>
             <span className={styles.heading}>Account Details</span>
           </Col>
         </Row>
-        <Row className="mt-3 px-4">
+        <Row className="mt-3 px-0 px-sm-4">
           <Col lg={6} sm={12} xs={12} className={styles.dealershipForm}>
+            <Col className="mt-3">
+              <h5 className={styles.header}>
+                Add Dealership Fees and Inventory
+              </h5>
+            </Col>
             <Row>
-              <Col className="mt-3">
-                <h5 className={styles.header}>
-                  Add Dealership Fees and Inventory
-                </h5>
+              <Col sm={12} xs={12} lg={6} className="mt-1">
+                <Input
+                  variant="teriary"
+                  showRequiredMark
+                  name="dealerFees"
+                  label="Dealer Fee"
+                  placeholder="$599"
+                  type="currency"
+                />
               </Col>
-              <Row>
-                <Col sm={12} xs={12} lg={6} className="mt-1">
-                  <Input
-                    variant="teriary"
-                    showRequiredMark
-                    name="dealerFees"
-                    label="Dealer Fee"
-                    placeholder="$599"
-                    type="currency"
-                  />
-                </Col>
-                <Col xs={12} lg={6} className="mt-1">
-                  <Input
-                    variant="teriary"
-                    showRequiredMark
-                    name="processingFees"
-                    label="Total Processing Fee"
-                    placeholder="$299"
-                    type="currency"
-                  />
-                </Col>
-                <Col xs={12} lg={6} className="mt-3">
-                  <Input
-                    variant="teriary"
-                    showRequiredMark
-                    name="dmsAccountNumber"
-                    label="Add DMS Account Number"
-                    placeholder="DMS Account Number Here"
-                  />
-                </Col>
-                <Col sm={12} lg={6} className="mt-3">
-                  <Input
-                    variant="teriary"
-                    showRequiredMark
-                    name="dmsName"
-                    label="Add DMS Name"
-                    placeholder="Select DMS"
-                    type="select"
-                    options={["Option1", "Option2", "Option3"].map(
-                      (option) => ({
-                        label: option,
-                        value: option,
-                      })
-                    )}
-                  />
-                </Col>
-                <Col sm={12} lg={6} className="mt-3">
-                  <Input
-                    variant="teriary"
-                    showRequiredMark
-                    name="floorplanCompany"
-                    label="Add Floorplan Company"
-                    placeholder="Floorplan Company Here"
-                  />
-                </Col>
-                <Col sm={12} lg={6} className="mt-3">
-                  <Input
-                    variant="teriary"
-                    showRequiredMark
-                    name="floorplanCompanyEmail"
-                    label="Add Floorplan Contact Email"
-                    placeholder=" Select Floorplan Contact Email"
-                  />
-                </Col>
-              </Row>
-              <Row className={styles.bankingResponsive}>
-                <Col lg={12} className="mt-2">
-                  <h5 className={styles.header}>Banking Information</h5>
-                </Col>
-                <Col sm={12} lg={6} className="mt-1">
-                  <Input
-                    variant="teriary"
-                    name="bank.name"
-                    label="Bank Name"
-                    placeholder="Enter Bank Name Here"
-                  />
-                </Col>
-                <Col sm={12} lg={6} className="mt-1">
-                  <Input
-                    variant="teriary"
-                    name="bank.address"
-                    label="Bank Address"
-                    placeholder="Bank Address Here"
-                  />
-                </Col>
-                <Col sm={12} lg={6} className="mt-1">
-                  <Input
-                    variant="teriary"
-                    name="bank.accountNumber"
-                    label="Wire Account Number"
-                    placeholder="Wire Account Number"
-                  />
-                </Col>
-                <Col sm={12} lg={6} className="mt-1">
-                  <Input
-                    variant="teriary"
-                    name="bank.routingNumber"
-                    label="Wire Routing Number"
-                    placeholder="Wire Routing Number"
-                  />
-                </Col>
-                <Col sm={12} lg={6} className="mt-1">
-                  <Input
-                    variant="teriary"
-                    name="bank.businessName"
-                    label="Business Name"
-                    placeholder="Enter Business Name Here"
-                  />
-                </Col>
-                <Col sm={12} lg={6} className="mt-1">
-                  <Input
-                    variant="teriary"
-                    name="bank.businessAddress"
-                    label="Business Address"
-                    placeholder="Business Address Here"
-                  />
-                </Col>
-              </Row>
+              <Col xs={12} lg={6} className="mt-1">
+                <Input
+                  variant="teriary"
+                  showRequiredMark
+                  name="processingFees"
+                  label="Total Processing Fee"
+                  placeholder="$299"
+                  type="currency"
+                />
+              </Col>
+              <Col xs={12} lg={6} className="mt-3">
+                <Input
+                  variant="teriary"
+                  showRequiredMark
+                  name="dmsAccountNumber"
+                  label="Add DMS Account Number"
+                  placeholder="DMS Account Number Here"
+                />
+              </Col>
+              <Col sm={12} lg={6} className="mt-3">
+                <Input
+                  variant="teriary"
+                  showRequiredMark
+                  name="dmsName"
+                  label="Add DMS Name"
+                  placeholder="Select DMS"
+                  type="select"
+                  options={["Option1", "Option2", "Option3"].map((option) => ({
+                    label: option,
+                    value: option,
+                  }))}
+                />
+              </Col>
+              <Col sm={12} lg={6} className="mt-3">
+                <Input
+                  variant="teriary"
+                  showRequiredMark
+                  name="floorplanCompany"
+                  label="Add Floorplan Company"
+                  placeholder="Floorplan Company Here"
+                />
+              </Col>
+              <Col sm={12} lg={6} className="mt-3">
+                <Input
+                  variant="teriary"
+                  showRequiredMark
+                  name="floorplanCompanyEmail"
+                  label="Add Floorplan Contact Email"
+                  placeholder=" Select Floorplan Contact Email"
+                />
+              </Col>
+            </Row>
+            <Row className={styles.bankingResponsive}>
+              <Col lg={12} className="mt-2">
+                <h5 className={styles.header}>Banking Information</h5>
+              </Col>
+              <Col sm={12} lg={6} className="mt-1">
+                <Input
+                  variant="teriary"
+                  name="bank.name"
+                  label="Bank Name"
+                  placeholder="Enter Bank Name Here"
+                />
+              </Col>
+              <Col sm={12} lg={6} className="mt-1">
+                <Input
+                  variant="teriary"
+                  name="bank.address"
+                  label="Bank Address"
+                  placeholder="Bank Address Here"
+                />
+              </Col>
+              <Col sm={12} lg={6} className="mt-1">
+                <Input
+                  variant="teriary"
+                  name="bank.accountNumber"
+                  label="Wire Account Number"
+                  placeholder="Wire Account Number"
+                />
+              </Col>
+              <Col sm={12} lg={6} className="mt-1">
+                <Input
+                  variant="teriary"
+                  name="bank.routingNumber"
+                  label="Wire Routing Number"
+                  placeholder="Wire Routing Number"
+                />
+              </Col>
+              <Col sm={12} lg={6} className="mt-1">
+                <Input
+                  variant="teriary"
+                  name="bank.businessName"
+                  label="Business Name"
+                  placeholder="Enter Business Name Here"
+                />
+              </Col>
+              <Col sm={12} lg={6} className="mt-1">
+                <Input
+                  variant="teriary"
+                  name="bank.businessAddress"
+                  label="Business Address"
+                  placeholder="Business Address Here"
+                />
+              </Col>
             </Row>
           </Col>
-          <Col lg={6}>
+          <Col lg={6} className="p-0">
             <Col lg={12} className="d-none d-sm-block">
               <h1 className={styles.informationHeading}>
                 <i>Why do we need this information?</i>
