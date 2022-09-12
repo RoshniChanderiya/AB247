@@ -12,7 +12,7 @@
   &.btn {
     &-lg {
       @include mq(sm) {
-        min-width: auto;
+        min-width: 100%;
       }
 
       @include mq(xxs) {
