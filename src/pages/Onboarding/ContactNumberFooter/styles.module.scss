@@ -15,13 +15,13 @@
   .footerText {
     color: $primary-color;
     @include mq(xs) {
-      font-size: $font-lg * 1.2;
+      font-size: $font-lg * 1.1;
       @include flexCenterContainer;
     }
   }
   em {
     @include mq(xs) {
-      font-size: $font-lg * 1.2;
+      font-size: $font-lg * 1;
     }
   }
 }

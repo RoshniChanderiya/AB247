@@ -125,9 +125,11 @@
 .footerBtn {
   margin-top: $margin-sm;
   @include mq(xs) {
-    top: 1420px;
     position: absolute;
-    margin: -5px;
+    bottom: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 // Representative
