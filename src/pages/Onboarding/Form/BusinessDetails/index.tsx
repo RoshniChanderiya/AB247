@@ -479,20 +479,14 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                 </Col>
               </Row>
             </Col>
-
           </Row>
         )}
       </Form>
       <ContactNumberFooter />
       <Col sm={12} className={styles.submitbtn}>
-      <p className="text-white">Account Administrator Information</p>
+        <p className="text-white">Account Administrator Information</p>
 
-        <Button
-          className="submitbtn mx-3"
-          onClick={() => setIsBussiness(false)}
-        >
-          NEXT
-        </Button>
+        <Button onClick={() => setIsBussiness(false)}>NEXT</Button>
       </Col>
     </>
   );

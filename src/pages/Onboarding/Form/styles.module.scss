@@ -106,11 +106,16 @@
     justify-content: center;
     margin: 0;
     padding: $padding-lg;
-  }
-  button {
-    @include mq(xs) {
-      width: 100%;
-      border: none;
+    p {
+      margin: 0 $margin-lg 0 0;
+      white-space: nowrap;
+    }
+    button {
+      @include mq(xs) {
+        width: auto;
+        min-width: 100px !important;
+        border: none;
+      }
     }
   }
 }
