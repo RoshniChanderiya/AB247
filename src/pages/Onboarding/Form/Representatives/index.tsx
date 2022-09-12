@@ -383,6 +383,7 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
               )}
             >
               <p>
+                
                 Click To Add New <br /> Dealer Representative
               </p>
             </div>
@@ -399,6 +400,7 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
             className={classNames(styles.updatebtn, "w-25", "btn-save")}
             onClick={() => onNext("DEALER_REPRESENTATIVES", {})}
           >
+
             UPDATE
           </Button>
         </Col>
