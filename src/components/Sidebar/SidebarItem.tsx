@@ -35,7 +35,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       <div className="align-self-center">
         <img src={SidebarArrowIcon} alt="arrow" />
       </div>
-      <div className="flex-grow-1 px-3 d-flex car-avatar">
+      <div className="flex-grow-1 px-0 px-sm-3 d-flex car-avatar">
         <div
           className={classNames(
             "px-2",

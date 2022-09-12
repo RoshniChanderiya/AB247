@@ -43,6 +43,8 @@ const Sidebar: React.FC<SidebarProps> = ({ items, title, activeStep }) => {
           "px-2",
           "d-flex",
           "align-items-center",
+          "d-none",
+          "d-sm-block",
           "justify-content-between"
         )}
       >

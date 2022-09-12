@@ -12,6 +12,12 @@
     width: 100%;
     padding-left: 0px;
     border: none;
+    @include mq(xs) {
+      display: flex;
+      margin: 0;
+      position: absolute;
+      top: 110px;
+    }
 
     li.listGroupItem {
       background: $white;
@@ -21,12 +27,30 @@
       padding: $padding-xs * 2.5 0;
       border: none;
       display: flex;
-      margin-top:$margin-sm  ;
+      margin-top: $margin-sm;
+
+      @include mq(xs) {
+        flex-direction: row-reverse;
+        width: 100%;
+        min-height: 50px;
+        white-space: nowrap;
+        padding: 0 $padding-sm;
+        border-bottom: 3px solid $teal-50;
+      }
+      img {
+        @include mq(xs) {
+          display: none;
+        }
+      }
       p.text-sm {
         font-size: 0.85em;
       }
       &.activePage {
-        border: 2px solid $teal-900;
+        border: 2px solid $teal-500;
+        @include mq(xs) {
+          border: none;
+          border-bottom: 3px solid $teal;
+        }
       }
       &.bgProduct {
         background: $tertiary-color 0% 0% no-repeat padding-box;
@@ -36,6 +60,10 @@
       }
       &:hover {
         border: 2px solid $teal-900;
+        @include mq(xs) {
+          border: none;
+          border-bottom: 3px solid $teal;
+        }
       }
       .outerCircle {
         width: 21px;
@@ -43,11 +71,25 @@
         border-radius: 100%;
         border: 1px solid #3397fd;
       }
+      @include mq(xs) {
+        &:nth-child(2) {
+          display: none !important;
+        }
+      }
     }
     h6 {
       color: $black-700;
       font-weight: medium;
       font-size: $font-md;
+      @include mq(xs) {
+        font-size: $font-sm;
+        margin: 0;
+      }
+    }
+    p {
+      @include mq(xs) {
+        display: none;
+      }
     }
     .text-subtitle {
       color: $gray-100;
@@ -61,6 +103,11 @@
     border-radius: 50%;
     border: 2px solid $primary-color;
     margin-right: $margin-xl;
+    @include mq(xs) {
+      margin-right: 0;
+      width: 20px;
+      height: 20px;
+    }
   }
   .filledCircle {
     width: 25px;
@@ -80,6 +127,9 @@
     justify-content: space-around;
     border-radius: 10px;
     margin: $margin-sm $margin-md;
+    @include mq(xs) {
+      display: none;
+    }
     .video {
       display: block;
       margin-left: auto;

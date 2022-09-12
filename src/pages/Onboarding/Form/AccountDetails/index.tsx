@@ -87,7 +87,7 @@ const AccountDetails: React.FC<AccountDetailsProps> = ({ onNext }) => {
             <span className={styles.heading}>Account Details</span>
           </Col>
         </Row>
-        <Row className="mt-3 px-0 px-sm-4">
+        <Row className="mt-3 mt-sm-3 px-0 px-sm-4">
           <Col lg={6} sm={12} xs={12} className={styles.dealershipForm}>
             <Col className="mt-3">
               <h5 className={styles.header}>

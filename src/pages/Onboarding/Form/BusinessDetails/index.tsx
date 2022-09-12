@@ -118,7 +118,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                 <Col sm={12}>
                   <span className={styles.heading}>Business Details</span>
                 </Col>
-                <Col sm={12} className="mt-4">
+                <Col sm={12} className="mt-5 col-sm-mt-4">
                   <Input
                     variant="teriary"
                     name="dealerName"
