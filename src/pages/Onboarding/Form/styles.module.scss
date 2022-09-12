@@ -98,6 +98,7 @@
   margin: $margin-xl * 2 0 0 $margin-xl * 5;
   padding-left: $padding-xl * 2;
   font-weight: 500;
+  display: none;
   @include mq(xs) {
     background: $teal-900;
     display: flex;
