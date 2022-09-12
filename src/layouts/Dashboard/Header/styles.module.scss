@@ -15,7 +15,7 @@
   gap: 80px;
   color: $black-700;
   @include mq(md) {
-    gap: 5px;
+    gap: 15px;
   }
   .profileContainer {
     display: flex;

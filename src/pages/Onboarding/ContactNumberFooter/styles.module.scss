@@ -2,7 +2,7 @@
 @import "@/assets/scss/mixins.scss";
 
 .contactFooter {
-  margin-top: $margin-sm;
+  margin-top: $margin-xl * 5;
   font-size: $font-lg;
   font-weight: 500;
   @include mq(xs) {

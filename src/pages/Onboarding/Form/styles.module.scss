@@ -142,7 +142,7 @@
     position: absolute;
     min-height: 100px;
     padding: $padding-lg;
-    bottom: 180px;
+    bottom: 210px;
     width: 100%;
   }
 
@@ -164,9 +164,6 @@
 }
 .updatebtn {
   float: right;
-  @include mq(xs) {
-    float: left;
-  }
 }
 
 //
@@ -210,5 +207,19 @@
     height: 50px;
     margin-bottom: 30px;
     margin-top: 0;
+  }
+}
+.updatebtnSection {
+  @include mq(xs) {
+    background: $teal-900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 24px;
+    .updatebtn {
+      width: 100% !important;
+      border: none;
+    }
   }
 }

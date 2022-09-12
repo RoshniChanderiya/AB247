@@ -154,7 +154,15 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
             _source: { role, payload },
           } = representative;
           return (
-            <div key={_id} className={classNames("mt-4", styles.form)}>
+            <div
+              key={_id}
+              className={classNames(
+                "mt-4",
+                "d-none",
+                "d-sm-block",
+                styles.form
+              )}
+            >
               <Row>
                 <Col sm={12}>
                   <LabelValue
@@ -383,7 +391,6 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
               )}
             >
               <p>
-                
                 Click To Add New <br /> Dealer Representative
               </p>
             </div>
@@ -395,14 +402,15 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
           <ContactNumberFooter />
         </Col>
         <Col lg={6}>
-          <Button
-            type="submit"
-            className={classNames(styles.updatebtn, "w-25", "btn-save")}
-            onClick={() => onNext("DEALER_REPRESENTATIVES", {})}
-          >
-
-            UPDATE
-          </Button>
+          <div className={styles.updatebtnSection}>
+            <Button
+              type="submit"
+              className={classNames(styles.updatebtn, "w-25", "btn-save")}
+              onClick={() => onNext("DEALER_REPRESENTATIVES", {})}
+            >
+              UPDATE
+            </Button>
+          </div>
         </Col>
       </Row>
     </>
