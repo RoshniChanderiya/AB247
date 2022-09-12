@@ -1,24 +1,20 @@
 @import "@/assets/scss/variables.scss";
 @import "@/assets/scss/mixins.scss";
 
-
 .summaryContainer {
   padding-left: $padding-xl;
   @include mq(xs) {
     padding: 0;
-
-    
-   }
- .heading {
+  }
+  .heading {
     margin-top: $margin-sm;
     font-size: $font-lg;
-    
   }
- .editIcon {
+  .editIcon {
     height: 40px;
     width: 40px;
     cursor: pointer;
-   }
+  }
 
   .label {
     font-weight: 300;
@@ -148,12 +144,12 @@
   border-radius: 30px;
   @include mq(xs) {
     border-radius: 0;
-    padding: 0;
+    padding: $padding-md;
     margin: 0;
     width: 100%;
   }
 }
-.responsiveBtn{
+.responsiveBtn {
   display: none;
   @include mq(xs) {
     display: block;

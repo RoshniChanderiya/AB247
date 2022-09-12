@@ -134,29 +134,7 @@
   }
 }
 // Representative
-.addRepresentative {
-  border-radius: 4px;
-  background: $teal-50;
-  min-height: 650px;
-  @include mq(xs) {
-    position: absolute;
-    min-height: 100px;
-    padding: $padding-lg;
-    bottom: 210px;
-    width: 100%;
-  }
 
-  .plusCircleContent {
-    text-align: center;
-    font-size: $font-lg;
-    font-weight: 500;
-    color: $teal;
-  }
-  .plusCircle {
-    color: $teal;
-    opacity: 0.3;
-  }
-}
 .addRepresentative:hover {
   .plusCircle {
     opacity: 1;
@@ -173,6 +151,35 @@
   column-gap: 20px;
   overflow: auto;
   width: 100%;
+  @include mq(xs) {
+    padding-bottom: 220px;
+    .addBtn {
+      width: 100% !important;
+    }
+  }
+  .addRepresentative {
+    border-radius: 4px;
+    background: $teal-50;
+    min-height: 650px;
+    @include mq(xs) {
+      position: absolute;
+      min-height: 100px;
+      padding: $padding-lg;
+      bottom: 210px;
+      width: 100%;
+    }
+
+    .plusCircleContent {
+      text-align: center;
+      font-size: $font-lg;
+      font-weight: 500;
+      color: $teal;
+    }
+    .plusCircle {
+      color: $teal;
+      opacity: 0.3;
+    }
+  }
   .form {
     width: 400px;
     min-width: 400px;

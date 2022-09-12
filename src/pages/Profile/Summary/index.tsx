@@ -65,20 +65,20 @@ const LabelAndValue: React.FC<{
 const Summary: React.FC = () => {
   const navigate = useNavigate();
   const { dealer } = useContext(OnboardingContext);
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const dealerPayload: Dealer["_source"]["payload"] = get(
     dealer,
     "_source.payload",
     {}
   );
   const mobResponsiveToggle = () => {
-   setIsOpen((prev) => !prev)
-  }
+    setIsOpen((prev) => !prev);
+  };
   return (
     <>
       <Row className={styles.summaryContainer}>
         <Col lg={4}>
-          <Row>
+          <Row className="p-3">
             <Col lg={12} className="d-flex">
               <h2 className={styles.heading}>Dealership Account Profile</h2>
               <img
@@ -162,18 +162,18 @@ const Summary: React.FC = () => {
           </Row>
         </Col>
         <Col lg={4}>
-          <div className="d-flex">
-            <h2 className={styles.heading}>Fees and Account Access</h2>
-            <img
-              src={IconEdit}
-              alt="edit"
-              className={styles.editIcon}
-              onClick={() =>
-                navigate(`/onboarding/account?dealer=${dealer?._id}`)
-              }
-            />
-          </div>
           <div className={classNames(styles.accountContainer, "mt-4")}>
+            <div className="d-flex">
+              <h2 className={styles.heading}>Fees and Account Access</h2>
+              <img
+                src={IconEdit}
+                alt="edit"
+                className={styles.editIcon}
+                onClick={() =>
+                  navigate(`/onboarding/account?dealer=${dealer?._id}`)
+                }
+              />
+            </div>
             <Row className="mt-3">
               <Col lg={6}>
                 <LabelAndValue
