@@ -1,4 +1,5 @@
 import OnboardingLandingPage from "@/pages/Onboarding/Landing";
+import ResetPassword from "@/pages/Onboarding/ResetPassword";
 import AuthProvider from "@/providers/AuthProvider";
 import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
@@ -58,6 +59,7 @@ const AppRoute: React.FC = () => {
                 <Route path=":step" element={<Onboarding />} />
               </Route>
               <Route path="/profile" element={<Profile />} />
+              <Route path="/confirmpassword" element={<ResetPassword />} />
               <Route path="*" element={<>Page Not Found</>} />
             </Route>
 
