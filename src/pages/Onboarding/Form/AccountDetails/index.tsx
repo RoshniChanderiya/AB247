@@ -141,13 +141,13 @@ const AccountDetails: React.FC<AccountDetailsProps> = ({ onNext }) => {
               <div className="d-flex d-block d-sm-none mt-3 inputTerm">
                 <ThemeCheckBox
                   name="terms"
-                  label="I agree with the "
+                  label="I agree to allow BidWizer to add my inventory."
                   className="inputcheck"
                   color="red"
                 />
-                <Link to="/">
+                {/* <Link to="/">
                   <p>Terms and Conditions</p>
-                </Link>
+                </Link> */}
               </div>
               <Col sm={12} lg={6} className="mt-3">
                 <Input
@@ -220,6 +220,17 @@ const AccountDetails: React.FC<AccountDetailsProps> = ({ onNext }) => {
                   placeholder="Business Address Here"
                 />
               </Col>
+              <div className="d-flex d-block d-sm-none mt-3 inputTerm">
+                <ThemeCheckBox
+                  name="terms"
+                  label="I agree with the "
+                  className="inputcheck"
+                  color="red"
+                />
+                <Link to="/">
+                  <p>Terms and Conditions</p>
+                </Link>
+              </div>
             </Row>
           </Col>
           <Col lg={6} className="p-0">
