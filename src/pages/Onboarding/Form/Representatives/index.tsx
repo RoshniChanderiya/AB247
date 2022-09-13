@@ -300,7 +300,7 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
                     />
                   </Space>
                 </Col>
-                <Row className="justify-content-center">
+                <Row className="justify-content-center p-0 m-0">
                   <Col lg={8} xs={6}>
                     <Input
                       variant="teriary"
