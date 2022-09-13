@@ -3,6 +3,7 @@
 
 .navbar {
   background: $white 0% 0% no-repeat padding-box;
+  z-index: 1;
   .headerLogo {
     @include mq(xs) {
       width: 160px;

@@ -108,7 +108,7 @@ const Onboard: React.FC = () => {
   return (
     <Row>
       <Col lg={9}>
-        <Card className={classNames(styles.contactForm, "p-3")}>
+        <Card className={classNames(styles.contactForm, "p-0", "p-sm-3")}>
           {activeStep === "BUSINESS_DETAILS" && (
             <BusinessDetails onNext={onNext} />
           )}

@@ -18,7 +18,7 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ showMetaData }) => (
-  <footer className="mt-4">
+  <footer className="mt-0 mt-sm-4">
     <Container fluid>
       <Row>
         {showMetaData && (
@@ -39,7 +39,13 @@ const Footer: React.FC<FooterProps> = ({ showMetaData }) => (
                 )}
               >
                 <Logo variant="footer" className={styles.footerLogo} />
-                <p className={classNames("text-white", "my-3", styles.footerText)}>
+                <p
+                  className={classNames(
+                    "text-white",
+                    "my-3",
+                    styles.footerText
+                  )}
+                >
                   <CompanyName /> was founded in 2017 and has now moved into the
                   automotive market as a disruptive technology. This
                   revolutionary platform will change the way people buy and sell

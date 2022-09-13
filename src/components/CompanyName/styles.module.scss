@@ -1,6 +1,7 @@
 @import "@/assets/scss/variables.scss";
 
 .companyName {
+  padding-left: $padding-xs;
   &.bold {
     font-weight: bold;
   }
