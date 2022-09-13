@@ -138,6 +138,17 @@ const AccountDetails: React.FC<AccountDetailsProps> = ({ onNext }) => {
                   }))}
                 />
               </Col>
+              <div className="d-flex d-block d-sm-none mt-3">
+                <ThemeCheckBox
+                  name="terms"
+                  label="I agree with the "
+                  className="mx-1"
+                  color="red"
+                />
+                <Link to="/">
+                  <p>Terms and Conditions</p>
+                </Link>
+              </div>
               <Col sm={12} lg={6} className="mt-3">
                 <Input
                   variant="teriary"

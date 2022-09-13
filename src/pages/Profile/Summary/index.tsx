@@ -76,7 +76,10 @@ const Summary: React.FC = () => {
       <Row className={styles.summaryContainer}>
         <Col lg={4}>
           <Row className="p-3">
-            <Col lg={12} className="d-flex">
+            <Col
+              lg={12}
+              className="d-flex justify-content-between align-items-center"
+            >
               <h2 className={styles.heading}>Dealership Account Profile</h2>
               <img
                 src={IconEdit}
@@ -160,7 +163,7 @@ const Summary: React.FC = () => {
         </Col>
         <Col lg={4}>
           <div className={classNames(styles.accountContainer, "mt-4")}>
-            <div className="d-flex">
+            <div className="d-flex justify-content-between">
               <h2 className={styles.heading}>Fees and Account Access</h2>
               <img
                 src={IconEdit}
