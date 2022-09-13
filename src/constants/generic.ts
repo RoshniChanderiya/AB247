@@ -12,6 +12,7 @@ export const COMPANY_NAME_ID = "BWZR001-01";
 export const COMPANY_EMAIL = "contact@BidWizer.com";
 export const COMPANY_CONTACT_NUMBER = "1+(800) 920-6912";
 
+export const TRADE_IN_NOT_AVAILABLE_TEXT = 'not-available'
 export const DEFAULT_DATE_FORMAT = "MM/DD/YYYY";
 export const DEFAULT_DATE_TIME_FORMAT = "MM/DD/YYYY • hh:mm A";
 export const DEFAULT_TIME_FORMAT = "hh:mm:ss";
