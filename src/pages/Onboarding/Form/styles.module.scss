@@ -103,6 +103,7 @@
   font-weight: 500;
   // display: none;
   @include mq(xs) {
+    display: flex !important;
     background: $teal-900;
     @include flexCenterContainer;
     margin: 0;

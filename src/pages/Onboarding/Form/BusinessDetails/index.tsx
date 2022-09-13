@@ -479,7 +479,10 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
         )}
       </Form>
       <ContactNumberFooter />
-      <Col sm={12} className={styles.submitButton}>
+      <Col
+        sm={12}
+        className={classNames(styles.submitButton, "d-block", "d-sm-none")}
+      >
         <p className={styles.buttonText}>Account Administrator Information</p>
 
         <Button
