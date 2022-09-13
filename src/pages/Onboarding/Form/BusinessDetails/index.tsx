@@ -111,9 +111,9 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
           <Row className="p-3">
             {showBusiness ? (
               <Col sm={12} md={6} lg={6} xs={12}>
-                  <Col sm={12}>
-                    <span className={styles.heading}>Business Details</span>
-                  </Col>
+                <Col sm={12}>
+                  <span className={styles.heading}>Business Details</span>
+                </Col>
                 <Col sm={12} className="mt-5 col-sm-mt-2">
                   <Input
                     variant="teriary"
@@ -210,7 +210,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                     Account Administrator Information
                   </span>
                 </Col>
-                <Row className="mt-4">
+                <Row className="mt-5">
                   <Col sm={6}>
                     <Input
                       variant="teriary"
@@ -249,7 +249,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                       placeholder="Enter Your Email Address"
                     />
                   </Col>
-                  <Row>
+                  <Row className="p-0 m-0">
                     <Col sm={5}>
                       <Input
                         variant="teriary"

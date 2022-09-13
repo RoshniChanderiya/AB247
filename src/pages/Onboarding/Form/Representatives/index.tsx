@@ -235,7 +235,7 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
             enableReinitialize
             validationSchema={bidderValidation}
           >
-            <div className={classNames("mt-4", styles.form)} id="add-rep-form">
+            <div className={classNames("mt-5", styles.form)} id="add-rep-form">
               <Row>
                 <Col sm={6}>
                   <Input

@@ -27,7 +27,7 @@
   @include mq(xs) {
     background-color: $white;
     border-radius: 0;
-    margin-bottom: $margin-xl * 2.5;
+    margin-bottom: $margin-xl * 3;
   }
   .header {
     color: $primary-color;
@@ -94,7 +94,8 @@
     border-right-color: $primary-color;
   }
 }
-.submitButton {
+.submitButton,
+.submitbtn {
   margin: $margin-xl * 2 0 0 $margin-xl * 5;
   padding-left: $padding-xl * 2;
   font-weight: 500;
