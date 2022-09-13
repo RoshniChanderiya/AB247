@@ -31,5 +31,19 @@ export const getYears = () => RestClient("/vehicles/years");
 export const getYearData = (year: number) =>
   RestClient(`/vehicles/years/${year}`);
 
+export const createDeliveryVehicle = ({
+  payload,
+  id,
+}: {
+  payload: any;
+  id: string;
+}) => RestClient(`/deals/${id}/delivery`, "POST", payload);
+
+export const getVehicleDeliveryStatus = (id: string) =>
+  RestClient(`deals/${id}/delivery/status`, "GET");
+
+export const declineDeliveryVehicle = ({ id }: { id: string }) =>
+  RestClient(`/deals/${id}/delivery/decline`, "PUT");
+
 export const updateInventory = (uvc: string) =>
   RestClient(`vehicles/inventory`, "PUT", { uvc });

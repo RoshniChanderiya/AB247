@@ -1,3 +1,4 @@
+import { TRADE_IN_NOT_AVAILABLE_TEXT } from "@/constants";
 import snakeCase from "lodash/snakeCase";
 
 export const isUUID = (uuid: string): boolean => {
@@ -37,3 +38,6 @@ export const getSnakeCaseVersion = (
 
   return reqObject;
 };
+
+export const isTrade = (tradeInId: string): boolean =>
+  tradeInId !== TRADE_IN_NOT_AVAILABLE_TEXT;

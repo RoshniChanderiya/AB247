@@ -118,4 +118,5 @@ export const useVehicleDeliveryStatus = () => {
 
 export const useDeclineVehicleDeliveryMutation = () => {
   return useMutation(declineDeliveryVehicle);
+  
 };
