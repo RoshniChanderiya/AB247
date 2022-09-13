@@ -7,7 +7,7 @@ import { Dealer } from "@/types/dealer";
 import { formatNumber } from "@/utils/NumberFomatter";
 import classNames from "classnames";
 import get from "lodash/get";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider, { Settings as SliderSettings } from "react-slick";
 import { Col, Row } from "reactstrap";
@@ -65,15 +65,12 @@ const LabelAndValue: React.FC<{
 const Summary: React.FC = () => {
   const navigate = useNavigate();
   const { dealer } = useContext(OnboardingContext);
-  const [isOpen, setIsOpen] = useState(false);
   const dealerPayload: Dealer["_source"]["payload"] = get(
     dealer,
     "_source.payload",
     {}
   );
-  const mobResponsiveToggle = () => {
-    setIsOpen((prev) => !prev);
-  };
+
   return (
     <>
       <Row className={styles.summaryContainer}>
@@ -274,11 +271,7 @@ const Summary: React.FC = () => {
       <Row className="mt-5">
         <ContactNumberFooter />
       </Row>
-      <Row className={styles.responsiveBtn}>
-        {/* <Button>
-          VIEW DEARLERSHIP
-        </Button> */}
-      </Row>
+      <Row className={styles.responsiveBtn}></Row>
     </>
   );
 };

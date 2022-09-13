@@ -3,11 +3,12 @@ import { useState, useEffect } from "react";
 interface Dimension {
   width: number;
   height: number;
+  isMobile: boolean;
 }
 
 const getDimentions = (): Dimension => {
   const { innerWidth: width, innerHeight: height } = window;
-  return { width, height };
+  return { width, height, isMobile: width < 568 };
 };
 
 const useWindowDimentions = (): Dimension => {

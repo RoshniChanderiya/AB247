@@ -14,7 +14,12 @@
 
 .textChange {
   font-size: $font-sm;
+  .detail {
+    color: $black;
+    font-weight: 600;
+  }
 }
+
 .nav {
   background-color: $teal;
   color: $white;
@@ -24,9 +29,4 @@
   border: none;
   font-size: $font-xl;
   font-weight: medium;
-}
-.Nav-tabs > li.active > a,
-.Nav-tabs > li.active > a:focus,
-.Nav-tabs > li.active > a:hover {
-  border: 0;
 }

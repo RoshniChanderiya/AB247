@@ -47,7 +47,7 @@
   width: 100%;
   height: 100px;
 
-  border: 1px solid #cecece;
+  border: 1px solid $gray-30;
   border-radius: 20px;
   padding: $padding-md;
   text-align: center;
@@ -73,7 +73,7 @@
     border: 0 solid transparent;
     border-top-width: 8px;
     border-bottom-width: 7px;
-    border-right: 19px solid #cecece;
+    border-right: 19px solid $gray-30;
     left: -20px;
     top: 22px;
   }
@@ -85,7 +85,7 @@
     border: 0px solid transparent;
     border-top-width: 7px;
     border-bottom-width: 6px;
-    border-right: 18px solid white;
+    border-right: 18px solid $white;
     top: 23px;
     left: -18px;
   }
@@ -94,23 +94,22 @@
     border-right-color: $primary-color;
   }
 }
-.submitbtn {
+.submitButton {
   margin: $margin-xl * 2 0 0 $margin-xl * 5;
   padding-left: $padding-xl * 2;
   font-weight: 500;
   display: none;
   @include mq(xs) {
     background: $teal-900;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCenterContainer;
     margin: 0;
     padding: $padding-lg;
-    p {
+    .buttonText {
       margin: 0 $margin-lg 0 0;
       white-space: nowrap;
+      color: $white;
     }
-    button {
+    .nextSubmitButton {
       @include mq(xs) {
         width: auto;
         min-width: 100px !important;
@@ -133,13 +132,32 @@
   @include mq(xs) {
     position: absolute;
     bottom: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCenterContainer;
   }
 }
 // Representative
+.addRepresentative {
+  border-radius: 4px;
+  background: $teal-50;
+  min-height: 650px;
+  @include mq(xs) {
+    position: absolute;
+    min-height: 100px;
+    padding: $padding-lg;
+    width: 100%;
+  }
 
+  .plusCircleContent {
+    text-align: center;
+    font-size: $font-lg;
+    font-weight: 500;
+    color: $teal;
+  }
+  .plusCircle {
+    color: $teal;
+    opacity: 0.3;
+  }
+}
 .addRepresentative:hover {
   .plusCircle {
     opacity: 1;
@@ -194,7 +212,7 @@
       padding: $padding-md;
     }
   }
-  button {
+  .editButton {
     @include mq(xs) {
       width: 100%;
       min-width: 100%;
@@ -214,22 +232,19 @@
 }
 .addBtn {
   @include mq(xs) {
-    align-items: center;
-    justify-content: center;
+    @include flexCenterContainer;
     height: 50px;
-    margin-bottom: 30px;
+    margin-bottom: $margin-md * 1.9;
     margin-top: 0;
   }
 }
-.updatebtnSection {
+.updatebuttonSection {
   @include mq(xs) {
     background: $teal-900;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCenterContainer;
     margin: 0;
-    padding: 24px;
-    .updatebtn {
+    padding: $padding-lg;
+    .updateButton {
       width: 100% !important;
       border: none;
     }

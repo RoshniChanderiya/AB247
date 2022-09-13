@@ -402,10 +402,10 @@ const Representatives: React.FC<RepresentativesProps> = ({ onNext }) => {
           <ContactNumberFooter />
         </Col>
         <Col lg={6}>
-          <div className={styles.updatebtnSection}>
+          <div className={styles.updatebuttonSection}>
             <Button
               type="submit"
-              className={classNames(styles.updatebtn, "w-25", "btn-save")}
+              className={classNames(styles.updateButton, "w-25", "btn-save")}
               onClick={() => onNext("DEALER_REPRESENTATIVES", {})}
             >
               UPDATE

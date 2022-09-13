@@ -1,0 +1,15 @@
+@import "@/assets/scss/variables.scss";
+
+.bordertitle {
+  border: none;
+  font-size: $font-xl;
+  font-weight: medium;
+}
+.subDetail {
+  font-weight: 400;
+}
+.Nav-tabs > li.active > a,
+.Nav-tabs > li.active > a:focus,
+.Nav-tabs > li.active > a:hover {
+  border: 0;
+}

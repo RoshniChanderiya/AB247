@@ -5,7 +5,7 @@ import { AppRoutes } from "@/constants";
 import useAuth from "@/hooks/useAuth";
 import classNames from "classnames";
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { Col, Row } from "reactstrap";
 import * as yup from "yup";
 import styles from "./styles.module.scss";
@@ -21,10 +21,15 @@ const loginValidation = yup.object({
 const Login: React.FC = () => {
   const { login, isLoggingIn } = useAuth();
   const navigate = useNavigate();
+  const [params] = useSearchParams();
 
+  const reuturnURL = decodeURIComponent(
+    params.get("returnUrl") || AppRoutes.DASHBOARD
+  );
+  
   const onLogin = (values: { email: string; password: string }) => {
     login(values, () => {
-      navigate(AppRoutes.DASHBOARD);
+      navigate(reuturnURL);
     });
   };
 
@@ -46,8 +51,7 @@ const Login: React.FC = () => {
         xs={{
           offset: 1,
           size: 10,
-        }}
-      >
+        }}>
         <div className="text-center">
           <h2>Dealer Account Login</h2>
           <p className={classNames(styles.text, "font-weight-normal")}>
@@ -57,8 +61,7 @@ const Login: React.FC = () => {
         <Form
           initialValues={{}}
           onSubmit={onLogin}
-          validationSchema={loginValidation}
-        >
+          validationSchema={loginValidation}>
           <Input name="email" label="Email" placeholder="Enter email" />
           <Input
             name="password"

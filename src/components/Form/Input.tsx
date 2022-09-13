@@ -6,7 +6,7 @@ import Radio from "../Radio";
 import ThemeInput from "../ThemeInput";
 import styles from "./styles.module.scss";
 
-interface InputProps extends FieldAttributes<any> {
+export interface InputProps extends FieldAttributes<any> {
   label: string;
   name: string;
   placeholder?: string;

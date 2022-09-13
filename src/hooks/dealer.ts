@@ -5,16 +5,16 @@ import {
   removeRepresentative,
   saveAccountDetails,
   saveBusinessDetails,
-  updateRepresentative,
+  updateRepresentative
 } from "@/services/dealer";
+import { Dealer } from "@/types/dealer";
 import { User } from "@/types/user";
 import { isUUID } from "@/utils/generic";
 import {
-  QueryOptions,
   useMutation,
   useQuery,
   useQueryClient,
-  UseQueryOptions,
+  UseQueryOptions
 } from "react-query";
 
 const QUERY_KEYS = {
@@ -22,7 +22,7 @@ const QUERY_KEYS = {
   DEALER_REPRESENTATIVES: "dealer-representative",
 };
 
-export const useDealer = (id: string, options?: QueryOptions) =>
+export const useDealer = (id: string, options?: UseQueryOptions<unknown, unknown, Dealer, string[]>) =>
   useQuery([QUERY_KEYS.DEALER_DETAILS, id], () => getDealer(id), {
     enabled: Boolean(id && isUUID(id)),
     ...options,

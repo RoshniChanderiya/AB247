@@ -1,10 +1,10 @@
 import Button from "@/components/Button";
 import Form from "@/components/Form";
 import Input from "@/components/Form/Input";
-import Radio from "@/components/Radio";
 import { ItemProperties } from "@/components/Sidebar";
 import { AVAIALABLE_ROLES, States } from "@/constants";
 import { useSaveBusinessDetailsMutation } from "@/hooks/dealer";
+import useWindowDimentions from "@/hooks/useWindowDimensions";
 import { OnboardingContext } from "@/providers/OnboardingProvider";
 import { getSnakeCaseVersion } from "@/utils/generic";
 import { retrieveErrorMessage } from "@/utils/RestClient";
@@ -15,8 +15,6 @@ import React, { useContext, useState } from "react";
 import { Col, Row } from "reactstrap";
 import * as yup from "yup";
 import ContactNumberFooter from "../../ContactNumberFooter";
-import useWindowDimentions from "@/hooks/useWindowDimensions";
-
 import styles from "../styles.module.scss";
 
 const URL_REGEX =
@@ -60,9 +58,8 @@ interface BusinessDetailsProps {
   onNext: (key: ItemProperties, data: Record<string, any>) => void;
 }
 const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
-  const [isBussiness, setIsBussiness] = useState(true);
-  const { width } = useWindowDimentions();
-
+  const [showBusiness, setShowBusiness] = useState(true);
+  const { isMobile } = useWindowDimentions();
   const { dealer, admin } = useContext(OnboardingContext);
   const { isLoading, mutateAsync: saveBusinessDetailsMutation } =
     useSaveBusinessDetailsMutation();
@@ -82,7 +79,6 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
   };
   const dealerPayload = get(dealer, "_source.payload", {});
   const adminPayload = get(admin, "_source.payload", {});
-  console.log(adminPayload.title);
 
   return (
     <>
@@ -111,14 +107,14 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
         validationSchema={validationSchema}
         enableReinitialize
       >
-        {width < 568 ? (
+        {isMobile ? (
           <Row className="p-3">
-            {isBussiness ? (
+            {showBusiness ? (
               <Col sm={12} md={6} lg={6} xs={12}>
-                <Col sm={12}>
-                  <span className={styles.heading}>Business Details</span>
-                </Col>
-                <Col sm={12} className="mt-5 col-sm-mt-4">
+                  <Col sm={12}>
+                    <span className={styles.heading}>Business Details</span>
+                  </Col>
+                <Col sm={12} className="mt-5 col-sm-mt-2">
                   <Input
                     variant="teriary"
                     name="dealerName"
@@ -483,10 +479,15 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
         )}
       </Form>
       <ContactNumberFooter />
-      <Col sm={12} className={styles.submitbtn}>
-        <p className="text-white">Account Administrator Information</p>
+      <Col sm={12} className={styles.submitButton}>
+        <p className={styles.buttonText}>Account Administrator Information</p>
 
-        <Button onClick={() => setIsBussiness(false)}>NEXT</Button>
+        <Button
+          className={styles.nextSubmitButton}
+          onClick={() => setShowBusiness(false)}
+        >
+          NEXT
+        </Button>
       </Col>
     </>
   );

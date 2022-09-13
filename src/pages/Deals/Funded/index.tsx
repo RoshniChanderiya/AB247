@@ -5,10 +5,11 @@ import { useDeals } from "@/hooks/deals";
 import { Deals } from "@/types/deals";
 import { formatNumber } from "@/utils/NumberFomatter";
 import dayjs from "dayjs";
+import startCase from "lodash/startCase";
 import get from "lodash/get";
 import upperFirst from "lodash/upperFirst";
 import React from "react";
-import ShipVehicleModal from "./ShipVehicleModal";
+import ShipVehicle from "./ShipVehicle";
 
 const FundedDeals: React.FC = () => {
   const { data, isLoading } = useDeals({
@@ -97,14 +98,14 @@ const FundedDeals: React.FC = () => {
     },
     {
       name: "STATUS",
-      dataKey: "_source.status",
-      render: () => "Ready",
+      dataKey: "_source.payload.acertus.purchase.status",
+      render: (status: string = "ready") => startCase(status || "ready"),
     },
     {
       name: "ACTION",
       dataKey: "_id",
       render: (id: string, deal: Deals) => {
-        return <ShipVehicleModal deal={deal} />;
+        return <ShipVehicle deal={deal} />;
       },
     },
   ];

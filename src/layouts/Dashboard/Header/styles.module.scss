@@ -3,7 +3,7 @@
 
 .navbar {
   background: $white 0% 0% no-repeat padding-box;
-  img {
+  .headerLogo {
     @include mq(xs) {
       width: 160px;
     }
@@ -15,14 +15,14 @@
   gap: 80px;
   color: $black-700;
   @include mq(md) {
-    gap: 15px;
+    gap: 5px;
   }
   .profileContainer {
     display: flex;
     gap: 30px;
 
-    @include mq(md) {
-      display: none !important;
+    @include mq(md-min) {
+      display: none;
     }
   }
 }

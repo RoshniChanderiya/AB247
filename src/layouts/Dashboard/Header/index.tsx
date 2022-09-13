@@ -29,7 +29,7 @@ const Header: React.FC = () => {
   return (
     <Navbar className={styles.navbar} light expand="lg">
       <NavLink to={AppRoutes.HOME}>
-        <Logo alt="Header Logo" variant="header" />
+        <Logo className={styles.headerLogo} alt="Header Logo" variant="header" />
       </NavLink>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>

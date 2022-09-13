@@ -16,10 +16,12 @@ const ProfileOptions: React.FC = () => {
   return (
     <PopoverBody className="p-0">
       <ul className={styles.dropdownItems}>
-        <li>
+        <li className="mb-2">
           <Link to="/profile">Manage Account</Link>
         </li>
-        <li onClick={onLogOut}>Sign out</li>
+        <li>
+          <Link to="/" onClick={onLogOut}>Sign out</Link>
+        </li>
       </ul>
     </PopoverBody>
   );

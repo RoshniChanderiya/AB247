@@ -12,13 +12,10 @@ import SubHeader, { NavItemProps } from "./SubHeader";
 
 const DashboardLayout: React.FC = () => {
   const { isLoggedIn } = useAuth();
-  
   const { data: analytics } = useHeaderCount({
-    enabled: isLoggedIn
+    enabled: isLoggedIn,
   });
   const location = useLocation();
-  console.log(location,"location")
-  
   const navigate = useNavigate();
   const isOnboarding = trim(location.pathname, "/") === "onboarding";
 
@@ -27,9 +24,11 @@ const DashboardLayout: React.FC = () => {
       return;
     }
     if (!isLoggedIn) {
-      navigate(AppRoutes.LOGIN);
+      navigate(
+        `${AppRoutes.LOGIN}?returnUrl=${encodeURIComponent(location.pathname)}`
+      );
     }
-  }, [isOnboarding, isLoggedIn, navigate]);
+  }, [isOnboarding, isLoggedIn, navigate, location]);
 
   const navLinks: NavItemProps[] = useMemo(() => {
     return [
@@ -64,12 +63,10 @@ const DashboardLayout: React.FC = () => {
     ];
   }, [analytics]);
 
-
-
   return (
     <>
       <Header />
-      {!isOnboarding &&  (
+      {!isOnboarding && (
         <SubHeader navLinks={navLinks} title="Dealers Dashboard" />
       )}
       <div className={styles.main}>

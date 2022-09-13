@@ -5,7 +5,7 @@ const ContactNumberFooter = () => {
       <span className={styles.footerText}>
         <i>Have Additional Questions? </i>
       </span>
-      <em>- Give us a call (800) 920-6912</em>
+      <em className={styles.footerSubtext}>- Give us a call (800) 920-6912</em>
     </p>
   );
 };

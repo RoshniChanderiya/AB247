@@ -19,18 +19,20 @@ import styles from "./styles.module.scss";
 const SummarySidebar: React.FC = () => {
   const navigate = useNavigate();
   const { dealer } = useContext(OnboardingContext);
+
   const { isLoading, data: representatives } = useDealerRePresentatives({
     id: dealer?._id as string,
     limit: 10000,
   });
+
   const { isLoading: isDeleting, mutateAsync: removeRepresentativeMutation } =
     useRemoveRepresentativeMutation();
   const [selectedId, setSelectedId] = useState<string>();
 
   const onEdit = (id?: string) => {
-    let url = `/onboarding/representative?dealer=${dealer?._id}`;
+    let url = `/onboarding/representative`;
     if (id) {
-      url = `${url}&user=${id}`;
+      url = `${url}?user=${id}`;
     }
     navigate(url);
   };
@@ -60,10 +62,8 @@ const SummarySidebar: React.FC = () => {
           "justify-content-between"
         )}
       >
-        <h4 className="ms-4 ms-md-5 ms-lg-0 my-3 ps-3">
-          Dealer Rep's
-        </h4>
-        <PlusCircle color="#fff" className={styles.headerEdit} size={30} onClick={() => onEdit()} />
+        <h4 className="ms-4 ms-md-5 ms-lg-0 my-3 ps-3">Dealer Rep's</h4>
+        <PlusCircle color="#fff" size={30} onClick={() => onEdit()} />
       </div>
       <div className={styles.profileCard}>
         {isLoading && (
@@ -93,7 +93,6 @@ const SummarySidebar: React.FC = () => {
                 </h3>
                 <div className={styles.action}>
                   <Edit
-                    className={styles.editUser}
                     onClick={() => onEdit(user._id)}
                   />
                   <Trash

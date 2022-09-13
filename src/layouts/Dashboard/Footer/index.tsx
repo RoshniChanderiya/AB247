@@ -39,13 +39,13 @@ const Footer: React.FC<FooterProps> = ({ showMetaData }) => (
                 )}
               >
                 <Logo variant="footer" className={styles.footerLogo} />
-                <p className="text-white my-3">
+                <p className={classNames("text-white", "my-3", styles.footerText)}>
                   <CompanyName /> was founded in 2017 and has now moved into the
                   automotive market as a disruptive technology. This
                   revolutionary platform will change the way people buy and sell
                   cars forever.
                 </p>
-                <p>Learn more</p>
+                <p className={styles.footerText}>Learn more</p>
               </div>
               <div className="text-center text-lg-start">
                 <h5 className={styles.footerSubHeading}>
@@ -63,7 +63,7 @@ const Footer: React.FC<FooterProps> = ({ showMetaData }) => (
                 <h5 className={classNames(styles.footerSubHeading, "mb-2")}>
                   Contact Info
                 </h5>
-                <p>
+                <p className={styles.footerText}>
                   <CompanyName showInc />
                 </p>
                 <p>417 5th Avenue</p>

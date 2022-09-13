@@ -10,7 +10,7 @@
     width: 100%;
     @include mq(xs) {
       height: 300px;
-      margin-top: $margin-xl + 60px;
+      margin-top: $margin-xl * 2.25;
     }
   }
 }

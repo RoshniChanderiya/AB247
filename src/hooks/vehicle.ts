@@ -1,6 +1,9 @@
 import {
+  createDeliveryVehicle,
+  declineDeliveryVehicle,
   getInventory,
   getVehicle,
+  getVehicleDeliveryStatus,
   getYearData,
   getYears,
   removeInventoryVehicle,
@@ -20,8 +23,10 @@ import {
 
 const QUERY_KEYS = {
   VEHICLE: "vehicle",
+  DEAL_LIST: "deal-list",
   VEHICLE_INVENTORY: "vehicle-inventory",
   VEHICLE_YEARS: "vehicle-years",
+  VEHICLE_DELIVERY_STATUS: "vehicle-delivery-status",
 };
 
 export const useVehicle = (
@@ -90,4 +95,27 @@ export const useUpdateInventoryMutation = () => {
       queryClient.invalidateQueries([QUERY_KEYS.VEHICLE]);
     },
   });
+};
+
+export const useCreateVehicleDeliveryMutation = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation(createDeliveryVehicle, {
+    onSuccess: () => {
+      queryClient.invalidateQueries([QUERY_KEYS.DEAL_LIST]);
+    },
+  });
+};
+
+export const useVehicleDeliveryStatus = () => {
+  const queryClient = useQueryClient();
+  return useMutation(getVehicleDeliveryStatus, {
+    onSuccess: () => {
+      queryClient.invalidateQueries([QUERY_KEYS.DEAL_LIST]);
+    },
+  });
+};
+
+export const useDeclineVehicleDeliveryMutation = () => {
+  return useMutation(declineDeliveryVehicle);
 };

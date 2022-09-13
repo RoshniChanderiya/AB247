@@ -271,7 +271,9 @@ const AccountDetails: React.FC<AccountDetailsProps> = ({ onNext }) => {
         <Col lg={12} className={styles.footerBtn}>
           <ContactNumberFooter />
         </Col>
+        
       </Row>
+
     </>
   );
 };
