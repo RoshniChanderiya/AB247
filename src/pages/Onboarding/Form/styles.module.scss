@@ -31,6 +31,8 @@
   }
   .header {
     color: $primary-color;
+    padding: $padding-md $padding-md 0;
+    margin: 0;
     @include mq(xs) {
       .header {
         color: $black;

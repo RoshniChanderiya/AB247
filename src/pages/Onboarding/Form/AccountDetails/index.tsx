@@ -89,7 +89,7 @@ const AccountDetails: React.FC<AccountDetailsProps> = ({ onNext }) => {
         </Row>
         <Row className="mt-3 mt-sm-3 px-0 px-sm-4">
           <Col lg={6} sm={12} xs={12} className={styles.dealershipForm}>
-            <Col className="mt-3">
+            <Col className="mt-5 mt-sm-3">
               <h5 className={styles.header}>
                 Add Dealership Fees and Inventory
               </h5>
@@ -271,8 +271,8 @@ const AccountDetails: React.FC<AccountDetailsProps> = ({ onNext }) => {
         <Col lg={12} className={styles.footerBtn}>
           <ContactNumberFooter />
         </Col>
-        </Row>
-        </>
+      </Row>
+    </>
   );
 };
 
