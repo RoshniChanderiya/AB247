@@ -39,7 +39,41 @@
       }
     }
   }
+
+  input[type="checkbox"] {
+    position: relative;
+    cursor: pointer;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: -4px;
+      left: 0;
+      border: 2px solid $teal;
+      border-radius: 3px;
+      background-color: $teal;
+    }
+    &:checked {
+      &:after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 14px;
+        border: solid $white;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        position: absolute;
+        top: 0;
+        left: 8px;
+      }
+    }
+  }
 }
+
 .informationHeading {
   margin-left: $margin-xl;
   font-weight: bold;
