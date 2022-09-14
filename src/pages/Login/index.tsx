@@ -34,44 +34,55 @@ const Login: React.FC = () => {
   };
 
   return (
-    <Row>
-      <Col>
-        <div className={classNames(styles.loginContainer)}>
-          <div className={classNames(styles.loginSection)}>
-            <div className="text-center">
-              <div className="text-center">
-                <h2>Dealer Account Login</h2>
-                <p className={classNames(styles.text, "font-weight-normal")}>
-                  Please login to your account below.
-                </p>
-              </div>
-              <Form
-                initialValues={{}}
-                onSubmit={onLogin}
-                validationSchema={loginValidation}
-              >
-                <Input name="email" label="Email" placeholder="Enter email" />
-                <Input
-                  name="password"
-                  label="Password"
-                  type="password"
-                  placeholder="Enter password"
-                />
-                <div className="d-flex justify-content-center mt-4">
-                  <Link to="/security/forgotpassword">
-                    <p className={classNames(styles.fPassword, "mx-1")}>
-                      Forgot Password?
-                    </p>
-                  </Link>
-                </div>
-
-                <Button block size="sm" type="submit" isLoading={isLoggingIn}>
-                  Login
-                </Button>
-              </Form>
-            </div>
-          </div>
+    <Row className={classNames(styles.loginContainer)}>
+      <Col
+        sm={{
+          offset: 4,
+          size: 8,
+        }}
+        lg={{
+          offset: 5,
+          size: 5,
+        }}
+        xl={{
+          offset: 4,
+          size: 5,
+        }}
+        xs={{
+          offset: 1,
+          size: 10,
+        }}
+      >
+        <div className="text-center">
+          <h2>Dealer Account Login</h2>
+          <p className={classNames(styles.text, "font-weight-normal")}>
+            Please login to your account below.
+          </p>
         </div>
+        <Form
+          initialValues={{}}
+          onSubmit={onLogin}
+          validationSchema={loginValidation}
+        >
+          <Input name="email" label="Email" placeholder="Enter email" />
+          <Input
+            name="password"
+            label="Password"
+            type="password"
+            placeholder="Enter password"
+          />
+          <div className="d-flex justify-content-center mt-4">
+            <Link to="/security/forgotpassword">
+              <p className={classNames(styles.fPassword, "mx-1")}>
+                Forgot Password?
+              </p>
+            </Link>
+          </div>
+
+          <Button block size="sm" type="submit" isLoading={isLoggingIn}>
+            Login
+          </Button>
+        </Form>
       </Col>
     </Row>
   );
