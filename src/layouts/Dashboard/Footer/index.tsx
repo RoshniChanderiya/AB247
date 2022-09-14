@@ -18,7 +18,7 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ showMetaData }) => (
-  <footer className="mt-0 mt-sm-4">
+  <footer>
     <Container fluid>
       <Row>
         {showMetaData && (

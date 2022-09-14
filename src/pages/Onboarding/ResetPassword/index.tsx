@@ -26,7 +26,7 @@ const ResetPassword: React.FC = () => {
   const reuturnURL = decodeURIComponent(
     params.get("returnUrl") || AppRoutes.DASHBOARD
   );
-  
+
   const onLogin = (values: { email: string; password: string }) => {
     login(values, () => {
       navigate(reuturnURL);
@@ -34,46 +34,44 @@ const ResetPassword: React.FC = () => {
   };
 
   return (
-    <Row className={classNames(styles.loginContainer)}>
-      <Col
-        sm={{
-          offset: 4,
-          size: 8,
-        }}
-        lg={{
-          offset: 5,
-          size: 5,
-        }}
-        xl={{
-          offset: 4,
-          size: 5,
-        }}
-        xs={{
-          offset: 1,
-          size: 10,
-        }}>
-        <div className="text-center">
-          <h2>Dealer Account Login</h2>
-          <p className={classNames(styles.text, "font-weight-normal")}>
-            Please login to your account below.
-          </p>
+    <Row>
+      <Col>
+        <div className={classNames(styles.loginContainer)}>
+          <div className={classNames(styles.loginSection)}>
+            <div className="text-center">
+              <h2>Dealer Account Login</h2>
+              <p
+                className={classNames(
+                  styles.text,
+                  "font-weight-normal",
+                  "mb-5"
+                )}
+              >
+                Please login to your account below.
+              </p>
+            </div>
+            <Form
+              initialValues={{}}
+              onSubmit={onLogin}
+              validationSchema={loginValidation}
+            >
+              <Input
+                name="password"
+                label="New Password"
+                placeholder="Enter new password"
+              />
+              <Input
+                name="password"
+                label="Confirm Password"
+                type="password"
+                placeholder="Enter confirm  password"
+              />
+              <Button block size="sm" type="submit" isLoading={isLoggingIn}>
+                Reset Password
+              </Button>
+            </Form>
+          </div>
         </div>
-        <Form
-          initialValues={{}}
-          onSubmit={onLogin}
-          validationSchema={loginValidation}>
-          <Input name="password" label="New Password" placeholder="Enter new password" />
-          <Input
-            name="password"
-            label="Confirm Password"
-            type="password"
-            placeholder="Enter confirm  password"
-          />
-       <Button block size="sm" type="submit" isLoading={isLoggingIn}>
-            Reset Password
-          </Button>
-          
-        </Form>
       </Col>
     </Row>
   );
