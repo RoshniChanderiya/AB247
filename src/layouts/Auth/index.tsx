@@ -5,11 +5,11 @@ import Sidebar from "./Sidebar";
 
 const AuthLayout: React.FC = () => {
   return (
-    <Row className="w-100">
-      <Col sm={4} className="d-none d-lg-block">
+    <Row>
+      <Col xl={5} lg={6} md={12} sm={12} className="d-none d-lg-block">
         <Sidebar />
       </Col>
-      <Col lg={8} sm={12} xs={12}>
+      <Col xl={7} lg={6} md={12} sm={12}>
         <Outlet />
       </Col>
     </Row>

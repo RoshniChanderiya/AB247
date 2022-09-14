@@ -5,17 +5,17 @@ import { AppRoutes } from "@/constants";
 import useAuth from "@/hooks/useAuth";
 import classNames from "classnames";
 import React from "react";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { Col, Row } from "reactstrap";
 import * as yup from "yup";
 import styles from "./styles.module.scss";
 
-const loginValidation = yup.object({
-  email: yup
+const ResetPasswordValidation = yup.object({
+  newPassword: yup.string().required("Please enter new password."),
+  confirmPassword: yup
     .string()
-    .required("Please enter email address.")
-    .email("Please enter valid email address."),
-  password: yup.string().required("Please enter password."),
+    .required("Please enter confirm password.")
+    .oneOf([yup.ref("newpassword"), null], "Confirm password must be match!"),
 });
 
 const ResetPassword: React.FC = () => {
@@ -24,56 +24,47 @@ const ResetPassword: React.FC = () => {
   const [params] = useSearchParams();
 
   const reuturnURL = decodeURIComponent(
-    params.get("returnUrl") || AppRoutes.DASHBOARD
+    params.get("returnUrl") || AppRoutes.LOGIN
   );
 
-  const onLogin = (values: { email: string; password: string }) => {
-    login(values, () => {
-      navigate(reuturnURL);
-    });
+  const onResetPassword = (values: {
+    newPassword: string;
+    confirmPassword: string;
+  }) => {
+    navigate(reuturnURL);
   };
 
   return (
-    <Row>
-      <Col>
-        <div className={classNames(styles.loginContainer)}>
-          <div className={classNames(styles.loginSection)}>
-            <div className="text-center">
-              <h2>Dealer Account Login</h2>
-              <p
-                className={classNames(
-                  styles.text,
-                  "font-weight-normal",
-                  "mb-5"
-                )}
-              >
-                Please login to your account below.
-              </p>
-            </div>
-            <Form
-              initialValues={{}}
-              onSubmit={onLogin}
-              validationSchema={loginValidation}
-            >
-              <Input
-                name="password"
-                label="New Password"
-                placeholder="Enter new password"
-              />
-              <Input
-                name="password"
-                label="Confirm Password"
-                type="password"
-                placeholder="Enter confirm  password"
-              />
-              <Button block size="sm" type="submit" isLoading={isLoggingIn}>
-                Reset Password
-              </Button>
-            </Form>
-          </div>
+    <div className={classNames(styles.resetPwdContainer)}>
+      <div className={classNames(styles.resetPwdSection)}>
+        <div className="text-center">
+          <h2>Reset Password</h2>
+          <p className={classNames(styles.text, "font-weight-normal", "mb-5")}>
+            Please reset your password.
+          </p>
         </div>
-      </Col>
-    </Row>
+        <Form
+          initialValues={{}}
+          onSubmit={onResetPassword}
+          validationSchema={ResetPasswordValidation}
+        >
+          <Input
+            name="newPassword"
+            label="New Password"
+            placeholder="Enter new password"
+          />
+          <Input
+            name="confirmPassword"
+            label="Confirm Password"
+            type="password"
+            placeholder="Enter confirm  password"
+          />
+          <Button block size="sm" type="submit" isLoading={isLoggingIn}>
+            Reset Password
+          </Button>
+        </Form>
+      </div>
+    </div>
   );
 };
 
