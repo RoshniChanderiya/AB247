@@ -72,6 +72,7 @@ const ResetPassword: React.FC = () => {
        <Button block size="sm" type="submit" isLoading={isLoggingIn}>
             Reset Password
           </Button>
+          
         </Form>
       </Col>
     </Row>
