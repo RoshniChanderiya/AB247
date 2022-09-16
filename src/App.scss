@@ -7,11 +7,13 @@
   overflow-x: hidden;
 }
 .inputTerm {
-    .inputcheck {
-      margin-left: $margin-lg;
-    }
-    a {
-      color: $teal !important;
-    }
+  .inputcheck {
+    margin-left: $margin-lg;
+    font-size: $font-sm;
+    font-weight: 500;
   }
-  
+  a {
+    color: $teal !important;
+    padding-left: $padding-sm * 0.5;
+  }
+}

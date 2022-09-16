@@ -109,13 +109,207 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
       >
         {isMobile ? (
           <>
-          <Row className="p-3">
-            {showBusiness ? (
-              <Col sm={12} md={6} lg={6} xs={12}>
+            <Row className="p-3">
+              {showBusiness ? (
+                <Col sm={12} md={6} lg={6} xs={12}>
                   <Col sm={12}>
                     <span className={styles.heading}>Business Details</span>
                   </Col>
-                <Col sm={12} className="mt-5 col-sm-mt-2">
+                  <Col sm={12} className="mt-5 col-sm-mt-2">
+                    <Input
+                      variant="teriary"
+                      name="dealerName"
+                      showRequiredMark
+                      label="Dealership Business Name"
+                      placeholder="Enter Dealership Business Name"
+                    />
+                  </Col>
+                  <Col sm={12}>
+                    <Input
+                      variant="teriary"
+                      name="dealerUrl"
+                      showRequiredMark
+                      label="Website"
+                      placeholder="Enter Website URL"
+                    />
+                  </Col>
+                  <Col sm={12}>
+                    <Input
+                      variant="teriary"
+                      name="dealerEmail"
+                      showRequiredMark
+                      label="Company Email Address"
+                      placeholder="Enter Company Email Address"
+                    />
+                  </Col>
+                  <Col sm={12}>
+                    <Input
+                      variant="teriary"
+                      name="dealerPhone"
+                      showRequiredMark
+                      label="Phone"
+                      type="phone"
+                      placeholder="Enter Office Phone"
+                    />
+                  </Col>
+                  <Col sm={12}>
+                    <Input
+                      variant="teriary"
+                      name="dealerStreet"
+                      showRequiredMark
+                      label="Address Line 1"
+                      placeholder="Address Line 1"
+                    />
+                  </Col>
+                  <Col sm={12}>
+                    <Input
+                      variant="teriary"
+                      name="addressLine2"
+                      label="Address Line 2"
+                      placeholder="Address Line 2"
+                    />
+                  </Col>
+                  <Row>
+                    <Col sm={12}>
+                      <Input
+                        variant="teriary"
+                        name="dealerCity"
+                        showRequiredMark
+                        label="City"
+                        placeholder="Enter City"
+                      />
+                    </Col>
+                    <Col sm={12} lg={8} xs={6}>
+                      <Input
+                        name="dealerState"
+                        type="select"
+                        label="State"
+                        placeholder="Select State"
+                        showRequiredMark
+                        variant="teriary"
+                        options={States.map((state) => ({
+                          label: state.name,
+                          value: state.abbreviation,
+                        }))}
+                      />
+                    </Col>
+                    <Col sm={12} lg={4} xs={6}>
+                      <Input
+                        variant="teriary"
+                        name="dealerZipcode"
+                        showRequiredMark
+                        label="Zip Code"
+                        placeholder="Enter Zip Code"
+                      />
+                    </Col>
+                  </Row>
+                </Col>
+              ) : (
+                <>
+                  <Col sm={12} md={6} lg={6}>
+                    <Col sm={12}>
+                      <span className={styles.heading}>
+                        Account Administrator Information
+                      </span>
+                    </Col>
+                    <Row className="mt-5">
+                      <Col sm={6}>
+                        <Input
+                          variant="teriary"
+                          name="admin.firstName"
+                          showRequiredMark
+                          label="First Name"
+                          placeholder="Enter First Name"
+                        />
+                      </Col>
+                      <Col sm={6}>
+                        <Input
+                          variant="teriary"
+                          name="admin.lastName"
+                          showRequiredMark
+                          label="Last Name"
+                          placeholder="Enter Last Name"
+                        />
+                      </Col>
+                      <Col sm={12}>
+                        <Input
+                          name="admin.title"
+                          type="select"
+                          label="Business Tittle/ Administrator"
+                          placeholder="Business Title"
+                          showRequiredMark
+                          variant="teriary"
+                          options={AVAIALABLE_ROLES}
+                        />
+                      </Col>
+                      <Col sm={12}>
+                        <Input
+                          variant="teriary"
+                          name="admin.email"
+                          showRequiredMark
+                          label="Your Email Address"
+                          placeholder="Enter Your Email Address"
+                        />
+                      </Col>
+                      <Row className="p-0 m-0">
+                        <Col sm={5}>
+                          <Input
+                            variant="teriary"
+                            name="admin.phone"
+                            showRequiredMark
+                            type="phone"
+                            label="Your Direct Phone"
+                            placeholder="Enter Your Mobile Phone Number"
+                          />
+                        </Col>
+                        <Col sm={2}>
+                          <Input
+                            variant="teriary"
+                            name="admin.extension"
+                            label="Ext."
+                            placeholder="Ext."
+                          />
+                        </Col>
+                        <Col sm={5}>
+                          <Input
+                            variant="teriary"
+                            name="admin.mobile"
+                            showRequiredMark
+                            type="phone"
+                            label="Your Mobile Number"
+                            placeholder="Enter Your Mobile Number"
+                          />
+                        </Col>
+                      </Row>
+                      <Col sm={12} className="mx-3 d-none d-sm-block">
+                        <Button
+                          type="submit"
+                          className={classNames(
+                            styles.nextbtn,
+                            "w-25",
+                            "btn-save"
+                          )}
+                          isLoading={isLoading}
+                          loaderSize="sm"
+                        >
+                          NEXT STEP
+                        </Button>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <ContactNumberFooter />
+                </>
+              )}
+            </Row>
+          </>
+        ) : (
+          <>
+            <Row>
+              <Col sm={12} md={6} lg={6} xs={12}>
+                <Col sm={12}>
+                  <span className={styles.heading}>Business Details</span>
+                </Col>
+                <Col sm={12} className="mt-4">
                   <Input
                     variant="teriary"
                     name="dealerName"
@@ -204,15 +398,13 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                   </Col>
                 </Row>
               </Col>
-            ) : (
-              <>
               <Col sm={12} md={6} lg={6}>
                 <Col sm={12}>
                   <span className={styles.heading}>
                     Account Administrator Information
                   </span>
                 </Col>
-                <Row className="mt-5">
+                <Row className="mt-4">
                   <Col sm={6}>
                     <Input
                       variant="teriary"
@@ -251,7 +443,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                       placeholder="Enter Your Email Address"
                     />
                   </Col>
-                  <Row className="p-0 m-0">
+                  <Row>
                     <Col sm={5}>
                       <Input
                         variant="teriary"
@@ -293,212 +485,27 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                   </Col>
                 </Row>
               </Col>
+            </Row>
             <ContactNumberFooter />
-            </>
-            )}
-          </Row>
-            </>
-        ) : (
-          <>
-          <Row>
-            <Col sm={12} md={6} lg={6} xs={12}>
-              <Col sm={12}>
-                <span className={styles.heading}>Business Details</span>
-              </Col>
-              <Col sm={12} className="mt-4">
-                <Input
-                  variant="teriary"
-                  name="dealerName"
-                  showRequiredMark
-                  label="Dealership Business Name"
-                  placeholder="Enter Dealership Business Name"
-                />
-              </Col>
-              <Col sm={12}>
-                <Input
-                  variant="teriary"
-                  name="dealerUrl"
-                  showRequiredMark
-                  label="Website"
-                  placeholder="Enter Website URL"
-                />
-              </Col>
-              <Col sm={12}>
-                <Input
-                  variant="teriary"
-                  name="dealerEmail"
-                  showRequiredMark
-                  label="Company Email Address"
-                  placeholder="Enter Company Email Address"
-                />
-              </Col>
-              <Col sm={12}>
-                <Input
-                  variant="teriary"
-                  name="dealerPhone"
-                  showRequiredMark
-                  label="Phone"
-                  type="phone"
-                  placeholder="Enter Office Phone"
-                />
-              </Col>
-              <Col sm={12}>
-                <Input
-                  variant="teriary"
-                  name="dealerStreet"
-                  showRequiredMark
-                  label="Address Line 1"
-                  placeholder="Address Line 1"
-                />
-              </Col>
-              <Col sm={12}>
-                <Input
-                  variant="teriary"
-                  name="addressLine2"
-                  label="Address Line 2"
-                  placeholder="Address Line 2"
-                />
-              </Col>
-              <Row>
-                <Col sm={12}>
-                  <Input
-                    variant="teriary"
-                    name="dealerCity"
-                    showRequiredMark
-                    label="City"
-                    placeholder="Enter City"
-                  />
-                </Col>
-                <Col sm={12} lg={8} xs={6}>
-                  <Input
-                    name="dealerState"
-                    type="select"
-                    label="State"
-                    placeholder="Select State"
-                    showRequiredMark
-                    variant="teriary"
-                    options={States.map((state) => ({
-                      label: state.name,
-                      value: state.abbreviation,
-                    }))}
-                  />
-                </Col>
-                <Col sm={12} lg={4} xs={6}>
-                  <Input
-                    variant="teriary"
-                    name="dealerZipcode"
-                    showRequiredMark
-                    label="Zip Code"
-                    placeholder="Enter Zip Code"
-                  />
-                </Col>
-              </Row>
-            </Col>
-            <Col sm={12} md={6} lg={6}>
-              <Col sm={12}>
-                <span className={styles.heading}>
-                  Account Administrator Information
-                </span>
-              </Col>
-              <Row className="mt-4">
-                <Col sm={6}>
-                  <Input
-                    variant="teriary"
-                    name="admin.firstName"
-                    showRequiredMark
-                    label="First Name"
-                    placeholder="Enter First Name"
-                  />
-                </Col>
-                <Col sm={6}>
-                  <Input
-                    variant="teriary"
-                    name="admin.lastName"
-                    showRequiredMark
-                    label="Last Name"
-                    placeholder="Enter Last Name"
-                  />
-                </Col>
-                <Col sm={12} className="d-none d-sm-block">
-                  <Input
-                    name="admin.title"
-                    type="select"
-                    label="Business Tittle/ Administrator"
-                    placeholder="Business Title"
-                    showRequiredMark
-                    variant="teriary"
-                    options={AVAIALABLE_ROLES}
-                  />
-                </Col>
-                <Col sm={12} className="d-none d-sm-block">
-                  <Input
-                    variant="teriary"
-                    name="admin.email"
-                    showRequiredMark
-                    label="Your Email Address"
-                    placeholder="Enter Your Email Address"
-                  />
-                </Col>
-                <Row>
-                  <Col sm={5}>
-                    <Input
-                      variant="teriary"
-                      name="admin.phone"
-                      showRequiredMark
-                      type="phone"
-                      label="Your Direct Phone"
-                      placeholder="Enter Your Mobile Phone Number"
-                    />
-                  </Col>
-                  <Col sm={2}>
-                    <Input
-                      variant="teriary"
-                      name="admin.extension"
-                      label="Ext."
-                      placeholder="Ext."
-                    />
-                  </Col>
-                  <Col sm={5}>
-                    <Input
-                      variant="teriary"
-                      name="admin.mobile"
-                      showRequiredMark
-                      type="phone"
-                      label="Your Mobile Number"
-                      placeholder="Enter Your Mobile Number"
-                    />
-                  </Col>
-                </Row>
-                <Col sm={12} className="mx-3 d-none d-sm-block">
-                  <Button
-                    type="submit"
-                    className={classNames(styles.nextbtn, "w-25", "btn-save")}
-                    isLoading={isLoading}
-                    loaderSize="sm"
-                  >
-                    NEXT STEP
-                  </Button>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-          <ContactNumberFooter />
           </>
         )}
-      <Col sm={12} className={classNames(styles.submitButton, "d-block", "d-sm-none")}>
-        <p className={styles.buttonText}>Account Administrator Information</p>
+        <Col
+          sm={12}
+          className={classNames(styles.submitButton, "d-block", "d-sm-none")}
+        >
+          <p className={styles.buttonText}>Add Dealership Fees and Inventory</p>
 
-        <Button
-          type="submit"
-          className={styles.nextSubmitButton}
-          loaderSize="sm"
-          onClick={() => setShowBusiness(false)}
-          isLoading={isLoading}
+          <Button
+            type="submit"
+            className={styles.nextSubmitButton}
+            loaderSize="sm"
+            onClick={() => setShowBusiness(false)}
+            isLoading={isLoading}
           >
-          NEXT
-        </Button>
-      </Col>
-          </Form>
+            NEXT
+          </Button>
+        </Col>
+      </Form>
     </>
   );
 };

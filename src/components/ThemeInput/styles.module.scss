@@ -1,4 +1,5 @@
 @import "@/assets/scss/variables";
+@import "@/assets/scss/mixins.scss";
 
 .group {
   .inputLabel {
@@ -24,6 +25,9 @@
       color: $black;
       font-size: $font-md;
       font-weight: 500;
+      @include mq(xs) {
+        font-size: $font-md * 0.9;
+      }
     }
     .astric {
       font-size: $font-lg;

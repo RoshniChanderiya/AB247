@@ -8,11 +8,16 @@
   text-transform: uppercase;
   font-size: $font-md;
   border: 2px solid;
+  @include mq(xs) {
+    font-size: $font-sm;
+    border: none;
+    padding: $padding-sm * 1.4;
+  }
 
   &.btn {
     &-lg {
       @include mq(sm) {
-        min-width: auto;
+        min-width: 100%;
       }
 
       @include mq(xxs) {
