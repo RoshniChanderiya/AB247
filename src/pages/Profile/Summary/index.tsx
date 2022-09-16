@@ -81,6 +81,10 @@ const Summary: React.FC = () => {
               className="d-flex justify-content-between align-items-center"
             >
               <h2 className={styles.heading}>Dealership Account Profile</h2>
+            </Col>
+
+            <Col lg={12} className="mt-3 d-flex justify-content-between">
+              <LabelAndValue label="Dealer Account Number" value="BW-2222" />
               <img
                 src={IconEdit}
                 alt="edit"
@@ -89,10 +93,6 @@ const Summary: React.FC = () => {
                   navigate(`/onboarding/business?dealer=${dealer?._id}`)
                 }
               />
-            </Col>
-
-            <Col lg={12} className="mt-3">
-              <LabelAndValue label="Dealer Account Number" value="BW-2222" />
             </Col>
             <Col lg={12} className="mt-3">
               <LabelAndValue
