@@ -15,19 +15,25 @@ const Profile: React.FC = () => {
   const toggleOpenState = () => {
     setIsOpen((prev) => !prev);
   };
-  
+
   return (
     <OnboardingProvider id={user?.dealer?.id}>
       <Row>
         <Col lg={9}>
           <Card className="p-3">
-            <Summary />
-            {isMobile && (
-              <Button onClick={toggleOpenState}>VIEW DEARLERSHIP</Button>
+            {isOpen || !isMobile ? (
+              <>
+                <Summary />
+                {isMobile && (
+                  <Button onClick={toggleOpenState}>VIEW DEARLERSHIP</Button>
+                )}
+              </>
+            ) : (
+              <SummarySidebar />
             )}
           </Card>
         </Col>
-        <Col lg={3}>{(isOpen || !isMobile) && <SummarySidebar />}</Col>
+        <Col lg={3}>{!isMobile && <SummarySidebar />}</Col>
       </Row>
     </OnboardingProvider>
   );

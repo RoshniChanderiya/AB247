@@ -145,9 +145,6 @@ const AccountDetails: React.FC<AccountDetailsProps> = ({ onNext }) => {
                   className="inputcheck"
                   color="red"
                 />
-                {/* <Link to="/">
-                  <p>Terms and Conditions</p>
-                </Link> */}
               </div>
               <Col sm={12} lg={6} className="mt-3">
                 <Input
@@ -231,7 +228,7 @@ const AccountDetails: React.FC<AccountDetailsProps> = ({ onNext }) => {
                   <p>Terms and Conditions</p>
                 </Link>
               </div>
-            </Row>
+              </Row>
           </Col>
           <Col lg={6} className="p-0">
             <Col lg={12} className="d-none d-sm-block">
@@ -274,11 +271,11 @@ const AccountDetails: React.FC<AccountDetailsProps> = ({ onNext }) => {
               >
                 COMPLETE REGISTRATION
               </Button>
-              <div className="d-flex mx-3 mt-3 d-none d-sm-block">
+              <div className="d-flex mx-3 mt-3 d-none d-sm-block inputTerm">
                 <ThemeCheckBox
                   name="terms"
-                  label="I agree with the "
-                  className="mx-1"
+                  label=" I agree with the"
+                  className="inputcheck"
                   color="red"
                 />
                 <Link to="/">

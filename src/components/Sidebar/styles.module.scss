@@ -118,6 +118,9 @@
     background: $teal-900;
     border: 3px solid $primary-color;
     margin-right: $margin-xl;
+    @include mq(xs) {
+      margin-right: 0;
+    }
   }
   .videoContainer {
     list-style-type: none;

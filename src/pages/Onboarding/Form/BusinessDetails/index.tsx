@@ -108,12 +108,13 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
         enableReinitialize
       >
         {isMobile ? (
+          <>
           <Row className="p-3">
             {showBusiness ? (
               <Col sm={12} md={6} lg={6} xs={12}>
-                <Col sm={12}>
-                  <span className={styles.heading}>Business Details</span>
-                </Col>
+                  <Col sm={12}>
+                    <span className={styles.heading}>Business Details</span>
+                  </Col>
                 <Col sm={12} className="mt-5 col-sm-mt-2">
                   <Input
                     variant="teriary"
@@ -204,6 +205,7 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                 </Row>
               </Col>
             ) : (
+              <>
               <Col sm={12} md={6} lg={6}>
                 <Col sm={12}>
                   <span className={styles.heading}>
@@ -291,9 +293,13 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
                   </Col>
                 </Row>
               </Col>
+            <ContactNumberFooter />
+            </>
             )}
           </Row>
+            </>
         ) : (
+          <>
           <Row>
             <Col sm={12} md={6} lg={6} xs={12}>
               <Col sm={12}>
@@ -476,22 +482,23 @@ const BusinessDetails: React.FC<BusinessDetailsProps> = ({ onNext }) => {
               </Row>
             </Col>
           </Row>
+          <ContactNumberFooter />
+          </>
         )}
-      </Form>
-      <ContactNumberFooter />
-      <Col
-        sm={12}
-        className={classNames(styles.submitButton, "d-block", "d-sm-none")}
-      >
+      <Col sm={12} className={classNames(styles.submitButton, "d-block", "d-sm-none")}>
         <p className={styles.buttonText}>Account Administrator Information</p>
 
         <Button
+          type="submit"
           className={styles.nextSubmitButton}
+          loaderSize="sm"
           onClick={() => setShowBusiness(false)}
-        >
+          isLoading={isLoading}
+          >
           NEXT
         </Button>
       </Col>
+          </Form>
     </>
   );
 };

@@ -9,7 +9,7 @@ import {
   removeInventoryVehicle,
   restoreInventoryVehicle,
   updateFloorBid,
-  updateInventory,
+  updateInventory
 } from "@/services/vehicle";
 import { VehiclePayload } from "@/types/vehicle";
 import { isUUID } from "@/utils/generic";
@@ -18,7 +18,7 @@ import {
   useMutation,
   useQuery,
   useQueryClient,
-  UseQueryResult,
+  UseQueryResult
 } from "react-query";
 
 const QUERY_KEYS = {
@@ -88,7 +88,6 @@ export const useYearData = (year: number) =>
 
 export const useUpdateInventoryMutation = () => {
   const queryClient = useQueryClient();
-
   return useMutation(updateInventory, {
     onSuccess: () => {
       queryClient.invalidateQueries([QUERY_KEYS.VEHICLE_INVENTORY]);
@@ -99,7 +98,6 @@ export const useUpdateInventoryMutation = () => {
 
 export const useCreateVehicleDeliveryMutation = () => {
   const queryClient = useQueryClient();
-
   return useMutation(createDeliveryVehicle, {
     onSuccess: () => {
       queryClient.invalidateQueries([QUERY_KEYS.DEAL_LIST]);
@@ -118,5 +116,4 @@ export const useVehicleDeliveryStatus = () => {
 
 export const useDeclineVehicleDeliveryMutation = () => {
   return useMutation(declineDeliveryVehicle);
-  
 };

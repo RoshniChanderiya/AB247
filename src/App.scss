@@ -3,13 +3,14 @@
 @import "~bootstrap/scss/bootstrap";
 
 .app-container {
-  padding: 0;
+    padding: 0;
 }
 .inputTerm {
-  .inputcheck {
-    margin-left: $margin-lg;
+    .inputcheck {
+      margin-left: $margin-lg;
+    }
+    a {
+      color: $teal !important;
+    }
   }
-  a {
-    color: $teal !important;
-  }
-}
+  

@@ -28,7 +28,9 @@ Auth.configure({
 
 const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const {
-    data: user,
+    data: user = {
+      dealer: {},
+    },
     isLoading,
     refetch,
   } = useQuery(["user-details"], () => getProfile(), {

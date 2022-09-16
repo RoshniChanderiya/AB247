@@ -92,7 +92,7 @@ const Footer: React.FC<FooterProps> = ({ showMetaData }) => (
         <Row sm={12} className={classNames(styles.tagline, "p-3 m-0")}>
           <Col lg={6} sm={12} className="text-center text-lg-start">
             <p className={styles.footCopyright}>
-              Copyright &copy; {dayjs().get("year")}
+              Copyright &copy;  {dayjs().get("year")}
               <CompanyName showInc /> All Rights Reserved.
             </p>
           </Col>

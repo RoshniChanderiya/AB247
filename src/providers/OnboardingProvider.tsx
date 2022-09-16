@@ -1,10 +1,10 @@
 import { useDealer, useDealerRePresentatives } from "@/hooks/dealer";
+import useAuth from "@/hooks/useAuth";
 import { Dealer } from "@/types/dealer";
 import { User } from "@/types/user";
 import { isUUID } from "@/utils/generic";
 import first from "lodash/first";
 import React from "react";
-import { useSearchParams } from "react-router-dom";
 
 interface SocketProviderProps {
   id?: string;
@@ -20,8 +20,12 @@ const OnboardingProvider: React.FC<SocketProviderProps> = ({
   id,
   children,
 }) => {
-  const [query] = useSearchParams();
-  const dealerId = id ?? (query.get("dealer") || "");
+  const {
+    user: {
+      dealer: { id: dealerId },
+    },
+  } = useAuth();
+  
   const { isLoading, data: dealerDetails } = useDealer(dealerId);
 
   const { isLoading: isFetchingBidder, data: bidders } =
