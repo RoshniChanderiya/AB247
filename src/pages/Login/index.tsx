@@ -26,7 +26,7 @@ const Login: React.FC = () => {
   const reuturnURL = decodeURIComponent(
     params.get("returnUrl") || AppRoutes.DASHBOARD
   );
-  
+
   const onLogin = (values: { email: string; password: string }) => {
     login(values, () => {
       navigate(reuturnURL);
@@ -51,7 +51,8 @@ const Login: React.FC = () => {
         xs={{
           offset: 1,
           size: 10,
-        }}>
+        }}
+      >
         <div className="text-center">
           <h2>Dealer Account Login</h2>
           <p className={classNames(styles.text, "font-weight-normal")}>
@@ -61,7 +62,8 @@ const Login: React.FC = () => {
         <Form
           initialValues={{}}
           onSubmit={onLogin}
-          validationSchema={loginValidation}>
+          validationSchema={loginValidation}
+        >
           <Input name="email" label="Email" placeholder="Enter email" />
           <Input
             name="password"

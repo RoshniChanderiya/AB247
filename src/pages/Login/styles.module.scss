@@ -1,19 +1,19 @@
 @import "@/assets/scss/theme.scss";
 
 .loginContainer {
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    .labelIs{
-        color: $primary;
-        font-weight: 500;
-    }
-    .fPassword{
-        font-weight: 500;
-    }
-    .text{
-        font-weight: 500;
-        color: $gray-100;
-        font-size: $font-sm;
-    }
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  .labelIs {
+    color: $primary;
+    font-weight: 500;
+  }
+  .fPassword {
+    font-weight: 500;
+  }
+  .text {
+    font-weight: 500;
+    color: $gray-100;
+    font-size: $font-sm;
+  }
 }

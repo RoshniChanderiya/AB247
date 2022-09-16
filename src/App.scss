@@ -3,7 +3,8 @@
 @import "~bootstrap/scss/bootstrap";
 
 .app-container {
-    padding: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 .inputTerm {
     .inputcheck {
