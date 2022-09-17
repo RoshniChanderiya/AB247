@@ -1,0 +1,22 @@
+@import '@/assets/scss/variables.scss';
+@import '@/assets/scss/mixins.scss';
+
+.container {
+  display: block;
+
+  .mainImage {
+    @include flexCenter();
+    height: 300px;
+
+    .original {
+      max-width: 100%;
+    }
+  }
+
+  .thumbImage {
+    @include flexCenter();
+    .thumbnail {
+      max-width: 100%;
+    }
+  }
+}

@@ -1,19 +1,8 @@
 /* autoprefixer: off */
-@import "@/assets/scss/theme.scss";
-@import "~bootstrap/scss/bootstrap";
+@import '@/assets/scss/theme.scss';
+@import '@autobid247/theme/dist/style.css';
+@import '~react-image-gallery/styles/scss/image-gallery.scss';
 
 .app-container {
   padding: 0;
-  overflow-x: hidden;
-}
-.inputTerm {
-  .inputcheck {
-    margin-left: $margin-lg;
-    font-size: $font-sm;
-    font-weight: 500;
-  }
-  a {
-    color: $teal !important;
-    padding-left: $padding-sm * 0.5;
-  }
 }

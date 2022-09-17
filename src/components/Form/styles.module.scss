@@ -1,8 +1,0 @@
-@import "@/assets/scss/mixins.scss";
-.radio {
-    font-weight: normal;
-    font-size: 15px;
-    @include mq(xs) {
-        font-size: 5px;
-     }
-}

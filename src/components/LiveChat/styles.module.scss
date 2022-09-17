@@ -1,0 +1,25 @@
+@import '@/assets/scss/variables.scss';
+
+.chatContainer {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+  border-radius: 4px;
+  position: relative;
+  border: 1px solid $teal;
+  // 170px is the height of the header, and margin-lg is the margin on this element.
+  height: calc(100vh - 85px);
+
+  .chatBox {
+    // padding: $padding-md;
+    height: 300px;
+    overflow-y: auto;
+
+    .chatFooter {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+}

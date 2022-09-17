@@ -1,0 +1,157 @@
+@import '@/assets/scss/variables.scss';
+@import '@/assets/scss/mixins';
+
+.parentThemeInput {
+  display: flex;
+  margin-top: $margin-md;
+  .dropDown {
+    width: 120px;
+  }
+  div:first-child {
+    border: none;
+  }
+
+  @include mq(xs) {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  @include mq(md) {
+    gap: 15px;
+  }
+  .hideYmm {
+    display: block;
+    @include mq(xs) {
+      display: none;
+    }
+  }
+  .showHeaderSearch {
+    @include mq(xs) {
+      display: none;
+    }
+  }
+  .otherInput {
+    width: 15%;
+    padding-right: $padding-sm;
+    .buttonDropDown {
+      font-size: $font-sm;
+      height: 45px;
+      @include mq(xs) {
+      }
+    }
+    .filterIcon {
+      margin-left: $margin-md;
+      height: 35px;
+      background-color: $teal-200;
+      background-size: 100px;
+      display: none;
+      @include mq(xs) {
+        display: block;
+        position: absolute;
+        right: 14px;
+        top: 20px;
+      }
+    }
+
+    @include mq(sm) {
+      width: 100% !important;
+      margin: $margin-xs;
+      padding: 0;
+    }
+    @include mq(md) {
+      width: 17%;
+      margin-top: $margin-md;
+    }
+  }
+  .rangeSlider {
+    display: none;
+    @include mq(xs) {
+      display: block;
+      width: 90%;
+      padding: 0;
+    }
+  }
+  .searchBtn {
+    min-height: $margin-sm;
+    font-size: 14px;
+    margin-left: $margin-sm;
+    padding-right: $padding-md;
+    margin-bottom: $margin-sm;
+
+    span {
+      margin-left: 0;
+    }
+
+    @include mq(xs) {
+      display: none;
+      width: 100%;
+    }
+  }
+
+  .searchDeskBtn {
+    display: none;
+    .searchBtnBackground {
+      height: 50px;
+      background-size: 300px;
+    }
+    @include mq(md) {
+      display: block;
+      width: 50%;
+      margin-left: $margin-md * 6;
+      margin-top: 5px;
+    }
+  }
+
+  .radius {
+    width: 140px;
+    padding-right: $padding-lg;
+
+    @include mq(md) {
+      width: 130px;
+      margin-top: 5px;
+    }
+    @include mq(md-min) {
+      width: 140px;
+    }
+    @include mq(xxs) {
+      width: 145px;
+      margin-top: 15px;
+    }
+    @include mq(xs) {
+      margin-top: $margin-md;
+      margin-right: 15px;
+      width: 145px;
+    }
+  }
+}
+
+.getResult {
+  @include mq(xs) {
+    width: 100%;
+  }
+}
+
+.showSideBar {
+  display: none;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  position: absolute;
+  background-color: $teal-50;
+  padding: $padding-sm;
+  @include mq(xs) {
+    display: block;
+  }
+}
+.sliderIcon {
+  background-color: $black;
+  position: absolute;
+  padding: $padding-md;
+  left: -55px;
+}
+.ymmContainer {
+  @include mq(xs) {
+    flex-direction: column;
+    padding-left: $padding-lg;
+  }
+}

@@ -1,0 +1,16 @@
+@import '@/assets/scss/variables.scss';
+@import '@/assets/scss/mixins';
+
+.ymmsection {
+  padding: $padding-sm;
+  background: $black-700;
+  z-index: 50;
+  width: 100%;
+  @include mq(sm) {
+    position: relative;
+    display: block;
+  }
+  @include mq(lg) {
+    padding-top: 0;
+  }
+}

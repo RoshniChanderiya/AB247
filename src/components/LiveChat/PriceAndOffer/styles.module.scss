@@ -1,0 +1,62 @@
+@import '@/assets/scss/variables.scss';
+
+.offerContainer {
+  background: $secondary-color;
+  padding: $padding-md;
+  position: relative;
+  text-align: center;
+  margin-bottom: $margin-sm;
+
+  &Desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .information {
+      .heading {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .information {
+    margin-bottom: $margin-lg;
+
+    .heading {
+      color: $primary-color;
+      font-weight: 300;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+
+    .amount {
+      color: $white;
+      font-weight: 600;
+      font-size: 24px * 2;
+    }
+  }
+
+  .offer {
+    position: absolute;
+    bottom: -33px;
+    left: 0;
+    width: 100%;
+    padding: 0 $padding-md;
+
+    &Desktop {
+      position: unset;
+      width: auto;
+      padding: 0;
+    }
+    .input {
+      width: 150px;
+    }
+    .offerButton {
+      width: 150px;
+      max-width: 200px;
+    }
+    .buyButton {
+      width: 150px;
+      max-width: 200px;
+    }
+  }
+}

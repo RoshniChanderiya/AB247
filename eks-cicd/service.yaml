@@ -2,16 +2,16 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app.kubernetes.io/name: dealers-bid
-    app.kubernetes.io/instance: dealers-bid-instance
-    app.kubernetes.io/version: "1.0.0"
+    app.kubernetes.io/name: wholesale-ux
+    app.kubernetes.io/instance: wholesale-ux-instance
+    app.kubernetes.io/version: '1.0.0'
     app.kubernetes.io/component: backend
     app.kubernetes.io/managed-by: kubectl
-  name: dealers-bid
+  name: wholesale-ux
   namespace: dev
 spec:
   selector:
-    app: dealers-bid
+    app: wholesale-ux
   type: LoadBalancer
   ports:
     - protocol: TCP

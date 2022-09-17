@@ -1,26 +1,24 @@
-import { AuthContext } from "@/providers/AuthProvider";
-import { retrieveErrorMessage } from "@/utils/RestClient";
-import Message from "@/utils/Toast";
-import { Auth } from "@aws-amplify/auth";
-import get from "lodash/get";
-import { useContext, useEffect, useState } from "react";
-import { useMutation, useQueryClient } from "react-query";
+import { Auth } from '@aws-amplify/auth';
+import get from 'lodash/get';
+import { useContext, useEffect, useState } from 'react';
+import { useMutation, useQueryClient } from 'react-query';
+
+import { AuthContext } from '@/providers/AuthProvider';
+import { retrieveErrorMessage } from '@/utils/RestClient';
+import Message from '@/utils/Toast';
 
 const useAuth = () => {
   const { user, login, logout: cognitoLogout } = useContext(AuthContext);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const queryClient = useQueryClient();
-  const { mutateAsync: loginMutation, isLoading: isLoggingIn } = useMutation(
-    login,
-    {
-      onSuccess: () => {
-        queryClient.invalidateQueries(["user-details"]);
-      },
-    }
-  );
+  const { mutateAsync: loginMutation, isLoading: isLoggingIn } = useMutation(login, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(['user-details']);
+    },
+  });
   useEffect(() => {
-    Auth.currentAuthenticatedUser().catch((err) => {
+    Auth.currentAuthenticatedUser().catch(() => {
       setIsLoggedIn(false);
     });
   }, []);
@@ -30,7 +28,8 @@ const useAuth = () => {
    */
   const onLogin = async (
     values: { email: string; password: string },
-    callback: () => void = () => {}
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    callback: () => void = () => {},
   ) => {
     try {
       await loginMutation(values);
@@ -54,7 +53,7 @@ const useAuth = () => {
     user,
     isLoggingIn,
     isLoggedIn,
-    token: get(user, "signInUserSession.accessToken.jwtToken"),
+    token: get(user, 'signInUserSession.accessToken.jwtToken'),
   };
 };
 

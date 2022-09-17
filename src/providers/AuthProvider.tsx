@@ -1,21 +1,17 @@
-import { getProfile } from "@/services/user";
-import { Auth } from "@aws-amplify/auth";
-import first from "lodash/first";
-import React from "react";
-import { useQuery } from "react-query";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Auth } from '@aws-amplify/auth';
+import first from 'lodash/first';
+import React from 'react';
+import { useQuery } from 'react-query';
+
+import { getProfile } from '@/services/services';
 
 interface AuthProviderProps {
   children: React.ReactNode;
 }
 
 export const AuthContext = React.createContext<{
-  login: ({
-    email,
-    password,
-  }: {
-    email: string;
-    password: string;
-  }) => Promise<any>;
+  login: ({ email, password }: { email: string; password: string }) => Promise<any>;
   logout: () => Promise<any>;
   user: any;
 }>({} as any);
@@ -23,7 +19,7 @@ export const AuthContext = React.createContext<{
 Auth.configure({
   userPoolId: process.env.REACT_APP_COGNITO_USER_POOL_ID,
   userPoolWebClientId: process.env.REACT_APP_COGNITO_CLIENT_ID,
-  region: first(process.env.REACT_APP_COGNITO_USER_POOL_ID?.split("_")),
+  region: first(process.env.REACT_APP_COGNITO_USER_POOL_ID?.split('_')),
 });
 
 const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
@@ -33,7 +29,7 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     },
     isLoading,
     refetch,
-  } = useQuery(["user-details"], () => getProfile(), {
+  } = useQuery(['user-details'], () => getProfile(), {
     retry: 0,
     refetchOnWindowFocus: false,
   });
@@ -42,13 +38,7 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
    * @param username
    * @param password
    */
-  const login = async ({
-    email,
-    password,
-  }: {
-    email: string;
-    password: string;
-  }) => {
+  const login = async ({ email, password }: { email: string; password: string }) => {
     await Auth.signIn(email, password);
     refetch();
   };
@@ -57,7 +47,7 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   return (
     <AuthContext.Provider value={{ login, logout, user }}>
-      {isLoading ? "Loading..." : children}
+      {isLoading ? 'Loading...' : children}
     </AuthContext.Provider>
   );
 };

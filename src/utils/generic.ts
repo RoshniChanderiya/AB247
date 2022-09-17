@@ -1,43 +1,31 @@
-import { TRADE_IN_NOT_AVAILABLE_TEXT } from "@/constants";
-import snakeCase from "lodash/snakeCase";
+import omit from 'lodash/omit';
 
-export const isUUID = (uuid: string): boolean => {
-  return uuid.replace(new RegExp(" "), "").length === 32;
-};
 /**
- * get initials from the given string
- * @param string
+ *
+ * @param value
+ * @param options
  * @returns
  */
-export const getInitials = (string: string = ""): string => {
-  var names = string.split(" "),
-    initials = names[0].substring(0, 1).toUpperCase();
-
-  if (names.length > 1) {
-    initials += names[names.length - 1].substring(0, 1).toUpperCase();
-  }
-  return initials;
-};
-
-/**
- * convert the given object's keys to snake case deeply
- * @param form form values to convert
- * @returns form values in snake case
- */
-export const getSnakeCaseVersion = (
-  form: Record<string, any>
-): Record<string, any> => {
-  const reqObject: Record<string, any> = {};
-  Object.keys(form).forEach((key) => {
-    if (typeof form[key] === "object") {
-      reqObject[snakeCase(key)] = getSnakeCaseVersion(form[key]);
-    } else {
-      reqObject[snakeCase(key)] = form[key];
-    }
+export const formatNumber = (value = 0, options: Intl.NumberFormatOptions = {}) => {
+  const formattedNumber = new Intl.NumberFormat('en-US', {
+    style: options.style ?? 'currency',
+    currency: options.currency ?? 'USD',
+    minimumFractionDigits: options.minimumFractionDigits ?? 0,
+    maximumFractionDigits: options.maximumFractionDigits ?? 0,
+    ...omit(options, [
+      'style',
+      'style',
+      'minimumFractionDigits',
+      'maximumFractionDigits',
+    ]),
   });
 
-  return reqObject;
+  return formattedNumber.format(Number(value));
 };
-
-export const isTrade = (tradeInId: string): boolean =>
-  tradeInId !== TRADE_IN_NOT_AVAILABLE_TEXT;
+/**
+ *
+ * @param uuid
+ * @returns boolean
+ */
+export const isUUID = (uuid: string): boolean =>
+  uuid.replace(new RegExp(' '), '').length === 32;

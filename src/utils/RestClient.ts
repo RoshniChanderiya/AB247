@@ -1,6 +1,6 @@
-import { Auth } from "@aws-amplify/auth";
-import axios, { AxiosRequestConfig, AxiosResponse, Method } from "axios";
-import get from "lodash/get";
+import { Auth } from '@aws-amplify/auth';
+import axios, { AxiosRequestConfig, AxiosResponse, Method } from 'axios';
+import get from 'lodash/get';
 
 export const getToken = async (): Promise<string> => {
   const user = await Auth.currentAuthenticatedUser();
@@ -9,14 +9,16 @@ export const getToken = async (): Promise<string> => {
 
 const RestClient = async (
   url: string,
-  method: Method = "GET",
-  params: any = {},
-  options: AxiosRequestConfig = {}
-): Promise<AxiosResponse["data"]> => {
+  method: Method = 'GET',
+  params: AxiosRequestConfig['params'] | AxiosRequestConfig['data'] = {},
+  options: AxiosRequestConfig = {},
+): Promise<AxiosResponse['data']> => {
   let token;
   try {
     token = await getToken();
-  } catch (error) {}
+  } catch (error) {
+    console.error(error);
+  }
   const config: AxiosRequestConfig = {
     ...options,
     baseURL: options.baseURL || process.env.REACT_APP_API_URL,
@@ -25,32 +27,28 @@ const RestClient = async (
       ...options?.headers,
       Authorization: token as string,
     },
-    data: method !== "GET" ? params : undefined,
-    params: method === "GET" ? params : undefined,
+    data: method !== 'GET' ? params : undefined,
+    params: method === 'GET' ? params : undefined,
   };
   try {
     return (await axios(url, config)).data;
   } catch (error) {
-    throw get(error, "response", error);
+    throw get(error, 'response', error);
   }
 };
 
-export const retrieveErrorMessage = (error: any) => {
+export const retrieveErrorMessage = (error: unknown) => {
   const message = get(
     error,
-    "data.error",
-    get(
-      error,
-      "message",
-      "An unknown error occurred while completing your request."
-    )
+    'data.error',
+    get(error, 'message', 'An unknown error occurred while completing your request.'),
   );
   return get(
     error,
-    "data.message",
-    typeof message === "string"
+    'data.message',
+    typeof message === 'string'
       ? message
-      : "An unknown error occurred while completing your request."
+      : 'An unknown error occurred while completing your request.',
   );
 };
 

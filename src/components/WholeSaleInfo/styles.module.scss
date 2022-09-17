@@ -1,0 +1,23 @@
+@import '@/assets/scss/variables.scss';
+@import '@/assets/scss/mixins';
+
+.parent {
+  width: 100%;
+  background: linear-gradient($teal-900, $teal);
+  color: $white;
+  margin: 0;
+
+  .wholeSale {
+    @include mq(xs) {
+      .bidWizerWholeSale {
+        font-size: $font-lg;
+        margin-left: $margin-md;
+      }
+    }
+  }
+  .selectVehicle {
+    @include mq(xs) {
+      display: none;
+    }
+  }
+}

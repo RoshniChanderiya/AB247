@@ -1,0 +1,26 @@
+@import '@/assets/scss/variables.scss';
+
+.formContainer {
+  background: $secondary-color;
+  padding: $padding-md;
+
+  :global(.mb-3) {
+    margin-bottom: 0 !important;
+  }
+  .space {
+    width: 100%;
+
+    & > div:first-child {
+      width: 80%;
+    }
+  }
+
+  .input {
+    display: flex;
+    width: 100%;
+  }
+
+  .sendButton {
+    width: 150px;
+  }
+}

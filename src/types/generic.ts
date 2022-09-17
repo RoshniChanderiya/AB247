@@ -1,6 +1,4 @@
-import { LIST_VIEW_TYPE } from "@/constants";
-
-export interface IdType {
+export interface RefID {
   id: string;
   type: string;
 }
@@ -21,13 +19,7 @@ export interface GenericDataModel {
   type: string;
   group: string;
 }
-export interface AuctionDataModel<T> extends GenericDataModel {
-  key?: string;
-  id: string;
-  _id: string;
-  _index: string;
-  payload: T;
-}
+
 export interface DataModel<T> {
   _id: string;
   _index: string;
@@ -35,16 +27,9 @@ export interface DataModel<T> {
     payload: T;
   };
 }
-export type ListViewType = typeof LIST_VIEW_TYPE[number];
 
-export interface Analytics {
-  auctions: {
-    live?: number;
-    scheduled?: number;
-  };
-  deals: {
-    new?: number;
-    pending?: number;
-    funded?: number;
-  };
+export interface ColorFilter {
+  text: string;
+  count: number;
+  checked: boolean;
 }

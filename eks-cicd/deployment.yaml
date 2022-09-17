@@ -2,25 +2,25 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app.kubernetes.io/name: dealers-bid
-    app.kubernetes.io/instance: dealers-bid-instance
+    app.kubernetes.io/name: wholesale-ux
+    app.kubernetes.io/instance: wholesale-ux-instance
     app.kubernetes.io/version: '1.0.0'
     app.kubernetes.io/managed-by: kubectl
-  name: dealers-bid
+  name: wholesale-ux
   namespace: dev
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: dealers-bid
+      app: wholesale-ux
   template:
     metadata:
       labels:
-        app: dealers-bid
+        app: wholesale-ux
     spec:
       containers:
-        - image: 920871934450.dkr.ecr.us-east-1.amazonaws.com/dealers-bid:latest
+        - image: 920871934450.dkr.ecr.us-east-1.amazonaws.com/wholesale-ux:latest
           imagePullPolicy: Always
-          name: dealers-bid
+          name: wholesale-ux
           ports:
             - containerPort: 80

@@ -25,7 +25,6 @@ $teal-900: #035f77;
 
 // white
 $white-100: #b5b3b3;
-$white-200: #f8faff;
 
 // black
 $black: #000000;
@@ -38,30 +37,18 @@ $black-700: #2a2f32;
 $white: #fff;
 // red
 $red: #f97171;
-$red-100: #ffa7a7;
-$red-800: #f72424;
 $red-900: #ff0000;
 
 // gray
 $gray: #707070;
-$gray-30:#cecece;
 $gray-50: #eeeeee;
 $gray-100: #777777;
 $gray-200: #4d4f5c;
-$gray-300: #8a8787;
-$gray-500: #2a2f3229;
 $gray-700: #6897b11f;
-
-// yellow
-
-$yellow-30: #fecf3e;
-
-// green
 
 $green: #00aa06;
 
-// shadow color
-$shadow-color: #6897b133;
+$chalk: #bbbbbb;
 
 /*
 theme colors, try to use theme colors as much as possible, no longer use of the color names directly.
@@ -78,12 +65,6 @@ $primary-color: $teal;
 $secondary-color: $teal-900;
 $tertiary-color: $teal-50;
 
-$primary-border-color: #eeeeee;
-
-/* box shadows */
-
-$input-box-shadow: 0px 3px 6px $gray-700;
-
 /* variables for spacing */
 
 $margin-xs: 4px;
@@ -97,11 +78,6 @@ $padding-sm: 8px;
 $padding-md: 16px;
 $padding-lg: 24px;
 $padding-xl: 48px;
-
-// font-family
-$primary-font: "Barlow", sans-serif;
-$secondary-font: "Cormorant Garamond", sans-serif;
-$tertiary-font: "Source Sans Pro", sans-serif;
 
 // font-size
 $font-xs: 8px;

@@ -1,0 +1,66 @@
+@import '@/assets/scss/variables.scss';
+@import '@/assets/scss/mixins';
+
+.contentArea {
+  color: $black-700;
+  margin-top: $margin-md;
+  .viewMakeBtn {
+    font-size: $font-sm;
+  }
+  .numberText {
+    font-size: $font-sm;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+  }
+  .carImage {
+    height: auto;
+  }
+
+  .days {
+    color: $red-900;
+  }
+  .old {
+    font-size: $font-sm;
+    font-weight: normal;
+  }
+
+  .text {
+    font-size: $font-sm - 2px;
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+  }
+  .dealerRating {
+    color: $black-700;
+    font-weight: medium;
+  }
+
+  .modelMileage {
+    color: $black-700;
+    font-weight: 600;
+
+    strong {
+      display: block;
+    }
+  }
+
+  .showInfo {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .buyButton {
+    border-color: $green;
+    width: 60%;
+  }
+  .btnOutline {
+    width: 100%;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+.chatModal {
+  padding: 0;
+}

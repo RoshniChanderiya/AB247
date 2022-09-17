@@ -1,0 +1,70 @@
+@import '@/assets/scss/variables.scss';
+@import '@/assets/scss/mixins';
+
+.container {
+  display: flex;
+  align-items: center;
+  &.primary {
+    color: $black;
+  }
+
+  &.secondary {
+    color: $white;
+  }
+
+  .rangeContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 26px;
+    margin-left: 22px;
+  }
+  .sliderContainer {
+    height: 36px;
+    display: flex;
+    width: 100%;
+  }
+
+  .renderTrack {
+    height: 5px;
+    width: 100%;
+    border-radius: 4px;
+    align-self: center;
+  }
+
+  .renderThumbContainer {
+    height: 24px;
+    width: 24px;
+    z-index: 0 !important;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 6px $teal;
+    background-color: $teal-100;
+  }
+
+  .renderThumbLabel {
+    position: absolute;
+    top: -28px;
+    font-weight: bold;
+    font-size: $font-sm;
+    &.primary {
+      color: $gray;
+    }
+    &.secondary {
+      color: $white;
+    }
+  }
+
+  .rangeInfo {
+    display: flex;
+    justify-content: space-between;
+    &.primary {
+      color: $gray;
+    }
+    &.secondary {
+      color: $teal;
+    }
+  }
+}

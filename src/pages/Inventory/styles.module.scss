@@ -1,0 +1,176 @@
+@import '@/assets/scss/variables.scss';
+@import '@/assets/scss/mixins';
+
+.header {
+  padding: $padding-xs * 5;
+  background: $black-700;
+  z-index: 2;
+  width: 100%;
+  @include mq(sm) {
+    position: relative;
+    display: block;
+  }
+  @include mq(lg) {
+    padding-top: 0;
+  }
+  .inventoryContainer {
+    gap: 10px;
+  }
+
+  .searchContainer {
+    gap: 5px;
+    display: flex;
+    @include mq(xs) {
+      display: block;
+    }
+    @include mq(md) {
+      display: flex;
+    }
+    h5 {
+      color: $white;
+    }
+    .filterBox {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      @include mq(xs) {
+        display: block;
+      }
+
+      .updateButton {
+        width: 150px;
+      }
+    }
+  }
+
+  .date {
+    color: $white;
+    font-size: 18px;
+    width: 14%;
+    margin-top: 8px;
+    @include mq(xs) {
+      display: none;
+    }
+  }
+  .filterText {
+    margin-right: 1vw;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: $white;
+    column-gap: 5px;
+
+    .dayText {
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+}
+
+.contentArea {
+  padding: 20px 15px 15px;
+  width: 350px;
+  margin-top: 25px;
+  .numberText {
+    font-size: 16px;
+  }
+  .text {
+    font-size: 9px;
+    align-items: justify-content-cen;
+  }
+  .dealerRating {
+    color: $black-700;
+    font-weight: medium;
+  }
+
+  .modelMileage {
+    color: $black-700;
+    font-weight: 600;
+
+    strong {
+      display: block;
+    }
+  }
+
+  .showInfo {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .btnOutline {
+    width: 100%;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.contentArea {
+  padding: 0px 10px 10px;
+  color: $black-700;
+
+  .modelMileage {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    justify-content: space-between;
+
+    .brandContainer {
+      width: 60%;
+    }
+    strong {
+      display: block;
+      font-weight: 600;
+    }
+
+    .carBrand {
+      font-weight: normal;
+    }
+  }
+  .views {
+    font-weight: 500;
+    span {
+      display: block;
+      font-size: 13px;
+      font-weight: 400;
+    }
+  }
+  .price {
+    font-size: 24px;
+    font-weight: 800;
+  }
+  .btn-outline {
+    font-size: 16px;
+  }
+  .css-ahj2mt-MuiTypography-root {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+.sidebar {
+  background-color: $teal-50;
+  @include mq(xs) {
+    display: none;
+  }
+}
+
+.avgPriceContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: $margin-sm;
+  margin-right: $margin-sm;
+  @include mq(lg) {
+    justify-content: flex-start;
+    padding-top: $padding-sm;
+  }
+  .averageMSRPLabel {
+    font-weight: 400;
+  }
+  .avgPrice {
+    font-weight: 500;
+  }
+}
+
+.header {
+  background-color: $black;
+}

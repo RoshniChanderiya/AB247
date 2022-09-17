@@ -1,0 +1,21 @@
+@import '@/assets/scss/variables.scss';
+
+.metaData {
+  width: 100%;
+  padding: 0 $padding-md;
+  .detail {
+    text-align: center;
+    .value {
+      font-size: $font-lg;
+
+      &.danger {
+        color: $red;
+      }
+    }
+
+    .label {
+      font-size: $font-md - 2;
+      font-weight: 400;
+    }
+  }
+}
