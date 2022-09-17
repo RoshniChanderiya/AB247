@@ -1,4 +1,5 @@
 import OnboardingLandingPage from "@/pages/Onboarding/Landing";
+import WholesaleSetpassword from "@/pages/WholesaleSetpassword";
 import AuthProvider from "@/providers/AuthProvider";
 import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
@@ -35,6 +36,7 @@ const AppRoute: React.FC = () => {
         <React.Suspense fallback={"Loading..."}>
           <Routes>
             <Route path="/" element={<DashboardLayout />}>
+              <Route path="/resetpassword" element={<WholesaleSetpassword />} />
               <Route index element={<Dashboard />} />
               <Route path="auctions" element={<Auctions />}>
                 <Route path="live" element={<AuctionList />} />
